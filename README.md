@@ -1,3 +1,3 @@
 # My homeworks
 
-For priview click [here](https://skazko-o.github.io/My_HWorks)
+For priview click [here](https://skazko-o.github.io/My_Homeworks)
