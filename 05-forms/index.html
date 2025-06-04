@@ -9,13 +9,14 @@
         .container {
             width: 500px;
             margin: 0 auto;
+            background-color: gainsboro;
         }
 
         .form_row {
             margin-bottom: 10px;
         }
-
-       .form_row span, .form_row label {
+        
+        .form_row label {
             display: inline-block;
             width: 200px;
         }
@@ -23,12 +24,16 @@
         .buttons {
             text-align: center;
         }
+
+        .inline-lbl {
+            display: inline;
+        }
     </style>
 </head>
 
 <body>
+    <h1 style="text-align: center;">Реєстрація користувача</h1>
     <div class="container">
-        <h1>Реєстрація користувача</h1>
         <form action="https://httpbin.org/post" method="post">
             <fieldset>
                 <div class="form_row">
@@ -50,9 +55,9 @@
                 <div class="form_row">
                     <span>Стать</span>
                     <input type="radio" id="man" name="sex" value="male" checked required>
-                    <label for="man">чоловіча</label>
+                    <label for="man" class="inline-lbl">чоловіча</label>
                     <input type="radio" id="woman" name="sex" value="female" required>
-                    <label for="woman">жіноча</label>
+                    <label for="woman" class="inline-lbl">жіноча</label>
                 </div>
                 <div class="form_row">
                     <label for="age">Вік</label>
