@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Підказки для &lt;;form&gt; - Extra 05</title>
+    <style>
+        form {
+            max-width: 600px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>HTML елементи FORM</h1>
+        <ul>
+            <li><a href="#input">&lt;;input&gt;</a></li>
+            <li><a href="#label">&lt;;label&gt;</a></li>
+            <li><a href="#select">&lt;select&gt;, &lt;option&gt; і &lt;optgroup&gt;</a></li>
+            <li><a href="#textarea">&lt;textarea&gt; разом з &lt;button&gt;</a></li>
+            <li><a href="#fieldset_legent">&lt;fieldset&gt; і &lt;legend&gt;</a></li>
+            <li><a href="#datalist">&lt;datalist&gt;</a></li>
+        </ul>
+    </header>
+    <main>
+        <form>
+            <fieldset id="input">
+                <legend>Елемент &lt;input&gt; </legend>
+                <div>
+                    <p>Одним з найбільш використовуваних елементів форми</p>
+                    <p>Основні атрибути:</p>
+                    <ul>
+                        <li> type – визначає тип введення (текст, число, дата і т. д.).</li>
+                        <li> name – задає ім'я, яке використовується для надсилання даних форми.</li>
+                        <li> value – встановлює початкове значення поля.</li>
+                        <li> placeholder – відображає текст-підказку.</li>
+                        <li> required – робить поле обов’язковим для заповнення.</li>
+                        <li> disabled – вимикає поле, роблячи його недоступним.</li>
+                        <li>readonly – робить поле доступним для перегляду, але не для редагування.</li>
+                    </ul>
+                </div>
+                <a href="#">До гори</a>
+            </fieldset>
+            <fieldset id="label">
+                <legend>Елемент &lt;lable&gt; </legend>
+                <div>
+                    <p>Використовується для зв’язку текстового опису з елементами форми, такими як &lt;input&gt;,
+                        &lt;textarea&gt;, &lt;select&gt;</p>
+                    <p>Корисні атрибути:</p>
+                    <ul>
+                        <li>for – вказує id елемента, до якого прив’язаний label.
+                        <li>title – додає підказку при наведенні.</li>
+                    </ul>
+                </div>
+                <a href="#">До гори</a>
+            </fieldset>
+            <fieldset id="select">
+                <legend>Елемент &lt;select&gt;, &lt;option&gt; і &lt;optgroup&gt;</legend>
+                <div>
+                    <p>Використовується для створення випадаючого списку, з якого користувач може вибрати один або
+                        кілька
+                        варіантів. Елемент option визначає окремі варіанти вибору.
+                    </p>
+                    <p>Атрибути:</p>
+                    <ul>
+                        <li>name – використовується для передачі даних у формі.</li>
+                        <li>multiple – дозволяє вибрати кілька варіантів.</li>
+                        <li>size – задає кількість видимих пунктів списку.</li>
+                        <li>disabled – блокує вибір.</li>
+                        <li>required – робить вибір обов'язковим.</li>
+                    </ul>
+                    <span><b>Наприклад:</b></span>
+                    <label for="country">Оберіть країну:</label>
+                    <select name="test" id="country">
+                        <optgroup label="Country">
+                            <option disabled>Eastern Europe</option>
+                            <option>Ukraine</option>
+                            <option>Poland</option>
+                            <option>Bulgaria</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <a href="#">До гори</a>
+            </fieldset>
+            <fieldset id="textarea">
+                <legend>Елемент &lt;textarea&gt; разом з &lt;button&gt;</legend>
+                <div>
+                    <p>Використовується для введення великого обсягу тексту, наприклад, коментарів або описів</p>
+                    <p>Корисні атрибути:</p>
+                    <ul>
+                        <li>name – передає дані у формі.</li>
+                        <li>maxlength – обмежує кількість символів.</li>
+                        <li>readonly – тільки для читання.</li>
+                        <li>wrap – визначає, як текст переноситься </li>
+                        <li>required – робить вибір обов'язковим.</li>
+                        <li>disabled – вимикає поле вводу.</li>
+                    </ul>
+                    <span><b>Наприклад:</b></span>
+                    <p><label for="tm">Напишіть нам повідомлення. Небільше 100 символів</label></p>
+                    <textarea name="text message" id="tm" rows="4" cols="20"></textarea>
+                    <div>
+                        <button type="submit">Відправити</button>
+                        <button type="reset">Очистити форму</button>
+                        <button type="button">Просто кнопка</button>
+                    </div>
+                </div>
+                <a href="#">До гори</a>
+            </fieldset>
+            <fieldset id="fieldset_legent">
+                <legend>Елементи &lt;fieldset&gt; і &lt;legend&gt;</legend>
+                <div>
+                    <p>Використовуються для групування та заголовку частин форми, що покращує її структуру та
+                        доступність.
+                        Елемент legend встановлюэ заголовок.
+                    </p>
+                </div>
+            </fieldset>
+            <fieldset id="datalis">
+                <legend>Елемент &lt;datalist&gt;</legend>
+                <div>
+                    <p>Дозволяє створювати список автозаповнення для &lt;input&gt;. Він допомагає користувачам вибирати
+                        значення зі списку,
+                        зберігаючи можливість вводити власний текст.
+                    </p>
+                    <span><b>Наприклад:</b></span>
+                    <label for="city">Оберіть місто:</label>
+                    <input type="text" id="city" name="city" list="cities">
+                    <datalist id="cities">
+                        <option value="Київ"></option>
+                        <option value="Львів"></option>
+                        <option value="Одеса"></option>
+                        <option value="Харків"></option>
+                    </datalist>
+                </div>
+                <a href="#">До гори</a>
+            </fieldset>
+        </form>
+    </main>
+    <footer>
+        <p><b>Виконав домашню роботу:</b> Сказко Олександр</p>
+    </footer>
+</body>
+
+</html>
