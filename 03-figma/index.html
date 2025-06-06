@@ -5,18 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lesson 03 - Figma</title>
-    <style>
-        .container {
-            width: min(90%, 970px);
-            margin-inline: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <div class="container">
-            <nav>
+            <nav class="main-menu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#">About me</a></li>
@@ -28,18 +26,21 @@
         </div>
     </header>
     <main>
+        <hr>
         <div class="container">
+
             <h1>Denis Novik</h1>
             <img src="assets/images/main_photo.jpg" alt="Denis Novik">
         </div>
-        <section>
+        <section id="aboutme">
             <div class="container">
                 <h2>About me</h2>
-                <div class="content">
-                    <p>Hi, I'm Denis – UX/UI designer from Minsk.I'm interested in design and everything connected with
-                        it.</p>
-                    <p>I'm studying at courses "Web and mobile design interfaces" in IT-Academy.</p>
-                    <p>Ready to implement excellent projects with wonderful people.</p>
+                <div>
+                    <p id="imfrom"><span class="nowrap">Hi, I'm Denis – UX/UI designer from Minsk.</span>
+                        <span class="nowrap">I'm interested in design and everything connected with it.</span>
+                    </p>
+                    <p id="imstudy">I'm studying at courses "Web and mobile design interfaces" in IT-Academy.</p>
+                    <p id="imready">Ready to implement excellent projects with wonderful people.</p>
                 </div>
             </div>
         </section>
@@ -49,55 +50,57 @@
                     <h2>Skills</h2>
                     <p>I work in such programs as</p>
                 </hgroup>
-                <ul class="skills_list">
-                    <li>
-                        <img src="assets/images/ico-ps.svg" alt="Adobe Photoshop">
-                        <p>Adobe Photoshop</p>
-                        <div>
-                            <img src="assets/images/star-icon.jpg" alt="Rate Star">
-                            <img src="assets/images/star-icon.jpg" alt="Rate Star">
-                            <img src="assets/images/star-icon.jpg" alt="Rate Star">
-                            <img src="assets/images/star-icon.jpg" alt="Rate Star">
-                            <img src="assets/images/star-icon.jpg" alt="Rate Star">
-                        </div>
-                    </li>
-                    <li>
-                        <img src="assets/images/ico-ai.svg" alt="Adobe Illustrator">
-                        <p>Adobe Illustrator</p>
-                        <div>
-                            <img src="assets/images/star-icon.jpg" alt="Rate Star">
-                            <img src="assets/images/star-icon.jpg" alt="Rate Star">
-                            <img src="assets/images/star-icon.jpg" alt="Rate Star">
-                            <img src="assets/images/star-icon.jpg" alt="Rate Star">
-                            <img src="assets/images/star-icon.jpg" alt="Rate Star">
-                        </div>
-                    </li>
-                    <li>
-                        <img src="assets/images/ico-ae.svg" alt="Adobe After Effects">
-                        <p>Adobe After Effects</p>
-                        <div>
-                            <img src="assets/images/star-icon.jpg" alt="Rate Star">
-                            <img src="assets/images/star-icon.jpg" alt="Rate Star">
-                            <img src="assets/images/star-icon.jpg" alt="Rate Star">
-                            <img src="assets/images/star-icon.jpg" alt="Rate Star">
-                            <img src="assets/images/star-icon.jpg" alt="Rate Star">
-                        </div>
-                    </li>
-                    <li>
-                        <img src="assets/images/ico-figma.svg" alt="Figma">
-                        <p>Figma</p>
-                        <div>
-                            <img src="assets/images/star-icon.jpg" alt="Rate Star">
-                            <img src="assets/images/star-icon.jpg" alt="Rate Star">
-                            <img src="assets/images/star-icon.jpg" alt="Rate Star">
-                            <img src="assets/images/star-icon.jpg" alt="Rate Star">
-                            <img src="assets/images/star-icon.jpg" alt="Rate Star">
-                        </div>
-                    </li>
-                </ul>
+                <nav class="main-menu">
+                    <ul>
+                        <li>
+                            <img src="assets/images/ico-ps.svg" alt="Adobe Photoshop">
+                            <p>Adobe Photoshop</p>
+                            <div>
+                                <img src="assets/images/star-icon.svg" alt="Rate Star">
+                                <img src="assets/images/star-icon.svg" alt="Rate Star">
+                                <img src="assets/images/star-icon.svg" alt="Rate Star" class="transparent">
+                                <img src="assets/images/star-icon.svg" alt="Rate Star" class="transparent">
+                                <img src="assets/images/star-icon.svg" alt="Rate Star" class="transparent">
+                            </div>
+                        </li>
+                        <li>
+                            <img src="assets/images/ico-ai.svg" alt="Adobe Illustrator">
+                            <p>Adobe Illustrator</p>
+                            <div>
+                                <img src="assets/images/star-icon.svg" alt="Rate Star">
+                                <img src="assets/images/star-icon.svg" alt="Rate Star">
+                                <img src="assets/images/star-icon.svg" alt="Rate Star">
+                                <img src="assets/images/star-icon.svg" alt="Rate Star" class="transparent">
+                                <img src="assets/images/star-icon.svg" alt="Rate Star" class="transparent">
+                            </div>
+                        </li>
+                        <li>
+                            <img src="assets/images/ico-ae.svg" alt="Adobe After Effects">
+                            <p>Adobe After Effects</p>
+                            <div>
+                                <img src="assets/images/star-icon.svg" alt="Rate Star">
+                                <img src="assets/images/star-icon.svg" alt="Rate Star">
+                                <img src="assets/images/star-icon.svg" alt="Rate Star">
+                                <img src="assets/images/star-icon.svg" alt="Rate Star">
+                                <img src="assets/images/star-icon.svg" alt="Rate Star" class="transparent">
+                            </div>
+                        </li>
+                        <li>
+                            <img src="assets/images/ico-figma.svg" alt="Figma">
+                            <p>Figma</p>
+                            <div>
+                                <img src="assets/images/star-icon.svg" alt="Rate Star">
+                                <img src="assets/images/star-icon.svg" alt="Rate Star">
+                                <img src="assets/images/star-icon.svg" alt="Rate Star">
+                                <img src="assets/images/star-icon.svg" alt="Rate Star">
+                                <img src="assets/images/star-icon.svg" alt="Rate Star">
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </section>
-        <section>
+        <section id="portfolio">
             <div class="container">
                 <h2>Portfolio</h2>
                 <div>
@@ -118,34 +121,36 @@
             <div class="container">
                 <hgroup>
                     <h2>Contacts</h2>
-                    <p>Want to know more or just chat? You are welcome!</p>
+                    <p id="footer-contacts">Want to know more or just chat? You are welcome!</p>
                 </hgroup>
-                <a href="mailto:anton@exemple.com">Send message</a>
-                <ul>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="assets/images/ico-linkedin.svg" alt="linkedIn">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="assets/images/ico-instagram.svg" alt="Instagram">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="assets/images/ico-behance.svg" alt="bahance">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target="_blank">
-                            <img src="assets/images/ico-dribbble.svg" alt="dribble">
-                        </a>
-                    </li>
-                </ul>
+                <a href="mailto:anton@exemple.com" class="mail-btn">Send message</a>
+                <nav class="main-menu">
+                    <ul>
+                        <li>
+                            <a href="#" target="_blank">
+                                <img src="assets/images/ico-linkedin.svg" alt="linkedIn">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <img src="assets/images/ico-instagram.svg" alt="Instagram">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <img src="assets/images/ico-behance.svg" alt="bahance">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <img src="assets/images/ico-dribbble.svg" alt="dribble">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
             <div class="container">
-                <p>Like me on LinkedIn, Instagram, Behance, Dribble
+                <p id="footer-social">Like me on <span class="nowrap"> LinkedIn, Instagram, Behance,</span> Dribble
                 </p>
             </div>
         </footer>

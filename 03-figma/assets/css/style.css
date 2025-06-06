@@ -1,0 +1,125 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    color: #070707;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.container {
+    width: min(90%, 970px);
+    margin-inline: auto;    
+}
+
+.main-menu ul {
+    text-align: center;
+    font-size: 0;
+}
+
+.main-menu ul li {
+    display: inline-block;
+    margin: 0 20px;
+    font-size: 1.125rem;
+    color: #828282;   
+}
+
+.container h1 {
+    font-size: 3rem;
+    text-align: left;
+    margin: auto;
+    padding-top: 12px;
+    padding-bottom: 50px;
+}
+
+.container h2 {
+    font-size: 2.123rem;
+    text-align: center;
+    margin: 0;
+    padding-top: 100px;
+}
+
+hr {      
+    margin: auto;
+    border: none;
+    height: 1px;
+    width: 970px;
+    background-color: #828282;   
+}
+
+.transparent {
+    opacity: 0.1
+}
+
+#imfrom {
+    display: block;
+    width: 480px;
+    height: 50px;
+    margin: 0 auto;
+    font-size: 1.125rem;
+    padding-top: 50px;
+    padding-bottom: 30px;        
+}
+#imstudy {
+    display: block;
+    width: 406px;
+    height: 50px;
+    margin: 0 auto;
+    font-size: 1.125rem;    
+}
+#imready {
+    display: block;
+    width: 321px;
+    height: 50px;
+    margin: 0 auto;
+    font-size: 1.125rem;
+    padding-top: 30px;
+    padding-bottom: 100px;    
+}
+
+a {
+    display: inline-block;
+    margin-top: 40px;
+    margin-bottom: 70px;
+}
+
+#footer-contacts {
+    display: block;
+    width: 280px;
+    height: 46px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 1.125rem;
+    color: #070707;   
+}
+
+#footer-social {
+    display: block;
+    width: 200px;
+    height: 60px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #828282;      
+}
+
+.mail-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #070707;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 22px;
+    font-size: 1.125rem;
+    border: none;
+    cursor: pointer;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+#aboutme,
+#portfolio {
+    background-color: #F6F6F6;
+}
