@@ -156,6 +156,7 @@ hgroup h2 {
     text-decoration: none;
 }
 
+
 .btn {
   display: inline-block;
   color: #fff;
@@ -165,7 +166,7 @@ hgroup h2 {
   border: none;
   cursor: pointer;
   border-radius: 22px;
-  padding: 5px 16px;
+  padding: 5px 12px;
   min-width: 80px;
   border: 2px solid #070707;
   font-weight: 700;
@@ -178,7 +179,7 @@ hgroup h2 {
 }
 
 .btn-wrap {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .soc-list {
@@ -210,7 +211,13 @@ footer .container {
     width: min(90%, 310px);
 }
 
+footer hgroup {
+    margin-bottom: 56px;
+}
+
 footer hgroup p {
+    line-height: 1.4;
+    margin-top: -3px;
     padding: 0 10px;
 }
 
