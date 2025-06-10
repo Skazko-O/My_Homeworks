@@ -1,3 +1,21 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img{
+    vertical-align: top;
+}
+
+.container {
+    width: min(90%, 970px);
+    margin: 0 auto;
+    /*margin-inline: auto;*/
+}
+
+
+
 body {
     font-family: 'Open Sans', sans-serif;
     text-align: center;
@@ -14,11 +32,6 @@ header {
 
 hgroup {
     padding-bottom: 50px;
-}
-
-.container {
-    width: min(90%, 970px);
-    margin-inline: auto;
 }
 
 .main-menu ul {
