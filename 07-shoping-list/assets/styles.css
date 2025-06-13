@@ -9,6 +9,7 @@
 }
 
 body {
+    transition: all .10s ease-in;
     background-color: var(--bg-main);
     font-family: "Roboto", sans-serif;
 }
@@ -84,6 +85,8 @@ header div {
         font-size: 1.6875rem;
         line-height: 2rem;
 
+        transition: all .2s ease-in;
+
         &:hover {
             border-color: #fff;
         }
@@ -99,7 +102,7 @@ header div {
             position: absolute;
         }
 
-        &::before {
+        &::before {            
             width: 28px;
             height: 28px;
             background-color: #fff;
