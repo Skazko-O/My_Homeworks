@@ -1,0 +1,111 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 1.375rem;
+}
+
+.main_window {
+    font-family: 'Lucida Sans Unicode';
+    background-color: #39C;
+    border: 25px solid #2B81AC;
+    width: min(90%, 1440px);       
+}
+
+.head {  
+   
+    p {
+        font-size: 1.3125rem;
+    }
+
+    i {
+        font-size: 1.6875rem;
+    }
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;     
+    text-align: center;    
+    border: 2px solid #FFF;      
+
+}
+
+.group-Lisbon {   
+    flex: 50%;
+    background: #39C;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.group-Paris {  
+    flex: 25%;
+    background: #3CC;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.group-Belgrade {   
+    flex: 25%;
+    background: #969;
+    border-bottom: 2px solid #fff;
+}
+
+.group-Venice {
+    flex: 25%;
+    background: #C24747;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.group-Tel-Avive {
+    background: #E2674A;
+    flex: 25%;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.group-Cair {
+    flex: 25%;
+    background: #FFCC66;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.group-New-York {
+    flex: 25%;
+    background: #99CC99;
+    border-bottom: 2px solid #fff
+}
+
+.group-New-Delhi {
+    flex: 25%;
+    background: #669999;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.group-San-Francisco {
+    flex: 50%;
+    background: #CC6699;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.group-Tokyo {
+    flex: 25%;
+    background: #339966;
+    border-bottom: 2px solid #fff;
+}
+
+.group-Sydney {
+    flex: 100%;
+    background: #666699;   
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: normal;
+}

@@ -1,0 +1,142 @@
+$text-color: #544837;
+$primary-color: #F90;
+$secondary-color: #D80B0A; //secondary-colors/coral
+$secondary-color-light: #F03E3D; //primary-colors/coral
+$inactive-color: #D6E0EB; //secondary-colors/gray-light
+$battn-color-sec: #2F281E; //primary-colors/brown-dark
+$text-color-main-menu: #2F281E; //primary-colors/brown-dark
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    vertical-align: top;
+}
+
+a,
+.btn {
+    transition: all .2s ease-in-out;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    color: $text-color;
+    font-weight: 500;
+    line-height: 1.625rem;
+}
+
+.container {
+    width: min(90%, 1230px);
+    margin: 0 auto;
+}
+
+header .container {
+    padding: 17px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-menu {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    justify-content: space-around;
+    margin-left: 165px;
+    margin-right: 165px;
+
+    a {
+        color: $text-color-main-menu;
+        font-size: 1.125rem;
+        font-weight: 400;
+        line-height: 1.75rem;
+
+        &:hover {
+            color: $primary-color;
+        }
+
+        &:active {
+            color: $secondary-color;
+        }
+    }
+}
+
+.btn { 
+    text-decoration: none;
+    cursor: pointer;
+    padding: 12px 25px;
+    border-radius: 4px;
+    border: 1px solid $primary-color;
+    background-color: $primary-color;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    line-height: normal;
+    font-size: 1rem;   // є проблема з розмірами кнопки - поправити!! по дизайну 1.125rem
+    font-weight: 600;
+
+    &:hover {
+        background-color: $secondary-color-light;
+        border: 1px solid $secondary-color-light;
+    }
+
+    &:active {
+        background-color: $secondary-color;
+        border: 1px solid $secondary-color;
+    }
+
+    &.btn-secondary {
+        color: $battn-color-sec;
+        background-color: transparent;
+        border: 1px solid $battn-color-sec;
+
+        &:hover {
+            color: $secondary-color-light;
+            border: 1px solid $secondary-color-light;
+        }
+
+        &:active {
+            color: $secondary-color;
+            border: 1px solid $secondary-color;
+        }
+
+    }
+}
+
+.button-group {
+    display: flex;
+    gap: 29px; // є проблема з розмірами кнопки - поправити!! по дизайну 32px
+}
+
+.hero_section .container {
+    padding: 90px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    align-items: center;
+    color: $text-color-main-menu;
+
+    h1 {
+        font-size: 2.75rem;
+        font-weight: 700;
+        line-height: 3.375rem;
+        padding-bottom: 20px;
+    }
+
+    p {
+        font-size: 1.125rem;
+        font-weight: 400;
+        line-height: 1.75rem;
+        padding-bottom: 30px;
+    }
+
+}
+
+.hero_section .btn {
+        padding: 12px 40px;
+        font-size: 1.125rem;
+        border: none;
+    }
