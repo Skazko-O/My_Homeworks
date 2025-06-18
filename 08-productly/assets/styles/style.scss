@@ -27,6 +27,12 @@ body {
     color: $text-color;
     font-weight: 500;
     line-height: 1.625rem;
+
+    background-image: url('../images/bg.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 
 .container {

@@ -4,68 +4,77 @@
     box-sizing: border-box;
     color: #fff;
     font-size: 1.375rem;
-    font-weight: 400;
-    font-family: 'Lucida Sans Unicode';
+    font-weight: 400;    
+   
 }
 
 .light_blue {
-    background: #39C;
+    background-color: #39C;    
 }
 
 .biruzovi {
-    background: #3CC;
+    background-color: #3CC;
 }
 
 .buzok {
-    background: #969;
+    background-color: #969;
 }
 
 .red {
-    background: #C24747;
+    background-color: #C24747;
 }
 
 .orange {
-    background: #E2674A;
+    background-color: #E2674A;
 }
 
 .yellow {
-    background: #FFCC66;
+    background-color: #FFCC66;
 }
 
 .light-green {
-    background: #99CC99;
+    background-color: #99CC99;
 }
 
 .grey-green {
-    background: #669999;
+    background-color: #669999;
 }
 
 .rose {
-    background: #CC6699;
+    background-color: #CC6699;
 }
 
 .green {
-    background: #339966;
+    background-color: #339966;
 }
 
 .vialet {
-    background: #666699;
+    background-color: #666699;
 }
 
 .container {
-    margin: 0 auto;
     width: min(90%, 1170px);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 
 }
 
+
 body {
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'sans-serif';
     background-color: #39C;
     border: 25px solid #2B81AC;
+    height: 100vh;
+    width:75%;
+    margin: 0 auto;
+    padding: 0;    
 }
 
 h1 {
     padding-bottom: 39.62px;
     font-size: 1.3125rem;
+    font-weight: 400;
     font-style: normal;
     line-height: normal;
 }
@@ -77,34 +86,29 @@ h1 {
     flex-wrap: wrap;
     text-align: center;
     background: #fff;
-    padding: 1px;
+    padding: 2px;
     margin-bottom: 37px;
-    cursor: pointer;
+    
+    cursor: pointer;   
+    
 }
 
-.item {
-    padding: 1px;
+.color {
+    height: 100%;
 }
 
-.item:nth-child(1),
-.item:nth-child(9) {
-    width: 50%;
-
-}
-
-.item:nth-child(2),
-.item:nth-child(3),
-.item:nth-child(4),
-.item:nth-child(5),
-.item:nth-child(6),
-.item:nth-child(7),
-.item:nth-child(8),
-.item:nth-child(10) {
+.item {    
+    padding: 2px;
     width: 25%;
+    height: 147px;       
 }
 
-.item:nth-child(11) {
-    width: 100%;
+.width50 {
+width: 50%;
+}
+
+.width100 {
+width: 100%;
 }
 
 p {
