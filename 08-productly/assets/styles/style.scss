@@ -21,18 +21,38 @@ a,
     transition: all .2s ease-in-out;
 }
 
+nav {
+    
+a {
+        color: $text-color-main-menu;
+        font-size: 1.125rem;
+        font-weight: 400;
+        line-height: 1.75rem;
+
+        &:hover {
+            color: $primary-color;
+        }
+
+        &:active {
+            color: $secondary-color;
+        }
+    }
+
+}
+
 body {
     font-family: "Montserrat", sans-serif;
     font-size: 1rem;
     color: $text-color;
     font-weight: 500;
     line-height: 1.625rem;
+}
 
+.features_section {
     background-image: url('../images/bg.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-
 }
 
 .container {
@@ -59,22 +79,7 @@ header .container {
     list-style: none;
     display: flex;
     gap: 40px;
-    justify-content: space-around;
-
-    a {
-        color: $text-color-main-menu;
-        font-size: 1.125rem;
-        font-weight: 400;
-        line-height: 1.75rem;
-
-        &:hover {
-            color: $primary-color;
-        }
-
-        &:active {
-            color: $secondary-color;
-        }
-    }
+    justify-content: space-around;    
 }
 
 .btn {
