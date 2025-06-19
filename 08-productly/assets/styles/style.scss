@@ -48,13 +48,6 @@ body {
     line-height: 1.625rem;
 }
 
-.features_section {
-    background-image: url('../images/bg.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
 .container {
     width: min(90%, 1230px);
     margin: 0 auto;
@@ -159,6 +152,11 @@ header .container {
 }
 
 .features_section {
+    background-image: url('../images/bg.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
     h2 {
         font-size: 2.25rem;
         font-weight: 700;
