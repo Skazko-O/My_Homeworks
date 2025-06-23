@@ -53,7 +53,7 @@ h2 {
   grid-row: span 2;
 }
 
-.container:hover img:not(:hover) {
+.grid:hover img:not(:hover) {
     opacity: 0.7;
     transition: opacity 0.3s;
 }
