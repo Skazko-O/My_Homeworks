@@ -121,7 +121,7 @@ select {
 
 select {
     appearance: none;
-    background: url('../images/arrow_double.svg') no-repeat right 20px top 10px/14px auto;
+    background: url('../images/arrow_double.svg') no-repeat right 10px top 10px/16px auto;
 }
 
 .form-row {
@@ -183,16 +183,6 @@ input[type=radio] {
     font-weight: 400;
     line-height: 1.375rem;
     padding:0;
-}
-
-.select2-container--default .select2-selection--single .select2-selection__arrow {
-    background: url('../images/arrow_double.svg') center center/18px auto no-repeat;
-    height:36px;
-    right:7px;
-
-    b {
-        display: none;
-    }
 }
 
 .select2-container--default .select2-selection--single {

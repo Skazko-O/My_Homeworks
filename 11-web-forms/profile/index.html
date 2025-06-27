@@ -88,13 +88,12 @@
     </script>
     <script src="../assets/plagins/select2/js/select2.full.min.js">
     </script>
-    <script>
-
+   <script>
         $(function () {
-            $('select').select2()
-
-            $('input[type="file"]').on('change', function (e) {
-                $('.filename').text(e.target.value.split('\\').pop())
+            $('select').select2({
+                $("#js-example-basic-hide-search").select2({
+                    minimumResultsForSearch: Infinity
+                });
             })
 
         })
