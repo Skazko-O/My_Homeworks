@@ -1,0 +1,82 @@
+$border-color: #E4E4E4;
+$text-color: #545454;
+.avatar {
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.file-management {
+    display: flex;
+}
+
+.fake-file {
+    max-width: 137px;
+    border-radius: 4px;
+    border: 1px solid $border-color;
+    height: 30px;
+    margin-bottom: 10px;
+    background: url('../../../assets/images/photo_camera.svg')  right/16px auto no-repeat;
+    background-position: 95%;
+    
+
+
+    .filename {
+        font-family: 'Roboto';
+        font-size: 0.9375rem;
+        color: $text-color;
+    }
+
+    input {
+        // position: absolute;
+        left: 0;
+        top: 0;
+       
+        opacity: 0;
+    }
+}
+.upload_section {
+    margin-left: 20px;
+}
+
+.upload_tools {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.upload_tools-file {
+    display: flex;
+    padding-top:10px;
+}
+
+.text_upload_tools {
+    color: #969696;
+    font-family: Roboto;
+    font-size: 0.8125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.125rem;
+    letter-spacing: -0.00625rem;
+}
+
+
+.button-with-image {
+    margin-left:10px;
+    button {
+        border-radius: 5px;
+        border: 1px solid $border-color;
+        background-color: transparent;
+        width: 30px;
+        height: 30px;
+        background: url('../../../assets/images/Trash.svg') center/16px auto no-repeat;
+        margin: 0;
+
+    }
+    
+}
+
+.button-wrap-profile {
+    max-width: 150px;
+
+}

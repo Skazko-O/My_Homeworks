@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="../assets/plagins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="../assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/style-profile.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-wrap">
+            <header>
+                <h1>Profile</h1>
+            </header>
+            <main>
+                <form action="https://httpbin.org/post" method="post">
+                    <div class="upload_tools">
+                        <div class="avatar">
+                            <img src="../assets/images/profile_photo.png" alt="Profile Photo">
+                        </div>
+                        <div class="upload_section">
+                            <div class="upload_tools-file">
+                                <div class="fake-file">
+                                    <div class="filename">                                        
+                                        
+                                   <input type="file">
+                                    </div> 
+                                </div>
+                                <div class="button-with-image">
+                                    <button type="button"></button>
+                                </div>
+                            </div>
+                            <div class="text_upload_tools">
+                                Up to 1 MB (300x300 px)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-element">
+                            <label for="fname">Name</label>
+                            <input type="text" id="fname" name="fname">
+                        </div>
+                        <div class="form-element">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-element">
+                            <label for="country">Country</label>
+                            <select id="country" name="country" required>
+                                <option value="" disabled selected>Select</option>
+                                <option value="ukraine">Ukraine</option>
+                                <option value="usa">USA</option>
+                                <option value="uk">UK</option>
+                            </select>
+                        </div>
+                        <div class="form-element">
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-element">
+                            <label for="fname">Zip Code</label>
+                            <input type="text" id="zip_code" name="zip_code">
+                        </div>
+                        <div class="form-element">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+
+                    <div class="button-wrap-profile">
+                        <button type="submit">Update</button>
+                    </div>
+
+                </form>
+            </main>
+        </div>
+    </div>
+    <script src="../assets/js/jquery-3.7.1.js">
+    </script>
+    <script src="../assets/plagins/select2/js/select2.full.min.js">
+    </script>
+    <script>
+
+        $(function () {
+            $('select').select2()
+
+            $('input[type="file"]').on('change', function (e) {
+                $('.filename').text(e.target.value.split('\\').pop())
+            })
+
+        })
+    </script>
+</body>
+
+</html>
