@@ -13,11 +13,6 @@ $border-color: #E4E4E4;
     box-sizing: border-box;
 }
 
-ul,
-ol {
-    list-style: none;
-}
-
 .container {
     width: min(90%, 570px);
     margin: 0 auto;
@@ -105,8 +100,8 @@ img {
 input[type=text],
 input[type=email],
 input[type=password],
-input[type=tel],
-select {
+input[type=tel]
+{
     border-radius: 4px;
     border: 1px solid $border-color;
     height: 38px;
@@ -117,11 +112,6 @@ select {
     &:focus {
         outline: 1px solid $form-btn-color;
     }
-}
-
-select {
-    appearance: none;
-    background: url('../images/arrow_double.svg') no-repeat right 10px top 10px/16px auto;
 }
 
 .form-row {
@@ -194,4 +184,15 @@ input[type=radio] {
     width: 100%;
     color:#E4E4E4;
 
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    background: url('../images/arrow_double.svg') center center/18px auto no-repeat;
+    height:36px;
+    right:7px;
+
+    b {
+        display: none;
+    }
+    
 }
