@@ -1,5 +1,6 @@
 $border-color: #E4E4E4;
 $text-color: #545454;
+
 .avatar {
     max-width: 80px;
     max-height: 80px;
@@ -17,10 +18,8 @@ $text-color: #545454;
     border: 1px solid $border-color;
     height: 30px;
     margin-bottom: 10px;
-    background: url('../../../assets/images/photo_camera.svg')  right/16px auto no-repeat;
+    background: url('../../../assets/images/photo_camera.svg') right/16px auto no-repeat;
     background-position: 95%;
-    
-
 
     .filename {
         font-family: 'Roboto';
@@ -29,13 +28,12 @@ $text-color: #545454;
     }
 
     input {
-        // position: absolute;
         left: 0;
         top: 0;
-       
         opacity: 0;
     }
 }
+
 .upload_section {
     margin-left: 20px;
 }
@@ -47,7 +45,7 @@ $text-color: #545454;
 
 .upload_tools-file {
     display: flex;
-    padding-top:10px;
+    padding-top: 10px;
 }
 
 .text_upload_tools {
@@ -60,9 +58,9 @@ $text-color: #545454;
     letter-spacing: -0.00625rem;
 }
 
-
 .button-with-image {
-    margin-left:10px;
+    margin-left: 10px;
+
     button {
         border-radius: 5px;
         border: 1px solid $border-color;
@@ -73,7 +71,7 @@ $text-color: #545454;
         margin: 0;
 
     }
-    
+
 }
 
 .button-wrap-profile {

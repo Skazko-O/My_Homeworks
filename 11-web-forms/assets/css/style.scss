@@ -117,9 +117,9 @@ select
 
 .form-row {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(2, 1fr); 
+  //  grid-template-rows: repeat(1, 1fr); // можна це не писати
+    gap: 12px; // можна додати gap: 20px 12px; - це відступ між рядками
 }
 
 .radio-group {

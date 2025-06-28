@@ -11,6 +11,7 @@ $text-color: #545454;
     line-height: 1.125rem;
     letter-spacing: -0.00625rem;
 }
+
 .termsofuse {
     display: flex;
     justify-content: center;
@@ -19,7 +20,7 @@ $text-color: #545454;
     a {
         color: $form-btn-color;
         font-family: Inter;
-        text-decoration: none;        
+        text-decoration: none;
     }
 }
 
