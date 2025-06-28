@@ -196,3 +196,7 @@ input[type=radio] {
     }
     
 }
+
+  .select2-container--default {  // щось зламалось в стилях select2, чомусь було прописано для контейнера widht:68px
+    width: 100% !important;
+}
