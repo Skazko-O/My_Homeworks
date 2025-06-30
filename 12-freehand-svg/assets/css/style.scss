@@ -140,7 +140,11 @@ body {
 
   &:hover {
     border: 1px solid #3DB370;
-  } 
+  }
+
+  &:hover .icon use.default {
+    opacity: 0;
+  }
 
   &:hover .icon use.hover-active {
     opacity: 1;
