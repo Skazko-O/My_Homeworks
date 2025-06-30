@@ -84,8 +84,11 @@ body {
   font-style: normal;
   font-weight: 600;
   line-height: 2.8rem;
-  letter-spacing: 0.0125rem;
-  padding-bottom: 36px;
+  letter-spacing: 0.0125rem;  
+}
+
+hgroup {
+padding-bottom: 36px;
 }
 
 .flex-block {
