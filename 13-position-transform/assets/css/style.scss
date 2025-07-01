@@ -6,16 +6,53 @@
   box-sizing: border-box;
 }
 
-.container {
-  width: min(90%, 1200px);
-  margin: 0 auto;  
-  background-image: url('../images/bg-picture.svg');
-  background-repeat: no-repeat;
-  background-position: 50% 100%;   
+ul, ol {
+  list-style: none;
 }
 
-.heading {
-  list-style: none;
+a, button {
+  transition: all .2s ease;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  width: min(90%, 1200px);
+  margin: 0 auto;
+}
+
+body {
+  font-size: 1rem;
+  font-family: sans-serif;
+  background-image: url('../images/bg-picture.svg');
+  background-repeat: no-repeat;
+  background-position: 70% 30%;
+  background-attachment: fixed;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 70px;  
+}
+
+
+.header-container {
+  display: flex;  
+  padding-bottom: 75px;
+}
+
+.heading {  
   display: flex;
   gap: 10px;
   padding: 26px 0;
@@ -26,13 +63,6 @@
   font-weight: 400;
   line-height: normal;
   letter-spacing: 0.04125rem;
-}
-
-.header-container {
-  display: flex;
-  width: min(90%, 1200px);
-  margin: 0 auto; 
-  padding-bottom: 83px;
 }
 
 .lang {
@@ -52,8 +82,32 @@
 
 img {
   padding: 13px 0;
-} 
-  
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 385px auto;
+  gap: 30px;
+}
+
+.contents {  
+  position: sticky;
+  top:0;
+  text-transform: uppercase;
+  font-family: 'Francois One';
+  font-size: 2.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 3rem;
+  letter-spacing: 0.07rem;
+  padding: 10px; 
+  height: 100vh;
+
+  li{
+    padding-bottom: 80px;
+  }
+}
 
 .chapter {
   position: relative;
@@ -63,16 +117,25 @@ img {
   gap: 10px;
 }
 
-.chapter::before {
-  content: '';
-  position: absolute;
-  top: -50%;
+.divider {
+  border: none;
+  height: 8px;
   width: 100px;
-  border-top: 8px solid #000;
+  background-color: #000;
+  margin-bottom: 20px;
+  // margin: 2rem 0;
 }
 
-.main_text {
-  padding-bottom: 60px;
+
+// .chapter::before {
+//   content: '';
+//   position: absolute;
+//   top: -50%;
+//   width: 100px;
+//   border-top: 8px solid #000;
+// }
+
+.main_text {  
   font-family: 'PT Sans';
   font-size: 1.75rem;
   font-style: normal;
