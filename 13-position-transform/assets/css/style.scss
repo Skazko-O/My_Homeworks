@@ -37,19 +37,14 @@ body {
   gap: 70px;  
 }
 
+.head {
+  padding: 13px 0;
+  text-align: left;
+  margin-bottom: 66px;   
+} 
 
-.header-container {
-  display: flex;
-  justify-content: space-between;  
-  padding-bottom: 66px;  
-  
-}
-
-.heading {  
-  display: flex;
-  gap: 50px;
-  padding: 26px 0;
-  align-items: center;
+.heading {    
+  padding-right:591px;
   font-family: 'Staatliches';
   font-size: 1.375rem;
   font-style: normal;
@@ -58,8 +53,8 @@ body {
   letter-spacing: 0.04125rem;
 }
 
-.lang {  
-  margin-left: 3px;
+.lang {    
+  margin: 0 47px 0 3px;
   font-family: 'Tourney';
   font-size: 1.375rem;
   font-style: normal;
@@ -68,10 +63,10 @@ body {
   letter-spacing: 0.0825rem;
 }
 
-img {  
-  padding: 13px 0;
+.item {
+  display: inline-block;  
+  vertical-align: middle;
 }
-
 
 .grid-container {
   display: grid;
