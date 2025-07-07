@@ -42,7 +42,7 @@ body {
   font-size: 1rem;
   color: $text-color;
   font-family: 'Lato';
-  font-style: normal; 
+  font-style: normal;
 }
 
 .page-wrapper {
@@ -57,10 +57,11 @@ body {
 
 .logo {
   width: 141.793px;
+  padding: 44px 0;
 }
 
 ul {
-  display: flex;  
+  display: flex;
   justify-content: space-between;
   gap: 40px;
 }
@@ -82,7 +83,7 @@ nav {
     font-weight: 400;
     letter-spacing: 0.2625rem;
     text-transform: uppercase;
-    position: relative;  
+    position: relative;
 
     &:hover {
 
@@ -93,9 +94,28 @@ nav {
         transform: translateX(-50%);
         bottom: -5px;
         height: 1px;
-        width: 75%;        
-        background-color:$header-color;       
+        width: 75%;
+        background-color: $header-color;
       }
     }
   }
+}
+
+h1 {
+  padding: 100px 0 380px;
+  color: $header-color;
+  font-family: "Red Hat Display";
+  font-size: 3rem;  
+  font-weight: 600;
+  line-height: 4rem;  
+  letter-spacing: 0.15rem;
+}
+
+.bg {
+  background-image: url('../images/bg-image.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+
 }
