@@ -21,7 +21,7 @@
                 <a href="#"> <img src="assets/images/logo.svg" alt="Productly logo"></a>
             </div>
             <div class="hamburger">
-                <button type="button" class="close">
+                <button type="button" class="close" onclick="toggleMenu()">
                     <span></span>
                 </button>
             </div>
@@ -45,6 +45,14 @@
                     </li>
                 </ul>
             </nav>
+            <form action="https://httpbin.org/post" method="post">
+                    <div>                        
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone Number">
+                    </div>
+                    <div>
+                        <button class="btn" type="submit">Sign up now</button>
+                    </div>
+                </form>
         </div>
     </div>
     <!-- Адаптив -->
@@ -71,7 +79,7 @@
                     </ul>
                 </nav>
                 <div class="hamburger">
-                    <button type="button">
+                    <button type="button" onclick="toggleMenu()">
                         <span></span>
                     </button>
                 </div>
@@ -160,7 +168,7 @@
                         <li><a href="#">Terms of Service</a></li>
                     </ul>
                 </nav>
-                <form action="https://httpbin.org/post" method="post">
+                <form class="signup" action="https://httpbin.org/post" method="post">
                     <div>
                         <h4>Knowing you're always on<span class="new-line">the best energy deal.</span></h4>
                         <input type="tel" id="phone" name="phone" placeholder="Enter your phone Number">
@@ -172,6 +180,9 @@
             </div>
         </footer>
     </div>
+    <script>
+        const toggleMenu = () => document.body.classList.toggle('open-menu')       
+    </script>
 </body>
 
 </html>
