@@ -2,6 +2,7 @@
 
 $text-color: #565656;
 $header-color: #000;
+$paragraf-color: #7B7B7B;
 
 *,
 *::before,
@@ -49,6 +50,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 90px;
 
   main {
     flex-grow: 1;
@@ -70,7 +72,7 @@ ul {
   width: 17px;
 }
 
-header .container {
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -101,21 +103,107 @@ nav {
   }
 }
 
+
+
 h1 {
   padding: 100px 0 380px;
   color: $header-color;
   font-family: "Red Hat Display";
-  font-size: 3rem;  
+  font-size: 3rem;
   font-weight: 600;
-  line-height: 4rem;  
+  line-height: 4rem;
   letter-spacing: 0.15rem;
+  padding-left: 9.37%;
+  max-width: 770px;
+}
+
+h3 {
+  color: $header-color;
+  font-family: "Red Hat Display";
+  font-size: 1.75rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 166%;
+  letter-spacing: 0.175rem;
+  padding-bottom: 50px;
 }
 
 .bg {
-  background-image: url('../images/bg-image.jpg');
-  background-repeat: no-repeat;
+  height: 600px;
+  width: 100%;
+  background: url('../images/bg-image.jpg') center center no-repeat;
   background-size: cover;
-  background-position: center;
+}
 
+h2 {
+  color: $header-color;
+  font-family: "Red Hat Display";
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 4rem;
+  letter-spacing: 0.15rem;
+  padding-bottom: 50px;
+}
 
+.flex-block {
+  display: flex;
+  gap: 30px;
+  padding-bottom: 50px;
+
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+
+  img {
+    width: 570px;
+  }
+
+  p {
+    color: $paragraf-color;
+    font-family: Lato;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 166%;
+    letter-spacing: 0.1rem;
+    padding-bottom: 50px;
+
+    &.text-p {
+      color: $text-color;
+    }
+  }
+
+  h3 {
+    color: $header-color;
+    font-family: "Red Hat Display";
+    font-size: 1.4375rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 166%;
+    letter-spacing: 0.14375rem;
+  }
+}
+
+.flex-lp {
+  display: flex;
+  gap: 30px;
+
+  img {
+    width: 370px;
+    padding-bottom: 25px;
+  }
+}
+
+.under-img {
+  display: flex;
+  justify-content: space-between;
+  p {
+    color: $paragraf-color;
+    font-family: Lato;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 166%;
+    letter-spacing: 0.075rem;
+  }
 }

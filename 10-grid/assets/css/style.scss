@@ -38,10 +38,10 @@ h2 {
   text-align: center;
 }
 
-.grid {
+.grid { //рефакторинг - адаптивна верстка
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
-  grid-template-rows: 370px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  // grid-template-rows: 370px;
   gap: 30px;
 }
 
