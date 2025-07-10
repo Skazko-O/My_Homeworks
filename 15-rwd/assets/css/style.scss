@@ -3,6 +3,8 @@
 $text-color: #565656;
 $header-color: #000;
 $paragraf-color: #7B7B7B;
+$bg-footer-color: #F4F4F4;
+$hover-color: #fff;
 
 *,
 *::before,
@@ -21,10 +23,6 @@ a,
 button {
   transition: all .2s ease;
   text-decoration: none;
-}
-
-button {
-  cursor: pointer;
 }
 
 img {
@@ -49,7 +47,6 @@ body {
 .page-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 90px;
 
   main {
@@ -59,26 +56,30 @@ body {
 
 .logo {
   width: 141.793px;
-  padding: 44px 0;
+  padding: 21px 0;
 }
 
-ul {
+.main-menu {
   display: flex;
   justify-content: space-between;
-  gap: 40px;
+  gap: 43px;
 }
 
 .search {
   width: 17px;
 }
 
-header {
+.flex-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px 0;
 }
 
 nav {
+  margin-right: 65px;
+  margin-left: auto;
+
   a {
     color: $header-color;
     font-size: 0.875rem;
@@ -103,18 +104,32 @@ nav {
   }
 }
 
+.hero_section {
+  padding-bottom: 80px;
+}
 
 
 h1 {
-  padding: 100px 0 380px;
   color: $header-color;
   font-family: "Red Hat Display";
   font-size: 3rem;
   font-weight: 600;
   line-height: 4rem;
   letter-spacing: 0.15rem;
-  padding-left: 9.37%;
-  max-width: 770px;
+  padding-top: 100px;
+  padding-right: 400px;
+  padding-bottom: 380px;
+
+}
+
+h2 {
+  color: $header-color;
+  font-family: "Red Hat Display";
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 4rem;
+  letter-spacing: 0.15rem;
+  padding-bottom: 50px;
 }
 
 h3 {
@@ -128,27 +143,41 @@ h3 {
   padding-bottom: 50px;
 }
 
+h4 {
+  color: $header-color;
+  font-family: "Red Hat Display";
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 166%;
+  letter-spacing: 0.15rem;
+}
+
 .bg {
-  height: 600px;
   width: 100%;
   background: url('../images/bg-image.jpg') center center no-repeat;
   background-size: cover;
 }
 
-h2 {
-  color: $header-color;
-  font-family: "Red Hat Display";
-  font-size: 3rem;
+.text-p {
+  color: $text-color;
+  font-family: Lato;
+  font-size: 1rem;
+  font-style: normal;
   font-weight: 400;
-  line-height: 4rem;
-  letter-spacing: 0.15rem;
-  padding-bottom: 50px;
+  line-height: 166%;
+  letter-spacing: 0.1rem;
+
+}
+
+.flex-block:not(:last-child) {
+  margin-bottom: 50px;
 }
 
 .flex-block {
   display: flex;
   gap: 30px;
-  padding-bottom: 50px;
+  height: 470px;
 
   &.reverse {
     flex-direction: row-reverse;
@@ -156,21 +185,6 @@ h2 {
 
   img {
     width: 570px;
-  }
-
-  p {
-    color: $paragraf-color;
-    font-family: Lato;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 166%;
-    letter-spacing: 0.1rem;
-    padding-bottom: 50px;
-
-    &.text-p {
-      color: $text-color;
-    }
   }
 
   h3 {
@@ -181,22 +195,57 @@ h2 {
     font-weight: 500;
     line-height: 166%;
     letter-spacing: 0.14375rem;
+    padding-bottom: 10px;
+  }
+
+  p {
+    padding-bottom: 46px;
+    color: $paragraf-color;
+    font-weight: 400;
+    line-height: 166%;
+    letter-spacing: 0.1rem;
+  }
+
+  .text-blog {
+    color: $text-color;
+    font-family: Lato;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 166%;
+    letter-spacing: 0.05rem;
+
   }
 }
 
-.flex-lp {
+.text-suport {
+  max-width: 450px;
+  padding: 85px 0;
+
+}
+
+.above-header {
+  padding-bottom: 25px;
+  color: $paragraf-color;
+  font-family: Lato;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 166%;
+  letter-spacing: 0.1rem;
+}
+
+
+.flex-sec {
   display: flex;
   gap: 30px;
-
-  img {
-    width: 370px;
-    padding-bottom: 25px;
-  }
 }
 
 .under-img {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 25px;
+
   p {
     color: $paragraf-color;
     font-family: Lato;
@@ -206,4 +255,199 @@ h2 {
     line-height: 166%;
     letter-spacing: 0.075rem;
   }
+}
+
+.latest-posts {
+  h3 {
+    padding-bottom: 43px;
+  }
+
+  .img-lp {
+    width: 370px;
+    padding-bottom: 26px;
+  }
+
+  h4 {
+    color: $header-color;
+    font-family: "Red Hat Display";
+    font-size: 1.375rem;
+    font-weight: 500;
+    line-height: 166%;
+    letter-spacing: 0.1375rem;
+    padding-bottom: 16px;
+  }
+
+  .flex-element {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 22px;
+  }
+
+}
+
+
+
+.Most-Popular {
+
+  h3 {
+    padding-bottom: 47px;
+  }
+
+  .img-mp {
+    width: 570px;
+    padding-bottom: 22px;
+  }
+
+  .under-img {
+    padding-bottom: 21px;
+  }
+
+  h4 {
+    padding-bottom: 13px;
+  }
+
+  .flex-element {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 55px;
+  }
+}
+
+
+
+.btn {
+  display: inline-block;
+  color: #fff;
+  background-color: $text-color;
+  text-decoration: none;
+  border: none;
+  cursor: url("/15-rwd/assets/images/cursor.svg"), pointer;
+  width: 180px;
+  height: 46px;
+  font-family: Lato;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 166%;
+  letter-spacing: 0.1rem;
+}
+
+.btn-wrap {
+  text-align: center
+}
+
+.flex-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info {
+  padding-bottom: 60px;
+}
+
+.info-block {
+  width: 470px;
+
+  h3 {
+    color: $header-color;
+    font-family: "Red Hat Display";
+    font-size: 1.4375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 166%;
+    letter-spacing: 0.14375rem;
+  }
+
+}
+
+.info-text {
+  color: $text-color;
+  font-family: Lato;
+  font-size: 1.1875rem;
+  font-weight: 400;
+  line-height: 2rem;
+  letter-spacing: 0.05938rem;
+  padding-bottom: 31px;
+}
+
+footer {
+  background-color: $bg-footer-color;
+}
+
+.footer-sec {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5.29px;
+}
+
+.contact {
+  padding-top: 70px;
+
+  a {
+    color: $header-color;
+    font-family: Lato;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 166%;
+    letter-spacing: 0.1rem;
+    padding-bottom: 14.71px;
+  }
+
+  .tel {
+    padding-bottom: 12px;
+  }
+}
+
+.footer-h {
+  color: $header-color;
+  font-family: "Red Hat Display";
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 4rem;
+  letter-spacing: 0.15rem;
+  padding-bottom: 26px;
+}
+
+
+
+.social-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 23px;
+  padding: 125px 0 70px 0;
+
+  a {
+    border: 1px solid $text-color;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    cursor: url("/15-rwd/assets/images/cursor.svg"), pointer;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: $text-color;
+    }
+
+    &:hover svg {
+      fill: $hover-color;      
+    }
+
+    &:hover {
+      background-color: #565656;
+    }
+  }
+}
+
+.copyright {
+  text-align: center;
+  padding-bottom: 30px;
+  color: $header-color;
+  font-family: Lato;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 166%;
+  letter-spacing: 0.075rem;
 }
