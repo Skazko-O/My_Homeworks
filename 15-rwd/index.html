@@ -9,7 +9,52 @@
 </head>
 
 <body>
-
+  <!-- Адаптив -->
+  <div class="overlay"></div>
+  <div class="mobile-menu-panel">
+    <div class="mm-top">
+      <div class="logo">
+          <a href="#" title="Logo Manifest">
+            <img src="assets/images/logo.png" alt="Logo Manifest">
+          </a>
+        </div>
+      <div class="hamburger">        
+        <button type="button" class="close burger-button" onclick="toggleMenu()">
+          <span></span>
+        </button>
+      </div>
+      <nav>
+        <ul class="mobile-menu">
+          <li>
+            <a href="#" title="Home">
+              home
+            </a>
+          </li>
+          <li>
+            <a href="#" title="About">
+              about
+            </a>
+          </li>
+          <li>
+            <a href="#" title="Works">
+              works
+            </a>
+          </li>
+          <li>
+            <a href="#" title="Blog">
+              blog
+            </a>
+          </li>
+          <li>
+            <a href="#" title="Contact">
+              contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <!-- Адаптив -->
   <div class="container">
     <header>
       <div class="flex-header">
@@ -18,7 +63,7 @@
             <img src="assets/images/logo.png" alt="Logo Manifest">
           </a>
         </div>
-        <nav>
+        <nav class="navigation">
           <ul class="main-menu">
             <li>
               <a href="#" title="Home">
@@ -50,7 +95,13 @@
         <div class="search">
           <img src="assets/images/search.svg" alt="Search">
         </div>
+        <div class="hamburger">
+                    <button class="burger-button" type="button" onclick="toggleMenu()">
+                        <span></span>
+                    </button>
+                </div>    
       </div>
+                 
     </header>
   </div>
   <main>
@@ -72,7 +123,7 @@
             </h2>
           </div>
           <div class="flex-block">
-            <div>
+            <div class="blog-img">
               <img src="assets/images/left-arow.jpg" alt="Arow Left">
             </div>
             <div class="text-suport">
@@ -85,15 +136,22 @@
               <p>
                 6 May, 2020
               </p>
+
               <p class="text-blog">
                 Transformation has to be driven by everybody, not just by climate groups, and we have a responsibility
-                to
-                use our influence to drive this.
+                to use our influence to drive this.&nbsp; <svg xmlns="http://www.w3.org/2000/svg" width="24" height="12"
+                  viewBox="0 0 24 12" fill="none">
+                  <path
+                    d="M23.5303 6.53033C23.8232 6.23744 23.8232 5.76257 23.5303 5.46967L18.7574 0.696701C18.4645 0.403807 17.9896 0.403807 17.6967 0.696701C17.4038 0.989594 17.4038 1.46447 17.6967 1.75736L21.9393 6L17.6967 10.2426C17.4038 10.5355 17.4038 11.0104 17.6967 11.3033C17.9896 11.5962 18.4645 11.5962 18.7574 11.3033L23.5303 6.53033ZM-6.55671e-08 6.75L23 6.75L23 5.25L6.55671e-08 5.25L-6.55671e-08 6.75Z"
+                    fill="#7B7B7B" />
+                </svg>
               </p>
+
+
             </div>
           </div>
           <div class="flex-block reverse">
-            <div>
+            <div class="blog-img">
               <img src="assets/images/blog-image.jpg" alt="Bilding">
             </div>
             <div class="text-suport">
@@ -108,8 +166,11 @@
               </p>
               <p class="text-blog">
                 Transformation has to be driven by everybody, not just by climate groups, and we have a responsibility
-                to
-                use our influence to drive this.
+                to use our influence to drive this.&nbsp; <svg xmlns="http://www.w3.org/2000/svg" width="24" height="12"
+                  viewBox="0 0 24 12" fill="none">
+                  <path d="M23.5303 6.53033C23.8232 6.23744 23.8232 5.76257 23.5303 5.46967L18.7574 0.696701C18.4645 0.403807 17.9896 0.403807 17.6967 0.696701C17.4038 0.989594 17.4038 1.46447 17.6967 1.75736L21.9393 6L17.6967 10.2426C17.4038 10.5355 17.4038 11.0104 17.6967 11.3033C17.9896 11.5962 18.4645 11.5962 18.7574 11.3033L23.5303 6.53033ZM-6.55671e-08 6.75L23 6.75L23 5.25L6.55671e-08 5.25L-6.55671e-08 6.75Z"
+                    fill="#7B7B7B" />
+                </svg>
               </p>
             </div>
           </div>
@@ -117,10 +178,10 @@
 
         <section class="latest-posts">
           <div class="view">
-          <h3>Latest Posts</h3>
-          <div>
-            <div class="vp">
-              View All
+            <h3>Latest Posts</h3>
+            <div>
+              <div class="vp">
+                View All
               </div>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="12" viewBox="0 0 24 12" fill="none">
                 <path
@@ -134,12 +195,14 @@
               <div class="img-lp">
                 <img src="assets/images/lp-lamp.jpg" alt="Lamp">
               </div>
-              <div class="under-img">
-                <p>Interface Design</p>
-                <p>8 June, 2020</p>
+              <div class="content">
+                <div class="under-img">
+                  <p>Interface Design</p>
+                  <p>8 June, 2020</p>
+                </div>
+                <h4>UX traffic light colours</h4>
+                <p class="text-p">UI has to make a huge visual difference between warning, an alert and a success.</p>
               </div>
-              <h4>UX traffic light colours</h4>
-              <p class="text-p">UI has to make a huge visual difference between warning, an alert and a success.</p>
             </div>
             <div class="flex-element">
               <div class="img-lp">
@@ -172,8 +235,8 @@
               The Most Popular
             </h3>
             <div>
-            <div class="vp">
-              View All
+              <div class="vp">
+                View All
               </div>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="12" viewBox="0 0 24 12" fill="none">
                 <path
@@ -217,7 +280,7 @@
           <div class="flex-info">
             <div class="info-block">
               <h3>
-                Full-time UI/UX designer<br> Head of Design at VeronaLabs.com                
+                Full-time UI/UX designer<br> Head of Design at VeronaLabs.com
               </h3>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="12" viewBox="0 0 24 12" fill="none">
                 <path
@@ -292,6 +355,10 @@
       © Copyright Manifest Theme. Allrights reserved
     </div>
   </footer>
+
+  <script>
+    const toggleMenu = () => document.body.classList.toggle('open-menu')       
+  </script>
 </body>
 
 </html>
