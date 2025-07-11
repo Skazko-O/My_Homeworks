@@ -15,7 +15,7 @@
     <div class="mm-top">
       <div class="logo">
         <a href="#" title="Logo Manifest">
-          <img src="assets/images/logo.png" alt="Logo Manifest">
+          <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="assets/images/logo.png" alt="Logo Manifest">
         </a>
       </div>
       <div class="hamburger">
@@ -60,7 +60,7 @@
       <div class="flex-header">
         <div class="logo">
           <a href="#" title="Logo Manifest">
-            <img src="assets/images/logo.png" alt="Logo Manifest">
+            <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="assets/images/logo.png" alt="Logo Manifest">
           </a>
         </div>
         <nav class="navigation">
@@ -93,7 +93,7 @@
           </ul>
         </nav>
         <div class="search">
-          <img src="assets/images/search.svg" alt="Search">
+          <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="assets/images/search.svg" alt="Search">
         </div>
         <div class="hamburger">
           <button class="burger-button" type="button" onclick="toggleMenu()">
@@ -124,7 +124,7 @@
           </div>
           <div class="flex-block">
             <div class="blog-img">
-              <img src="assets/images/left-arow.jpg" alt="Arow Left">
+              <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="assets/images/left-arow.jpg" alt="Arow Left">
             </div>
             <div class="text-suport">
               <div class="above-header">
@@ -154,7 +154,7 @@
           </div>
           <div class="flex-block reverse">
             <div class="blog-img">
-              <img src="assets/images/blog-image.jpg" alt="Bilding">
+              <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="assets/images/blog-image.jpg" alt="Bilding">
             </div>
             <div class="text-suport">
               <div class="above-header">
@@ -198,7 +198,7 @@
           <div class="flex-sec-lp">
             <div class="flex-element">
               <div class="img-lp">
-                <img src="assets/images/lp-lamp.jpg" alt="Lamp">
+                <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="assets/images/lp-lamp.jpg" alt="Lamp">
               </div>
               <div class="content">
                 <div class="under-img">
@@ -211,7 +211,7 @@
             </div>
             <div class="flex-element adaptive-reverse">
               <div class="img-lp">
-                <img src="assets/images/lp-left-arow.jpg" alt="Laft Arow">
+                <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="assets/images/lp-left-arow.jpg" alt="Laft Arow">
               </div>
               <div class="content">
                 <div class="under-img">
@@ -224,7 +224,7 @@
             </div>
             <div class="flex-element">
               <div class="img-lp">
-                <img src="assets/images/lp-roof.jpg" alt="Roof">
+                <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="assets/images/lp-roof.jpg" alt="Roof">
               </div>
               <div class="content">
                 <div class="under-img">
@@ -257,7 +257,7 @@
           <div class="flex-sec-mp">
             <div class="flex-element">
               <div class="img-mp">
-                <img src="assets/images/mp-lamp.jpg" alt="Lamp">
+                <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="assets/images/mp-lamp.jpg" alt="Lamp">
               </div>
               <div class="content">
                 <div class="under-img">
@@ -272,7 +272,7 @@
             </div>
             <div class="flex-element">
               <div class="img-mp">
-                <img src="assets/images/mp-wall.jpg" alt="Lamp">
+                <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="assets/images/mp-wall.jpg" alt="Lamp">
               </div>
               <div class="under-img">
                 <p>Visual Design</p>
@@ -371,6 +371,10 @@
 
   <script>
     const toggleMenu = () => document.body.classList.toggle('open-menu')       
+  </script>
+  <script src="assets/js/lazyload.min.js"></script>
+  <script>
+    var lazyLoadInstance = new LazyLoad()
   </script>
 </body>
 
