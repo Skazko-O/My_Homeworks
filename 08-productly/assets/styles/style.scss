@@ -399,6 +399,9 @@ input {
 }
 
 @media screen and (max-width: 1000px) {
+    .button-group{
+        display: none;
+    }
 
     .logo-footer{
         display: none;
@@ -422,6 +425,7 @@ input {
 
     .hamburger {
         display: block;
+        margin-left: auto;
     }
 
     .card_list {        
@@ -439,9 +443,7 @@ input {
 
 @media screen and (max-width: 545px) {
 
-    .button-group{
-        display: none;
-    }
+    
     header .container{
         justify-content: flex-start;
     }
