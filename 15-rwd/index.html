@@ -272,10 +272,10 @@
         <button class="btn" type="button">Load More</button>
       </div>
 
-      <section class="info">
+      <section>
         <div class="container">
-          <div class="flex-info">
-            <div class="info-block">
+          <div class="info-wrap">
+            <div>
               <h3>
                 Full-time UI/UX designer<br> Head of Design at VeronaLabs.com
               </h3>
@@ -287,89 +287,90 @@
                 </svg>
               </a>
             </div>
-            <div class="info-block">
-              <div class="info-text">
+            <div>
+              <p>
                 We work with clients around the world from our headquarters in Charleston, South Carolina.
-              </div>
-              <div class="info-text">
+              </p>
+              <p>
                 We focus on naming, branding, brand narratives, website design and development, and brand experiences.
-              </div>
+              </p>
             </div>
           </div>
         </div>
-      </section>  
-  </main>
-  <footer>
-    <div class="footer-sec container">
-      <div class="contact">
-        <p class="footer-h">
-          Need a project?
-        </p>
-        <div class="tel">
-          <a href="tel:+2395550108" title="Telephone Number">
-            (239) 555-0108
-          </a>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="footer-wrap">
+          <div class="contact">
+            <p class="footer-h">
+              Need a project?
+            </p>
+            <div class="tel">
+              <a href="tel:+2395550108" title="Telephone Number">
+                (239) 555-0108
+              </a>
+            </div>
+            <div>
+              <a href="mailto:tanya.hill@example.com">tanya.hill@example.com</a>
+            </div>
+          </div>
+
+          <div>            
+            <ul class="social-list">
+              <li>
+                <a href="#" target="_blank" title="link-social" rel="nofolow noreferrer">
+                  <svg>
+                    <use xlink:href="assets/images/sprite.svg#instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank" title="link-social" rel="nofolow noreferrer">
+                  <svg>
+                    <use xlink:href="assets/images/sprite.svg#facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank" title="link-social" rel="nofolow noreferrer">
+                  <svg>
+                    <use xlink:href="assets/images/sprite.svg#twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank" title="link-social" rel="nofolow noreferrer">
+                  <svg>
+                    <use xlink:href="assets/images/sprite.svg#linkedin"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div>
-          <a href="mailto:tanya.hill@example.com">tanya.hill@example.com</a>
+        <div class="copyright">
+          © Copyright Manifest Theme. Allrights reserved
         </div>
       </div>
+    </footer>
 
-      <div>
-        <ul class="social-list">
-          <li>
-            <a href="#" target="_blank" title="link-social" rel="nofolow noreferrer">
-              <svg>
-                <use xlink:href="assets/images/sprite.svg#instagram"></use>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank" title="link-social" rel="nofolow noreferrer">
-              <svg>
-                <use xlink:href="assets/images/sprite.svg#facebook"></use>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank" title="link-social" rel="nofolow noreferrer">
-              <svg>
-                <use xlink:href="assets/images/sprite.svg#twitter"></use>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank" title="link-social" rel="nofolow noreferrer">
-              <svg>
-                <use xlink:href="assets/images/sprite.svg#linkedin"></use>
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <script>
+      const toggleMenu = () => document.body.classList.toggle('open-menu')
 
-    <div class="copyright">
-      © Copyright Manifest Theme. Allrights reserved
-    </div>
-  </footer>
+      window.addEventListener('resize', function (event) {
+        console.log(event.target.outerWidth)
+        if (event.target.outerWidth >= 970 && document.body.classList.contains('open-menu')) {
+          document.body.classList.remove('open-menu')
+        }
+      })
+    </script>
+    <script src="assets/js/lazyload.min.js">
 
-  <script>
-    const toggleMenu = () => document.body.classList.toggle('open-menu')
-
-    window.addEventListener('resize', function (event) {
-      console.log(event.target.outerWidth)
-      if (event.target.outerWidth >= 970 && document.body.classList.contains('open-menu')) {
-        document.body.classList.remove('open-menu')
-      }
-    })
-  </script>
-  <script src="assets/js/lazyload.min.js">
-
-  </script>
-  <script>
-    var lazyLoadInstance = new LazyLoad()
-  </script>
+    </script>
+    <script>
+      var lazyLoadInstance = new LazyLoad()
+    </script>
   </div>
 </body>
 
