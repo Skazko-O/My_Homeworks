@@ -14,7 +14,7 @@ $text-color-main-menu: #2F281E; //primary-colors/brown-dark
 }
 
 img {
-    vertical-align: top;    
+    vertical-align: top;
 }
 
 a,
@@ -208,10 +208,16 @@ nav {
     margin: auto;
 }
 
-footer .container {
+.f_nav {
+    display: flex;
+    justify-content: space-around;
+    gap: 140px;
+}
+
+.footer-wrap {
     display: flex;
     justify-content: space-between;
-    gap: 60px;
+    gap: 140px;
     align-items: center;
     padding: 70px 0;
 
@@ -265,18 +271,18 @@ footer .container {
 }
 
 input {
-        padding: 15px 10px;
-        align-items: center;
-        border-radius: 4px;
-        border: 1px solid #BCD0E5;
-        margin: 0 auto 25px;
-        width: 100%;
-    }
+    padding: 15px 10px;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid #BCD0E5;
+    margin: 0 auto 25px;
+    width: 100%;
+}
 
 .hamburger {
     display: none;
 
-    
+
 
     button {
         display: inline-block;
@@ -387,7 +393,7 @@ input {
     }
 }
 
-.mobile-menu { 
+.mobile-menu {
     a {
         display: inline-block;
         width: 100%;
@@ -398,44 +404,46 @@ input {
     }
 }
 
-@media screen and (max-width: 1000px) {
-    .button-group{
-        display: none;
+@media screen and (max-width: 1250px) {
+    .footer-wrap {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
     }
 
-    .logo-footer{
+}
+
+@media screen and (max-width: 1000px) {
+    .button-group {
         display: none;
     }
 
     footer .container {
         justify-content: center;
-    }
-
-    .signup {
-        display: none;
+        flex-direction: column;
     }
 
     .hero_section img {
         display: none;
-    }    
+    }
 
     .main-menu {
         display: none;
-    }   
+    }
 
     .hamburger {
         display: block;
         margin-left: auto;
     }
 
-    .card_list {        
-        grid-template-columns: repeat(2, 1fr);        
+    .card_list {
+        grid-template-columns: repeat(2, 1fr);
         gap: 80px;
     }
 }
 
 @media screen and (max-width: 680px) {
-    .card_list {        
+    .card_list {
         grid-template-columns: 1fr;
     }
 
@@ -443,8 +451,8 @@ input {
 
 @media screen and (max-width: 545px) {
 
-    
-    header .container{
+
+    header .container {
         justify-content: flex-start;
     }
 }
