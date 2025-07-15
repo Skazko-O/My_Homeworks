@@ -274,27 +274,19 @@ h1 {
 
 .blog-section {
   padding: 70px 0;
-
   article {
     display: flex;
     gap: 30px;
-    align-items: center;
-    .pic-wrap {
-      width: 50%;
-    }
-
+    align-items: center;   
     &:not(:last-child) {
       margin-bottom: 50px;
     }
-
     >div {
       width: 50%;
     }
-
     .content-wrap {
       padding-right: 10%;
     }
-
     &:nth-child(odd) {
       flex-direction: row-reverse;
     }
@@ -562,13 +554,6 @@ footer {
 
 }
 
-@media screen and (max-width: 1024px) {
-
-  // h1 {
-  //   padding-right: 30%;
-  // }
-}
-
 @media screen and (max-width: 970px) {
 
   .main-menu {
@@ -587,17 +572,18 @@ footer {
     height: auto;
     background-image: url('../images/768/bg-image-m.jpg');
   }
-  
-.blog-section article .content-wrap {
-  padding-right: 0;
-}
+
+  .blog-section article .content-wrap {
+    padding-right: 0;
+  }
 
   .posts-section .posts {
     display: block;
 
     article {
       width: 100%;
-      > div {
+
+      >div {
         width: 50%;
       }
 
@@ -606,32 +592,37 @@ footer {
       }
     }
   }
-}
 
-.info-wrap {
-  display: block;
-  > div {
-    width: 100%;
-  }
-  .clients {
-    margin-left: auto;
-    text-align: right;    
-  }  
-}
 
-.footer-wrap {
-  flex-direction: column;
-  .contact {
-    text-align: center;
-  }
-  .social-list{
-    padding: 40px 0;
-  }
-}
-.copyright {
-  padding-bottom: 50px;
-}
+  .info-wrap {
+    display: block;
 
+    >div {
+      width: 100%;
+    }
+
+    .clients {
+      margin-left: auto;
+      text-align: right;
+    }
+  }
+
+  .footer-wrap {
+    flex-direction: column;
+
+    .contact {
+      text-align: center;
+    }
+
+    .social-list {
+      padding: 40px 0;
+    }
+  }
+
+  .copyright {
+    padding-bottom: 50px;
+  }
+}
 
 @media screen and (max-width: 970px) and (min-width: 500px) {
   .posts-section .posts {
@@ -653,25 +644,26 @@ footer {
   .blog-section article,
   .blog-section article:nth-child(odd) {
     flex-direction: column-reverse;
-
     >div {
       width: 100%;
     }
   }
+  
 
   .posts-section .posts article {
     display: block;
     >div {
       width: 100%;
     }
-    
+
   }
 
-  .pop-section .posts  {
+  .pop-section .posts {
     display: block;
+
     article {
       width: 100%;
-    }    
+    }
   }
 
   .view {
@@ -683,14 +675,10 @@ footer {
     display: block;
   }
 
-  .footer-wrap {
-    flex-direction: column;
-    text-align: center;
-
-    .social-list {
-      padding: 40px 0;
-    }
+  .social-list {
+    padding: 40px 0;
   }
+
 
   .footer-h {
     font-size: 2rem;
@@ -698,6 +686,6 @@ footer {
 
   .copyright {
     font-size: 1rem;
-    letter-spacing: 0.1rem;    
+    letter-spacing: 0.1rem;
   }
 }
