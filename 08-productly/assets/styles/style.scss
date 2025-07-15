@@ -409,6 +409,10 @@ input {
         flex-direction: column;
         gap: 20px;
         text-align: center;
+        
+        .f_nav{
+            gap:0;
+        }
     }
 
 }
