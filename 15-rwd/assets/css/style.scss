@@ -279,6 +279,9 @@ h1 {
     display: flex;
     gap: 30px;
     align-items: center;
+    .pic-wrap {
+      width: 50%;
+    }
 
     &:not(:last-child) {
       margin-bottom: 50px;
@@ -585,8 +588,9 @@ footer {
     background-image: url('../images/768/bg-image-m.jpg');
   }
   
-
-  
+.blog-section article .content-wrap {
+  padding-right: 0;
+}
 
   .posts-section .posts {
     display: block;
