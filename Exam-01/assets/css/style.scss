@@ -102,6 +102,7 @@ button {
 .btn-hero {
   padding: 15px 50px;
   border: 1px solid $btn-color-hero;
+  border-radius: 50px;
   background-color: $btn-color-hero;
   color: #fff;
   line-height: 160%;
@@ -226,7 +227,7 @@ body {
 header {
   height: 100px;
   position: fixed;
-  z-index: 100;
+  z-index: 50;
   left: 0;
   top: 0;
   width: 100%;
@@ -678,18 +679,26 @@ header {
       linear-gradient(to top, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 1) 100%),
       url('../images/first-screen-img.webp') center center no-repeat;
     background-size: cover;
-    margin-top: 150px;
     padding-top: 0;
+
+    h1 {
+      padding-top: 200px;
+    }
+    
 
     p {
       display: inline-block;
-      padding: 0;
-      width: 75%;
+      padding-bottom: 50px;
+      width: 100%;
     }
 
-    .btn-hero {
-      margin: 0;
-      transform: translateY(-40px);
+    span {
+      display: block;
+      padding-bottom: 100px;
+    }
+
+    .btn-hero {      
+      margin: 0;      
     }
   }
 
@@ -703,7 +712,7 @@ header {
 
   .grid-features {
     padding-bottom: 50px;
-  }
+  }  
 
   .testimonials {
     margin-bottom: 50px;
@@ -718,17 +727,12 @@ header {
 
   .hamburger-box {
     display: block;
-  }
-
-  .hero-section {
-    padding-top: 0;
-    margin-top: 150px;
+  } 
 
     h1 {
       font-size: 4rem;
       padding-bottom: 15px;
-    }
-  }
+    }  
 
   .hero-section .btn-hero {
     transform: none;
