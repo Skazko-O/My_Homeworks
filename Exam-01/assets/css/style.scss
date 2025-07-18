@@ -1,4 +1,5 @@
 @use 'fonts.css' as*;
+@use 'hamburger.scss' as*;
 
 $text-color: #4B5D68;
 $btn-color-hero: #9C69E2;
@@ -16,7 +17,7 @@ $testimonials-bg-color: #CDF;
   margin: 0;
   box-sizing: border-box;
 }
-
+ 
 ul,
 ol {
   list-style: none;
@@ -154,61 +155,6 @@ body {
   display: none;
 }
 
-.burger-button {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  border: none;
-  background-color: transparent;
-  position: relative;
-
-  &::before,
-  &::after {
-    content: '';
-  }
-
-  &::before,
-  &::after,
-  span {
-    display: inline-block;
-    height: 3px;
-    width: 30px;
-    border-radius: 2px;
-    background-color: #333;
-    position: absolute;
-    left: 3px;
-  }
-
-  span {
-    top: 7px;
-  }
-
-  &::before {
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  &::after {
-    bottom: 7px;
-  }
-
-  &.close {
-    span {
-      display: none;
-    }
-
-    &::before {
-      top: 19px;
-      rotate: 45deg;
-    }
-
-    &::after {
-      top: 18px;
-      rotate: -45deg;
-    }
-  }
-}
-
 .overlay {
   visibility: hidden;
   opacity: 0;
@@ -279,7 +225,7 @@ body {
 header {
   height: 100px;
   position: fixed;
-  z-index: 100;
+  z-index: 10;
   left: 0;
   top: 0;
   width: 100%;
@@ -726,9 +672,6 @@ header {
 }
 
 @media screen and (max-width: 1024px) {
-  .container {
-    width: min(85%, 1240px);
-  }
   .hero-section {
     background:
       linear-gradient(to top, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 1) 100%),
@@ -784,10 +727,15 @@ header {
       font-size: 4rem;
       padding-bottom: 15px;
     }
+
+    p {
+      width: 100%;
+    }
   }
 
   .hero-section .btn-hero {
     transform: none;
+    margin-left: 25%;
   }
 
   .high-level {
@@ -861,6 +809,9 @@ header {
 .logo-nav img{
   padding: 0;
 }
+.hero-section{
+  margin-bottom: 50px;
+}
 
   .hero-section h1{
     font-size: 2.5rem;
@@ -894,5 +845,9 @@ header {
   }
   header .btn-request {
     display: none;
+  }
+
+  .high-level h2 {
+    font-size: 1.8rem;
   }
 }
