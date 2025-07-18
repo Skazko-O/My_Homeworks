@@ -1,4 +1,5 @@
 @use 'fonts.css' as*;
+@use 'hamburger' as*;
 
 $text-color: #4B5D68;
 $btn-color-hero: #9C69E2;
@@ -122,7 +123,8 @@ button {
 img {
   vertical-align: top;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .container {
@@ -150,63 +152,8 @@ body {
 
 /*==Mobile Menu==*/
 
-.hamburger {
+.hamburger-box{
   display: none;
-}
-
-.burger-button {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  border: none;
-  background-color: transparent;
-  position: relative;
-
-  &::before,
-  &::after {
-    content: '';
-  }
-
-  &::before,
-  &::after,
-  span {
-    display: inline-block;
-    height: 3px;
-    width: 30px;
-    border-radius: 2px;
-    background-color: #333;
-    position: absolute;
-    left: 3px;
-  }
-
-  span {
-    top: 7px;
-  }
-
-  &::before {
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  &::after {
-    bottom: 7px;
-  }
-
-  &.close {
-    span {
-      display: none;
-    }
-
-    &::before {
-      top: 19px;
-      rotate: 45deg;
-    }
-
-    &::after {
-      top: 18px;
-      rotate: -45deg;
-    }
-  }
 }
 
 .overlay {
@@ -726,10 +673,7 @@ header {
 }
 
 @media screen and (max-width: 1024px) {
-  .container {
-    width: min(85%, 1240px);
-  }
-  .hero-section {
+   .hero-section {
     background:
       linear-gradient(to top, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 1) 100%),
       url('../images/first-screen-img.webp') center center no-repeat;
@@ -772,7 +716,7 @@ header {
     display: none;
   }
 
-  .hamburger {
+  .hamburger-box {
     display: block;
   }
 

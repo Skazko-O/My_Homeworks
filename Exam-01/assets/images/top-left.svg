@@ -1,11 +1,1 @@
-<svg width="195" height="140" viewBox="0 0 195 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_3807_26)">
-<path d="M184.561 80.1237C210.512 109.559 179.87 137.981 125.937 138.748C18.7132 131.682 -5.48291 36.7221 2.62059 15.4313C10.7241 -5.85945 34.8535 -6.44056 70.6049 36.9316C106.356 80.3039 152.122 43.3298 184.561 80.1237Z" stroke="white" stroke-width="1.5"/>
-<ellipse cx="90.3444" cy="54.407" rx="16.9967" ry="10.0435" transform="rotate(20.7184 90.3444 54.407)" stroke="white" stroke-width="1.5"/>
-</g>
-<defs>
-<clipPath id="clip0_3807_26">
-<rect width="195" height="140" fill="white"/>
-</clipPath>
-</defs>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="195" height="140" fill="none"><g stroke="#fff" stroke-width="1.5" clip-path="url(#a)"><path d="M184.561 80.124c25.951 29.435-4.691 57.857-58.624 58.624C18.713 131.682-5.483 36.722 2.621 15.431c8.103-21.29 32.232-21.872 67.984 21.5 35.751 43.373 81.517 6.399 113.956 43.193Z"/><ellipse cx="90.344" cy="54.407" rx="16.997" ry="10.043" transform="rotate(21 90.344 54.407)"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h195v140H0z"/></clipPath></defs></svg>
