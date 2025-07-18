@@ -149,9 +149,7 @@ body {
 }
 
 /*==Mobile Menu==*/
-// .mobile-menu-wrap {
-//   display: none;
-// }
+
 .hamburger {
   display: none;
 }
@@ -255,6 +253,7 @@ body {
 }
 
 .mobile-menu {
+  padding-bottom: 20px;
   ul {
     border-bottom: 1px solid $header-color;
   }
@@ -858,5 +857,42 @@ header {
 }
 
 @media screen and (max-width: 620px) {
-  //зменшити зображення і падінги, збільшити шрифт
+
+.logo-nav img{
+  padding: 0;
+}
+
+  .hero-section h1{
+    font-size: 2.5rem;
+  }
+  .high-level {
+    padding: 20px;
+  }
+  .grid-cards {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .review-card{
+    flex-direction: column;
+    align-items: center;
+    h4, .site-link {
+      text-align: center;      
+    }
+  }
+  .footer-heading .btn-hero {
+    margin: 0 0 20px;
+  }
+
+  .grid-testimonials {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .hero-section h1{
+    font-size: 2rem;
+  }
+  header .btn-request {
+    display: none;
+  }
 }
