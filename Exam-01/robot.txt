@@ -1,0 +1,9 @@
+User-Agent: *
+Disalow: /admin/
+Disalow: /logs.txt
+
+User-agent: GPTBot
+Disalow: /
+
+Sitemap: https://skazko-o.github.io/My_Homeworks/Exam-01/sitemap.xml
+Host skazko-o.github.io/My_Homeworks/Exam-01
