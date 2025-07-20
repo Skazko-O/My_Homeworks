@@ -38,18 +38,30 @@ button {
 
 .color-1 {
   @include block-style(#F0FAF9);
+  background-image: url("../images/top-left.svg");
+  background-position: top 20px right 20px;
+  background-repeat: no-repeat;
 }
 
 .color-2 {
   @include block-style(#F6F0FD);
+  background-image: url("../images/top-right.svg");
+  background-position: bottom 20px right 20px;
+  background-repeat: no-repeat;
 }
 
 .color-3 {
   @include block-style(#FEF0F8);
+  background-image: url("../images/bottom-left.svg");
+  background-position: top 20px right 20px;
+  background-repeat: no-repeat;
 }
 
 .color-4 {
   @include block-style(#EAF6FC);
+  background-image: url("../images/bottom-right-left.svg");
+  background-position: top 20px left 20px;
+  background-repeat: no-repeat;
 }
 
 /*==SET HOVER COLOR FOR SOCIAL==*/
@@ -84,7 +96,8 @@ button {
   border-radius: 50px;
 }
 
-.btn-request {
+.btn-request,
+.btn-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -258,10 +271,10 @@ body {
     text-transform: uppercase;
     color: $header-color;
   }
+}
 
-  .btn-request {
-    margin: 0 28px;
-  }
+.btn-menu {
+  margin: 0 17px;
 }
 
 /*==HEADER==*/
@@ -982,12 +995,45 @@ header {
     padding: 20px;
   }
 
+  .heading {
+    padding-bottom: 185px;
+  }
+
+  .grid-features {
+    gap: 185px
+  }
+
   .grid-cards {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    padding: 10px;
+    padding: 40px;
+    gap: 50px;
+
+    .content-card {
+      width: 100%;
+    }
+
+    .photo-content {
+      position: absolute;
+      top: -159px;
+      right: 164px;
+    }
+  }
+
+  .color-3 {
+    img {
+      transform: translateX(0);
+      transform: translateY(49px);
+    }
+  }
+
+  .color-4 {
+    img {
+      transform: translateX(0);
+      transform: translateY(12px);
+    }
   }
 
   .review-card {
