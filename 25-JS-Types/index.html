@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оператори та типи данних</title>
+  <link rel="stylesheet" href="assets/css/style.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container pt-4 text-center">
+    <header></header>
+    <main>
+      <div class="row">
+        <div class="card mb-4 col">
+          <div class="card-header">
+            Minimum Task 1
+          </div>
+          <div class="card-body">
+            <p class="card-text">Виконай додавання 0,1 і 0,2 добийся математично правильної відповіді.</p>
+            <div class="row">
+              <div class="col-4">
+                <input type="text" id="element1" class="form-control">
+              </div>
+              +
+              <div class="col-4">
+                <input type="text" id="element2" class="form-control">
+              </div>
+              <div class="col-2">
+                <button type="button" class="btn btn-success" onclick="suma()">Сума</button>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <output id="rez_1"></output>
+          </div>
+        </div>
+        <div class="card mb-4 col">
+          <div class="card-header">
+            Minimum Task 2
+          </div>
+          <div class="card-body">
+            <p class="card-text">Виконай додавання рядка "1" і цифри 2, добийся математично правильної відповіді.</p>
+            <div class="row">
+              <div class="col-4">
+                <input type="text" id="elementText" class="form-control">
+              </div>
+              +
+              <div class="col-4">
+                <input type="text" id="elementChislo" class="form-control">
+              </div>
+              <div class="col-2">
+                <button type="button" class="btn btn-success" onclick="suma_text()">Сума</button>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <output id="rez_2"></output>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="card mb-4 col">
+          <div class="card-header">
+            Minimum Task 3
+          </div>
+          <div class="card-body">
+            <p class="card-text">Вкажіть обсяг флешки в Гб</p>
+            <div class="row">
+              <div class="col-4">
+                <input type="text" id="Gb" class="form-control">
+              </div>
+              <div class="col-2">
+                <button type="button" class="btn btn-success" onclick="calc_file()">Порахувати!</button>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <output id="rez_3"></output>
+          </div>
+        </div>
+        <div class="card mb-4 col">
+          <div class="card-header">
+            Norm Task 4
+          </div>
+          <div class="card-body">
+            <p class="card-text">Скільки шоколадок можна купити</p>
+            <div class="row">
+              <div class="col-4">
+                <label>Сума грошей в гаманці
+                  <input type="text" id="sumInput" class="form-control">
+                </label>
+              </div>
+              <div class="col-4">
+                <label>Ціна шоколадки
+                  <input type="text" id="priceInput" class="form-control">
+                </label>
+              </div>
+              <div class="col-2">
+                <button type="button" class="btn btn-success" onclick="chocolate()">Порахувати!</button>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <output id="rez_4"></output>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="card mb-4 col">
+          <div class="card-header">
+            Norm Task 5
+          </div>
+          <div class="card-body">
+            <p class="card-text">Введи тризначне число</p>
+            <div class="row">
+              <div class="col-4">
+                <input type="text" id="chisloInput" class="form-control">
+              </div>
+              <div class="col-2">
+                <button type="button" class="btn btn-success" onclick="chislo()">Результат</button>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <output id="rez_5"></output>
+          </div>
+        </div>
+        <div class="card mb-4 col">
+          <div class="card-header">
+            Max Task 6
+          </div>
+          <div class="card-body">
+            <p class="card-text">Введи cуму вкладу в банк на 2 місяці</p>
+            <div class="row">
+              <div class="col-4">
+                <input type="text" id="sumVkladInput" class="form-control">
+              </div>
+              <div class="col-2">
+                <button type="button" class="btn btn-success" onclick="bank()">Порахувати</button>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <output id="rez_6"></output>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-4 col">
+        <div class="card-header">
+          Max Task 7
+        </div>
+        <div class="card-body">
+          <p class="card-text">Що повернуть вирази:</p>
+          <ul>
+            <li>2 && 0 && 3 повертає 0 (перше хибне значення)</li>
+            <li>2 || 0 || 3 повертає 2 (перше правдиве значення)</li>
+            <li>2 && 0 || 3 повертає 3 (спочатку 0, потім 3)</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+  </div>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
