@@ -6,8 +6,9 @@ let first_Name = "Sasha";
 let age
 let f_Name
 let l_Name
+let lastName
 
-lastName = firstName;
+lastName = first_Name;
 
 // let 1Name
 // let first name
@@ -32,6 +33,11 @@ function askName() {
     const first_Name = prompt('Як тебе звати?', '');
     alert(`Привіт, ${first_Name}`);
 }
+
+const username = document.getElementById('username').value;
+const greetingText = `Hello, <b>${username}</b>`
+document.getElementById(`rez_1`).innerHTML = greetingText
+
 /*Норма: 2.Запитай рік народження користувача, порахуй його/її вік і виведи результат. 
 Поточний рік вкажи в коді як константу;*/
 function askAge() {
@@ -74,4 +80,30 @@ function convertCurrency() {
     const exchangeBuyEUR = 49.5;
     let currencyEUR = (currencyUSD * exchangeSellUAH) / exchangeBuyEUR;
     alert(`${currencyUSD} долларів дорівнює ${currencyEUR.toFixed(2)} евро`);
+}
+/* Перевірка пароля */
+function checkPassword() {
+    const user = prompt(`Who's there?`);
+    if (user === "Admin") {
+        const password = prompt(`Password?`);
+        if (password === "TheMaster") {
+            alert (`Welcome!`);
+        }
+        else if (password === null) {
+            alert (`Cenceled`);
+        }
+        else alert (`Wrong password`);
+    }
+    else if (user === null) {
+        alert (`Canceled`);
+    } 
+    else alert (`I don't know you`);
+}
+
+/* Виводимо парні числа */
+function parniChusla() {
+    for (let i=0; i<=10; ++i)
+        if (i % 2 === 0) {
+        alert(i);
+        }        
 }

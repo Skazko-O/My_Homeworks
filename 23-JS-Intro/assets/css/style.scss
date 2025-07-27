@@ -18,7 +18,7 @@ a, button {
 button {
   cursor: pointer;
   padding: 20px;
-  margin: 20px 0;
+  margin: 20px;
 }
 
 img {
@@ -29,7 +29,7 @@ img {
 }
 
 .container {
-  width: min(90%, 1200px);
+  width: min(90%, 1700px);
   margin: 0 auto;
 }
 
@@ -51,6 +51,7 @@ body {
 
 h1 {
   text-align: center;
+  padding-bottom: 50px;
 }
 
 .btn-wrapper {

@@ -7,7 +7,8 @@ var first_Name = "Sasha";
 var age;
 var f_Name;
 var l_Name;
-lastName = firstName; // let 1Name
+var lastName;
+lastName = first_Name; // let 1Name
 // let first name
 // let first-name  
 // let let
@@ -34,9 +35,12 @@ function askName() {
   var first_Name = prompt('Як тебе звати?', '');
   alert("\u041F\u0440\u0438\u0432\u0456\u0442, ".concat(first_Name));
 }
+
+var username = document.getElementById('username').value;
+var greetingText = "Hello, <b>".concat(username, "</b>");
+document.getElementById("rez_1").innerHTML = greetingText;
 /*Норма: 2.Запитай рік народження користувача, порахуй його/її вік і виведи результат. 
 Поточний рік вкажи в коді як константу;*/
-
 
 function askAge() {
   var age = prompt('Який рік твого народження?');
@@ -81,4 +85,32 @@ function convertCurrency() {
   var exchangeBuyEUR = 49.5;
   var currencyEUR = currencyUSD * exchangeSellUAH / exchangeBuyEUR;
   alert("".concat(currencyUSD, " \u0434\u043E\u043B\u043B\u0430\u0440\u0456\u0432 \u0434\u043E\u0440\u0456\u0432\u043D\u044E\u0454 ").concat(currencyEUR.toFixed(2), " \u0435\u0432\u0440\u043E"));
+}
+/* Перевірка пароля */
+
+
+function checkPassword() {
+  var user = prompt("Who's there?");
+
+  if (user === "Admin") {
+    var password = prompt("Password?");
+
+    if (password === "TheMaster") {
+      alert("Welcome!");
+    } else if (password === null) {
+      alert("Cenceled");
+    } else alert("Wrong password");
+  } else if (user === null) {
+    alert("Canceled");
+  } else alert("I don't know you");
+}
+/* Виводимо парні числа */
+
+
+function parniChusla() {
+  for (var i = 0; i <= 10; ++i) {
+    if (i % 2 === 0) {
+      alert(i);
+    }
+  }
 }
