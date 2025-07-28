@@ -46,7 +46,7 @@ function chislo() {
   var digit1 = num % 10;
   var digit2 = Math.floor(num % 100 / 10);
   var digit3 = Math.floor(num / 100);
-  var reversed = "".concat(digit1).concat(digit2).concat(digit3);
+  var reversed = digit1 * 100 + digit2 * 10 + digit3;
   document.getElementById('rez_5').innerText = "".concat(reversed);
 }
 /*Користувач вводить суму вкладу в банк на 2 місяці, з процентною ставкою депозиту 5% річних. Вивести суму нарахованих відсотків.*/

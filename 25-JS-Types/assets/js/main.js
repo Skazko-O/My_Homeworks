@@ -3,7 +3,7 @@
 function suma() {
     const element1 = document.getElementById('element1').value
     const element2 = document.getElementById('element2').value
-    let suma_2_chisel = parseFloat(element1.replace(",",".")) + parseFloat(element2.replace(",","."));
+    let suma_2_chisel = parseFloat(element1.replace(",", ".")) + parseFloat(element2.replace(",", "."));
     document.getElementById('rez_1').innerHTML = suma_2_chisel
         ? `Сума = <b>${Number(suma_2_chisel.toFixed(2))}</b>`
         : '<span style="color: red">Введіть числа</span>'
@@ -34,11 +34,11 @@ function calc_file() {
 /*Користувач вводить суму грошей в гаманці і ціну однієї шоколадки. Програма виводить скільки шоколадок може купити користувач і скільки здачі у нього залишиться.*/
 
 function chocolate() {
-    const sumInput = document.getElementById('sumInput').value.replace(",",".")
-    const priceInput = document.getElementById('priceInput').value.replace(",",".")
+    const sumInput = document.getElementById('sumInput').value.replace(",", ".")
+    const priceInput = document.getElementById('priceInput').value.replace(",", ".")
     const wallet = parseFloat(sumInput);
     const price = parseFloat(priceInput);
-    let chocoQ = Math.floor (wallet / price);
+    let chocoQ = Math.floor(wallet / price);
     let rest = (wallet - chocoQ * price).toFixed(2);
     document.getElementById('rez_4').innerHTML = `Можна купити ${chocoQ} шоколадки (-ку -ок) і залишиться ${rest} грн.`
 }
@@ -50,18 +50,18 @@ function chislo() {
     const num = parseInt(chisloInput);
     const digit1 = num % 10;
     const digit2 = Math.floor((num % 100) / 10);
-    const digit3 = Math.floor(num / 100);
-    const reversed = `${digit1}${digit2}${digit3}`;
+    const digit3 = Math.floor(num / 100);    
+    const reversed = digit1 * 100 + digit2 * 10 + digit3;
     document.getElementById('rez_5').innerText = `${reversed}`;
 }
 
 /*Користувач вводить суму вкладу в банк на 2 місяці, з процентною ставкою депозиту 5% річних. Вивести суму нарахованих відсотків.*/
 
 function bank() {
-    const sumVkladInput = document.getElementById('sumVkladInput').value.replace(",",".")
+    const sumVkladInput = document.getElementById('sumVkladInput').value.replace(",", ".")
     const sum = parseFloat(sumVkladInput);
     const months = 2; //термін вкладу в місяцях
     const stavka = 5; //ставка відсоток річних
-    let sumNarahVidsotkiv = ((stavka/12 * sum)/100 * months).toFixed(2);
+    let sumNarahVidsotkiv = ((stavka / 12 * sum) / 100 * months).toFixed(2);
     document.getElementById('rez_6').innerText = `Сума нарахованих відсотків ${sumNarahVidsotkiv} грн.`
 }

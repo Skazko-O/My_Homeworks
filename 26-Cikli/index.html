@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оператори та типи данних</title>
+  <link rel="stylesheet" href="assets/css/style.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container pt-4 text-center">
+    <header></header>
+    <main>
+      <div class="row gap-3">
+        <div class="card mb-4 col">
+          <div class="card-header">
+            Minimum Task 1
+          </div>
+          <div class="card-body">
+            <p class="card-text">Вкажи свій вік</p>
+            <div class="row justify-content-center">
+              <div class="col-2">
+                <input type="text" id="vik" class="form-control">
+              </div>
+              <div class="col-2">
+                <button type="button" class="btn btn-success" onclick="age()">Результат</button>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <output id="rez_1"></output>
+          </div>
+        </div>
+        <div class="card mb-4 col">
+          <div class="card-header">
+            Minimum Task 2
+          </div>
+          <div class="card-body">
+            <p class="card-text">Введи число від 0 до 9</p>
+            <div class="row justify-content-center">
+              <div class="col-2">
+                <input type="text" id="cifra" class="form-control">
+              </div>
+              <div class="col-2">
+                <button type="button" class="btn btn-success" onclick="chislo()">Результат</button>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <output id="rez_2"></output>
+          </div>
+        </div>
+      </div>
+      <div class="row gap-3">
+        <div class="card mb-4 col">
+          <div class="card-header">
+            Minimum Task 3
+          </div>
+          <div class="card-body">
+            <p class="card-text">Введи діапазон чисел я порахую їх суму</p>
+            <div class="row justify-content-center">
+              від
+              <div class="col-2">
+                <input type="text" id="chislo1" class="form-control">
+              </div>
+              до
+              <div class="col-2">
+                <input type="text" id="chislo2" class="form-control">
+              </div>
+              <div class="col-2">
+                <button type="button" class="btn btn-success" onclick="sumaDiapozon()">Результат</button>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <output id="rez_3"></output>
+          </div>
+        </div>
+        <div class="card mb-4 col">
+          <div class="card-header">
+            Minimum Task 4
+          </div>
+          <div class="card-body">
+            <p class="card-text">Введи два числа я знайду найбільший спільний дільник</p>
+            <div class="row justify-content-center">
+              від
+              <div class="col-2">
+                <input type="text" id="a" class="form-control">
+              </div>
+              до
+              <div class="col-2">
+                <input type="text" id="b" class="form-control">
+              </div>
+              <div class="col-2">
+                <button type="button" class="btn btn-success" onclick="spilniDilnik()">Результат</button>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <output id="rez_4"></output>
+          </div>
+        </div>
+      </div>
+      <div class="row gap-3">
+        <div class="card mb-4 col text-center">
+          <div class="card-header">
+            Minimum Task 5
+          </div>
+          <div class="card-body">
+            <p class="card-text">Введи числа я знайду всі дільники цього числа</p>
+            <div class="row justify-content-center">
+              <div class="col-2">
+                <input type="text" id="a1" class="form-control">
+              </div>
+              <div class="col-2">
+                <button type="button" class="btn btn-success" onclick="dilniki()">Знайти</button>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <output id="rez_5"></output>
+          </div>
+        </div>
+        <div class="card mb-4 col text-center">
+          <div class="card-header">
+            Norma Task 6
+          </div>
+          <div class="card-body">
+            <p class="card-text">Введіть п’ятирозрядне число, щоб дізнатись паліндром чи ні! </p>
+            <div class="row justify-content-center">
+              <div class="col-2">
+                <input type="text" id="a5" class="form-control">
+              </div>
+              <div class="col-2">
+                <button type="button" class="btn btn-success" onclick="palindrom()">Дізнатись</button>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <output id="rez_6"></output>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-4 col text-center">
+          <div class="card-header">
+            Norma Task 7
+          </div>
+          <div class="card-body">
+            <p class="card-text">Введіть суму покупки.</p>
+            <div class="row justify-content-center">
+              <div class="col-2">
+                <input type="text" id="sumaPocypcu" class="form-control">
+              </div>
+              <div class="col-2">
+                <button type="button" class="btn btn-success" onclick="discaunt()">До сплати</button>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <output id="rez_7"></output>
+          </div>
+        </div>
+    </main>
+    <footer></footer>
+  </div>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
