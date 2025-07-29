@@ -126,14 +126,14 @@ function palindrom() {
     if (isNaN(a5) || a5 == "" || String(a5).length !== 5) {
         document.getElementById('rez_6').innerText = 'Ви вели невірні данні'
         return
-    }   
-        digit = String(a5).split("");
-        if (digit[0] === digit[4] && digit[1] === digit[3]) {
-            document.getElementById('rez_6').innerText = 'Це паліндром!'
-        }
-        else {
-            document.getElementById('rez_6').innerText = 'Звичайне число'
-        }    
+    }
+    digit = String(a5).split("");
+    if (digit[0] === digit[4] && digit[1] === digit[3]) {
+        document.getElementById('rez_6').innerText = 'Це паліндром!'
+    }
+    else {
+        document.getElementById('rez_6').innerText = 'Звичайне число'
+    }
 }
 
 /*Запитай у користувача суму покупки і виведи суму до оплати зі знижкою:*/
@@ -157,4 +157,41 @@ function discaunt() {
     document.getElementById('rez_7').innerText = `Сума до сплати: ${sumaDoSplati.toFixed(2)} грн.`
 }
 
+/*Запитай у користувача 10 чисел і порахуй, скільки він ввів додатніх, від’ємних і нулів. 
+При цьому також порахуй, скільки з них парних і непарних. 
+Виведи статистику на екран. Враховуй, що достатньо однієї змінної (не 10) для введення чисел користувачем. */
 
+function countNumbers() {
+    let numbersArray = []
+    for (let i = 0; i < 10; i++) {
+        let input = prompt('Введи довільне число');
+        if (isNaN(input) || input.trim() == "" || input == null) {
+            alert('Ви вели невірні данні. Спробуйте ще раз');
+            i--;
+            continue;
+        }
+        numbersArray.push(Number(input));
+    }
+    let zeroCount = numbersArray.filter(num => num === 0).length;
+    let positiveCount = numbersArray.filter(num => num > 0).length;
+    let negativeCount = numbersArray.filter(num => num < 0).length;
+    let evenCount = numbersArray.filter(num => num % 2 == 0).length;
+    let oddCount = numbersArray.filter(num => num % 2 != 0).length;
+
+    document.getElementById('rez_8').innerText = `Ви ввели такі числа: (${numbersArray}) з них
+    ${positiveCount} додатні, ${negativeCount} від’ємні, ${zeroCount} нулів, ${evenCount} парних і ${oddCount} непарних`;
+}
+
+
+/*Зацикли відображення днів тижня таким чином: «День тижня. 
+Хочеш побачити наступний день? » і так до тих пір, поки користувач натискає OK.*/
+
+function daysWeek() {
+    let weekDay = ['Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П’ятниця', 'Субота', 'Неділя']
+    let i = 0;
+    do {
+        alert(`${weekDay[i]}\nХочеш побачити наступний день?`);
+        i = (i + 1) % weekDay.length;
+    } 
+    while (confirm("Натисно ОК якщо хочеш дізнатись, або скасуй натисни Cancel"))
+}

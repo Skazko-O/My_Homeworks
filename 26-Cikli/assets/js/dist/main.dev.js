@@ -176,3 +176,53 @@ function discaunt() {
   sumaDoSplati = sumaPocypcu - znijka;
   document.getElementById('rez_7').innerText = "\u0421\u0443\u043C\u0430 \u0434\u043E \u0441\u043F\u043B\u0430\u0442\u0438: ".concat(sumaDoSplati.toFixed(2), " \u0433\u0440\u043D.");
 }
+/*Запитай у користувача 10 чисел і порахуй, скільки він ввів додатніх, від’ємних і нулів. 
+При цьому також порахуй, скільки з них парних і непарних. 
+Виведи статистику на екран. Враховуй, що достатньо однієї змінної (не 10) для введення чисел користувачем. */
+
+
+function countNumbers() {
+  var numbersArray = [];
+
+  for (var i = 0; i < 10; i++) {
+    var input = prompt('Введи довільне число');
+
+    if (isNaN(input) || input.trim() == "" || input == null) {
+      alert('Ви вели невірні данні. Спробуйте ще раз');
+      i--;
+      continue;
+    }
+
+    numbersArray.push(Number(input));
+  }
+
+  var zeroCount = numbersArray.filter(function (num) {
+    return num === 0;
+  }).length;
+  var positiveCount = numbersArray.filter(function (num) {
+    return num > 0;
+  }).length;
+  var negativeCount = numbersArray.filter(function (num) {
+    return num < 0;
+  }).length;
+  var evenCount = numbersArray.filter(function (num) {
+    return num % 2 == 0;
+  }).length;
+  var oddCount = numbersArray.filter(function (num) {
+    return num % 2 != 0;
+  }).length;
+  document.getElementById('rez_8').innerText = "\u0412\u0438 \u0432\u0432\u0435\u043B\u0438 \u0442\u0430\u043A\u0456 \u0447\u0438\u0441\u043B\u0430: (".concat(numbersArray, ") \u0437 \u043D\u0438\u0445\n    ").concat(positiveCount, " \u0434\u043E\u0434\u0430\u0442\u043D\u0456, ").concat(negativeCount, " \u0432\u0456\u0434\u2019\u0454\u043C\u043D\u0456, ").concat(zeroCount, " \u043D\u0443\u043B\u0456\u0432, ").concat(evenCount, " \u043F\u0430\u0440\u043D\u0438\u0445 \u0456 ").concat(oddCount, " \u043D\u0435\u043F\u0430\u0440\u043D\u0438\u0445");
+}
+/*Зацикли відображення днів тижня таким чином: «День тижня. 
+Хочеш побачити наступний день? » і так до тих пір, поки користувач натискає OK.*/
+
+
+function daysWeek() {
+  var weekDay = ['Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П’ятниця', 'Субота', 'Неділя'];
+  var i = 0;
+
+  do {
+    alert("".concat(weekDay[i], "\n\u0425\u043E\u0447\u0435\u0448 \u043F\u043E\u0431\u0430\u0447\u0438\u0442\u0438 \u043D\u0430\u0441\u0442\u0443\u043F\u043D\u0438\u0439 \u0434\u0435\u043D\u044C?"));
+    i = (i + 1) % weekDay.length;
+  } while (confirm("Натисно ОК якщо хочеш дізнатись, або скасуй натисни Cancel"));
+}
