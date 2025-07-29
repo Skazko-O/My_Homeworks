@@ -205,26 +205,51 @@ function gameGuessNumber() {
         numbers.push(i);
     }
     let Q; //оголошуємо як глобальну змінну
-    let N;   
+    let N;
 
     do { //знаходимо середину масиву
         let sum = numbers.reduce((acc, val) => acc + val, 0); //Сумуємо всі значення масиву за доп. метода reduce acc - акумулює значення, val додає поточне значення. 0 - початкове значення acc
-         N = Math.round(sum / numbers.length) // дізнаємось середину масива = сума всіх значень ділимо на довжину (кількість елементів в масиві)
-         Q = prompt(`Число яке ти загадав = ${N}? Введи '=', '>' або '<'`);
+        N = Math.round(sum / numbers.length) // дізнаємось середину масива = сума всіх значень ділимо на довжину (кількість елементів в масиві)
+        Q = prompt(`Число яке ти загадав = ${N}? Введи '=', '>' або '<'`);
         if (Q == null) {
             alert("Ви вийшли з гри!");
             return;
         }
 
-        Q = Q.trim(); // обрізаємо можливі пробіли задля
+        Q = Q.trim(); // обрізаємо можливі пробіли щоб спрацювало порівняння
 
         if (Q == ">") {
-            numbers = numbers.slice(numbers.indexOf(N)+1); //метод slice повертає частину масива з вказаного індекса. indexOf повертає індекс масива
+            numbers = numbers.slice(numbers.indexOf(N) + 1); //метод slice повертає частину масива з вказаного індекса. indexOf повертає індекс масива
         }
         else if (Q == "<") {
             numbers = numbers.slice(0, numbers.indexOf(N));
         }
-    } while (Q != "="); 
+    } while (Q != "=");
     alert(`Я вгадав число. Це число ${N}`)
+}
 
+/*Виведи таблицю множення для всіх чисел від 2 до 9. Кожне число необхідно помножити на числа від 1 до 10.*/
+
+function multiTable() {
+    let html = '<div class="table">';
+    for (let i = 2; i <= 9; i++) {
+        html += '<div class="kolonka">';
+        for (let j = 1; j <= 10; j++) {
+            html += `<div class="raw">${i} x ${j} = ${i * j}</div>`;
+        }
+        html += '</div>';
+    }
+    html += '</div>';
+    document.getElementById('rez_9').innerHTML = html;
+}
+
+/*Запитай дату (день, місяць, рік) і виведи наступну за нею дату. 
+Враховуй можливість переходу на наступний місяць, рік, а також високосний рік.*/
+
+function nextDate(){
+    const input = document.getElementById("userDate").value;
+    const date = new Date(input);    
+    date.setDate(date.getDate() + 1); // метод .getDate повертає число дня місяця. метод .setDate змінює день. Якщо такого дня в місяці немає, переводить на перше число наступного місяця 
+    const formatted = date.toLocaleDateString("uk-UA");
+    document.getElementById('rez_10').innerText = `Наступний день буде ${formatted}`
 }

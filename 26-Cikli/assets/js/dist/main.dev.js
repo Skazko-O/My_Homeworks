@@ -256,7 +256,7 @@ function gameGuessNumber() {
       return;
     }
 
-    Q = Q.trim(); // обрізаємо можливі пробіли задля
+    Q = Q.trim(); // обрізаємо можливі пробіли щоб спрацювало порівняння
 
     if (Q == ">") {
       numbers = numbers.slice(numbers.indexOf(N) + 1); //метод slice повертає частину масива з вказаного індекса. indexOf повертає індекс масива
@@ -266,4 +266,35 @@ function gameGuessNumber() {
   } while (Q != "=");
 
   alert("\u042F \u0432\u0433\u0430\u0434\u0430\u0432 \u0447\u0438\u0441\u043B\u043E. \u0426\u0435 \u0447\u0438\u0441\u043B\u043E ".concat(N));
+}
+/*Виведи таблицю множення для всіх чисел від 2 до 9. Кожне число необхідно помножити на числа від 1 до 10.*/
+
+
+function multiTable() {
+  var html = '<div class="table">';
+
+  for (var i = 2; i <= 9; i++) {
+    html += '<div class="kolonka">';
+
+    for (var j = 1; j <= 10; j++) {
+      html += "<div class=\"raw\">".concat(i, " x ").concat(j, " = ").concat(i * j, "</div>");
+    }
+
+    html += '</div>';
+  }
+
+  html += '</div>';
+  document.getElementById('rez_9').innerHTML = html;
+}
+/*Запитай дату (день, місяць, рік) і виведи наступну за нею дату. 
+Враховуй можливість переходу на наступний місяць, рік, а також високосний рік.*/
+
+
+function nextDate() {
+  var input = document.getElementById("userDate").value;
+  var date = new Date(input);
+  date.setDate(date.getDate() + 1); // метод .getDate повертає число дня місяця. метод .setDate змінює день. Якщо такого дня в місяці немає, переводить на перше число наступного місяця 
+
+  var formatted = date.toLocaleDateString("uk-UA");
+  document.getElementById('rez_10').innerText = "\u041D\u0430\u0441\u0442\u0443\u043F\u043D\u0438\u0439 \u0434\u0435\u043D\u044C \u0431\u0443\u0434\u0435 ".concat(formatted);
 }
