@@ -183,9 +183,10 @@ function discaunt() {
 
 function countNumbers() {
   var numbersArray = [];
+  var n = 10; //кількість ітерацій
 
-  for (var i = 0; i < 10; i++) {
-    var input = prompt('Введи довільне число');
+  for (var i = 0; i < n; i++) {
+    var input = prompt("\u0412\u0432\u0435\u0434\u0438 \u0434\u043E\u0432\u0456\u043B\u044C\u043D\u0435 \u0447\u0438\u0441\u043B\u043E. \u0417\u0430\u043B\u0438\u0448\u0438\u043B\u043E\u0441\u044C \u0432\u0432\u0435\u0441\u0442\u0438 ".concat(n - i, " \u0447\u0438\u0441\u0435\u043B"));
 
     if (isNaN(input) || input.trim() == "" || input == null) {
       alert('Ви вели невірні данні. Спробуйте ще раз');
@@ -206,7 +207,7 @@ function countNumbers() {
     return num < 0;
   }).length;
   var evenCount = numbersArray.filter(function (num) {
-    return num % 2 == 0;
+    return num != 0 && num % 2 == 0;
   }).length;
   var oddCount = numbersArray.filter(function (num) {
     return num % 2 != 0;
@@ -226,3 +227,7 @@ function daysWeek() {
     i = (i + 1) % weekDay.length;
   } while (confirm("Натисно ОК якщо хочеш дізнатись, або скасуй натисни Cancel"));
 }
+/* Гра "Вгадай число" */
+
+
+function gameGuessNumber() {}

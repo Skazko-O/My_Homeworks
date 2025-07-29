@@ -163,8 +163,9 @@ function discaunt() {
 
 function countNumbers() {
     let numbersArray = []
-    for (let i = 0; i < 10; i++) {
-        let input = prompt('Введи довільне число');
+    const n = 10; //кількість ітерацій
+    for (let i = 0; i < n; i++) {
+        let input = prompt(`Введи довільне число. Залишилось ввести ${n-i} чисел`);
         if (isNaN(input) || input.trim() == "" || input == null) {
             alert('Ви вели невірні данні. Спробуйте ще раз');
             i--;
@@ -175,13 +176,12 @@ function countNumbers() {
     let zeroCount = numbersArray.filter(num => num === 0).length;
     let positiveCount = numbersArray.filter(num => num > 0).length;
     let negativeCount = numbersArray.filter(num => num < 0).length;
-    let evenCount = numbersArray.filter(num => num % 2 == 0).length;
+    let evenCount = numbersArray.filter(num =>num != 0 && num % 2 == 0).length;
     let oddCount = numbersArray.filter(num => num % 2 != 0).length;
 
     document.getElementById('rez_8').innerText = `Ви ввели такі числа: (${numbersArray}) з них
     ${positiveCount} додатні, ${negativeCount} від’ємні, ${zeroCount} нулів, ${evenCount} парних і ${oddCount} непарних`;
 }
-
 
 /*Зацикли відображення днів тижня таким чином: «День тижня. 
 Хочеш побачити наступний день? » і так до тих пір, поки користувач натискає OK.*/
@@ -194,4 +194,10 @@ function daysWeek() {
         i = (i + 1) % weekDay.length;
     } 
     while (confirm("Натисно ОК якщо хочеш дізнатись, або скасуй натисни Cancel"))
+}
+
+/* Гра "Вгадай число" */
+
+function gameGuessNumber() {
+
 }
