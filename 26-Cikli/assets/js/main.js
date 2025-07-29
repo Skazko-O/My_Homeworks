@@ -165,7 +165,7 @@ function countNumbers() {
     let numbersArray = []
     const n = 10; //кількість ітерацій
     for (let i = 0; i < n; i++) {
-        let input = prompt(`Введи довільне число. Залишилось ввести ${n-i} чисел`);
+        let input = prompt(`Введи довільне число. Залишилось ввести ${n - i} чисел`);
         if (isNaN(input) || input.trim() == "" || input == null) {
             alert('Ви вели невірні данні. Спробуйте ще раз');
             i--;
@@ -176,7 +176,7 @@ function countNumbers() {
     let zeroCount = numbersArray.filter(num => num === 0).length;
     let positiveCount = numbersArray.filter(num => num > 0).length;
     let negativeCount = numbersArray.filter(num => num < 0).length;
-    let evenCount = numbersArray.filter(num =>num != 0 && num % 2 == 0).length;
+    let evenCount = numbersArray.filter(num => num != 0 && num % 2 == 0).length;
     let oddCount = numbersArray.filter(num => num % 2 != 0).length;
 
     document.getElementById('rez_8').innerText = `Ви ввели такі числа: (${numbersArray}) з них
@@ -192,12 +192,39 @@ function daysWeek() {
     do {
         alert(`${weekDay[i]}\nХочеш побачити наступний день?`);
         i = (i + 1) % weekDay.length;
-    } 
+    }
     while (confirm("Натисно ОК якщо хочеш дізнатись, або скасуй натисни Cancel"))
 }
 
 /* Гра "Вгадай число" */
 
+
 function gameGuessNumber() {
+    let numbers = [];
+    for (let i = 0; i <= 100; i++) {
+        numbers.push(i);
+    }
+    let Q; //оголошуємо як глобальну змінну
+    let N;   
+
+    do { //знаходимо середину масиву
+        let sum = numbers.reduce((acc, val) => acc + val, 0); //Сумуємо всі значення масиву за доп. метода reduce acc - акумулює значення, val додає поточне значення. 0 - початкове значення acc
+         N = Math.round(sum / numbers.length) // дізнаємось середину масива = сума всіх значень ділимо на довжину (кількість елементів в масиві)
+         Q = prompt(`Число яке ти загадав = ${N}? Введи '=', '>' або '<'`);
+        if (Q == null) {
+            alert("Ви вийшли з гри!");
+            return;
+        }
+
+        Q = Q.trim(); // обрізаємо можливі пробіли задля
+
+        if (Q == ">") {
+            numbers = numbers.slice(numbers.indexOf(N)+1); //метод slice повертає частину масива з вказаного індекса. indexOf повертає індекс масива
+        }
+        else if (Q == "<") {
+            numbers = numbers.slice(0, numbers.indexOf(N));
+        }
+    } while (Q != "="); 
+    alert(`Я вгадав число. Це число ${N}`)
 
 }

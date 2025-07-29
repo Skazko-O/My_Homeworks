@@ -230,4 +230,40 @@ function daysWeek() {
 /* Гра "Вгадай число" */
 
 
-function gameGuessNumber() {}
+function gameGuessNumber() {
+  var numbers = [];
+
+  for (var i = 0; i <= 100; i++) {
+    numbers.push(i);
+  }
+
+  var Q; //оголошуємо як глобальну змінну
+
+  var N;
+
+  do {
+    //знаходимо середину масиву
+    var sum = numbers.reduce(function (acc, val) {
+      return acc + val;
+    }, 0); //Сумуємо всі значення масиву за доп. метода reduce acc - акумулює значення, val додає поточне значення. 0 - початкове значення acc
+
+    N = Math.round(sum / numbers.length); // дізнаємось середину масива = сума всіх значень ділимо на довжину (кількість елементів в масиві)
+
+    Q = prompt("\u0427\u0438\u0441\u043B\u043E \u044F\u043A\u0435 \u0442\u0438 \u0437\u0430\u0433\u0430\u0434\u0430\u0432 = ".concat(N, "? \u0412\u0432\u0435\u0434\u0438 '=', '>' \u0430\u0431\u043E '<'"));
+
+    if (Q == null) {
+      alert("Ви вийшли з гри!");
+      return;
+    }
+
+    Q = Q.trim(); // обрізаємо можливі пробіли задля
+
+    if (Q == ">") {
+      numbers = numbers.slice(numbers.indexOf(N) + 1); //метод slice повертає частину масива з вказаного індекса. indexOf повертає індекс масива
+    } else if (Q == "<") {
+      numbers = numbers.slice(0, numbers.indexOf(N));
+    }
+  } while (Q != "=");
+
+  alert("\u042F \u0432\u0433\u0430\u0434\u0430\u0432 \u0447\u0438\u0441\u043B\u043E. \u0426\u0435 \u0447\u0438\u0441\u043B\u043E ".concat(N));
+}
