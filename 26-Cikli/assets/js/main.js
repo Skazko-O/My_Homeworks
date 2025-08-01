@@ -140,8 +140,8 @@ function palindrom() {
 
 function discaunt() {
     const sumaPocypcu = Number(document.getElementById('sumaPocypcu').value.replace(",", "."))
-    sumaDoSplati = 0;
-    znijka = 0;
+    let sumaDoSplati = 0;
+    let znijka = 0;
     if (isNaN(sumaPocypcu) || sumaPocypcu < 0 || sumaPocypcu == "") {
         document.getElementById('rez_7').innerText = 'Ви вели невірні данні'
         return
@@ -227,7 +227,7 @@ function gameGuessNumber() {
             numbers = numbers.slice(0, numbers.indexOf(N));
         }
     } while (Q != "=");
-    alert(`Я вгадав число з ${counter} ітерації. Це число ${N}`)
+    alert(`Я вгадав число з ${counter} ітерації. Це число ${N}`) 
 }
 
 /*Виведи таблицю множення для всіх чисел від 2 до 9. Кожне число необхідно помножити на числа від 1 до 10.*/

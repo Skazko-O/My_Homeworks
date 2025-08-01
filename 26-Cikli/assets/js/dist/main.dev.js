@@ -157,8 +157,8 @@ function palindrom() {
 
 function discaunt() {
   var sumaPocypcu = Number(document.getElementById('sumaPocypcu').value.replace(",", "."));
-  sumaDoSplati = 0;
-  znijka = 0;
+  var sumaDoSplati = 0;
+  var znijka = 0;
 
   if (isNaN(sumaPocypcu) || sumaPocypcu < 0 || sumaPocypcu == "") {
     document.getElementById('rez_7').innerText = 'Ви вели невірні данні';
