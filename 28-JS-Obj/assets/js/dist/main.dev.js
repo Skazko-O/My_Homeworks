@@ -28,6 +28,11 @@ var car = {
   calcTime: function calcTime(dist) {
     var time = dist / this.avgSpeed;
     var breakTime = Math.floor(time / 4);
+
+    if (time % 4 === 0) {
+      breakTime -= 1;
+    }
+
     return time + breakTime;
   }
 };

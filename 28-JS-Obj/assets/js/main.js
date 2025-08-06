@@ -30,7 +30,10 @@ const car = {
     },
     calcTime(dist) {
         const time = dist / this.avgSpeed;
-        const breakTime = Math.floor(time / 4);
+        let breakTime = Math.floor(time / 4);
+        if (time % 4 === 0) {
+            breakTime -=1;
+        }
         return time + breakTime;
     }
 };
