@@ -70,6 +70,9 @@ body {
 /*==SIDEBAR==*/
 
 .sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 192px;
   background-color: $green-bg;
   color: $text-color;
@@ -127,8 +130,7 @@ body {
 
 .get-pro {
   position: relative;
-  padding: 20px 16px;
-  margin: 20px 0 26px;
+  padding: 20px 16px;  
   border-radius: 16px;
   background-color: $green-text-color;
 
