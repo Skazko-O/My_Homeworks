@@ -59,6 +59,7 @@ body {
 
   main {
     flex-grow: 1;
+    padding: 17px 0;
   }
 }
 
@@ -83,7 +84,7 @@ body {
   overflow-y: auto;
 }
 
-.logo {
+.logo a {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -93,6 +94,7 @@ body {
 
 .menu {
   padding-bottom: 224px;
+
   a {
     display: flex;
     gap: 12px;
@@ -105,18 +107,19 @@ body {
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
-    line-height: 100%;    
+    line-height: 100%;
 
     svg {
       width: 24px;
       height: 24px;
       fill: $text-color;
     }
-    
+
     &:hover {
       background-color: $active-color;
       color: $accent-color;
     }
+
     &.active {
       background-color: $active-color;
       color: $accent-color;
@@ -130,7 +133,7 @@ body {
 
 .get-pro {
   position: relative;
-  padding: 20px 16px;  
+  padding: 20px 16px;
   border-radius: 16px;
   background-color: $green-text-color;
 
@@ -160,12 +163,12 @@ body {
   }
 
   .btn-get-pro {
-    padding: 10px 14px;   
+    padding: 10px 14px;
     background-color: $active-color;
     border-radius: 8px;
     color: $accent-color;
-    text-align: center;    
-    font-size: 14px;    
+    text-align: center;
+    font-size: 14px;
     font-weight: 500;
     line-height: 100%;
   }
@@ -241,7 +244,7 @@ h1 {
   color: $green-text-color;
 }
 
-.avatar {  
+.avatar {
   border-radius: 50%;
 
   img {
@@ -262,11 +265,79 @@ h1 {
 .circle-btn {
   background-color: $green-bg;
   padding: 10px;
-  border-radius: 50%;  
+  border-radius: 50%;
 
   svg {
     width: 18px;
     height: 18px;
     fill: $green-text-color;
   }
+}
+
+/*==MAIN==*/
+
+.widget-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 27px;
+  width: 283px;
+  padding: 16px;
+  background-color: $green-text-color;
+  border-radius: 16px;
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .symbol {
+    width: 23px;
+    height: 23px;
+  }
+
+  .union {
+    width: 14.71px;
+  }
+
+  .card-name {
+    color: $green-bg;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 120%;
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card-text {
+    color: $green-bg;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 130%;
+    padding-bottom: 2px;
+  }
+
+  .card-balance {
+    color: #FBFBFC;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 120%;
+  }
+  
+  .sec-unit {    
+    display: flex;
+    gap: 18px;
+    padding-top: 10px;
+  }
+
+  .card-secur-value {
+    color: #FBFBFC;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 130%;
+  }
+
 }
