@@ -7,6 +7,8 @@ $green-bg: #ECF4E9;
 $green-text-color: #1E4841;
 $text-color: #6B7271;
 $active-color: #BBF49C;
+$border-color: #E5E6E6;
+$warning-color: #FDCED1;
 
 
 
@@ -43,8 +45,29 @@ img {
 }
 
 .container {
-  width: min(90%, 1440px);
+  width: min(90%, 2000px);
   margin: 0 auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1.05fr 3fr 3fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    'left-grid-section center-grid-section right-grid-section';
+  gap: 20px;
+}
+
+.left-grid-section {
+  grid-area: left-grid-section;
+}
+
+.center-grid-section {
+  grid-area: center-grid-section;
+}
+
+.right-grid-section {
+  grid-area: right-grid-section;
 }
 
 body {
@@ -61,6 +84,11 @@ body {
     flex-grow: 1;
     padding: 17px 0;
   }
+}
+
+.border-section {
+  border-radius: 16px;
+  border: 1px solid $border-color;
 }
 
 .main-content {
@@ -281,7 +309,7 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
   gap: 27px;
-  width: 283px;
+  max-width: 100%;
   padding: 16px;
   background-color: $green-text-color;
   border-radius: 16px;
@@ -326,8 +354,8 @@ h1 {
     font-weight: 700;
     line-height: 120%;
   }
-  
-  .sec-unit {    
+
+  .sec-unit {
     display: flex;
     gap: 18px;
     padding-top: 10px;
@@ -340,4 +368,70 @@ h1 {
     line-height: 130%;
   }
 
+}
+
+.section-statistic {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+
+  .card-statistic {
+    min-width: 151px;
+    padding: 16px;
+  }
+
+  .statistic-head {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 28px;
+  }
+
+  .statistic-amount {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 110%;
+  }
+
+  .total-income {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 130%;
+  }
+
+  .statistic-main {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 8px;
+    font-weight: 500;
+    line-height: 130%;
+
+    img {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  .badge {
+    display: flex;
+    gap: 4px;
+    background-color: $warning-color;
+    border-radius: 15px;
+    padding: 1px 4px;
+    width: 41px;
+
+  }
+
+  .circle-btn {
+    border-radius: 8px;
+    padding: 8px;
+  }
+
+  .dots {    
+    background-color: transparent;
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
 }
