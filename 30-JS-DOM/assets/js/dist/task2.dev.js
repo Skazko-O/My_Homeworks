@@ -8,8 +8,7 @@ open.addEventListener('click', function () {
 });
 close.addEventListener('click', function () {
   modal.style.display = 'none';
-}); // Закриття по кліку поза вікном
-
+});
 modal.addEventListener('click', function (e) {
   if (e.target === modal) {
     modal.style.display = 'none';
