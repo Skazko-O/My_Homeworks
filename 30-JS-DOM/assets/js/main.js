@@ -66,8 +66,50 @@ function addElement(parent, tag) {
     parent.appendChild(tag);
     document.body.appendChild(parent);
 }
-
 /*
+import { CoffeComponents }
+    from "./components/CoffeComponents.js";
+import { ShopsComponents }
+    from "./components/ShopsComponents.js";
+
+const output = document.querySelector("#output");
+const coffeesButton = document
+    .querySelector("#coffeesButton");
+const shopsButton = document
+    .querySelector("#shopsButton");
+const themeInput = document
+    .querySelector("#themeInput");
+
+themeInput.addEventListener("click", () => {
+    document.body.classList.toggle("dark-theme")
+
+})
+
+coffeesButton.addEventListener("click", () => {
+    setActiveButton(coffeesButton);
+    output.replaceChildren(
+        new CoffeComponents().render());
+});
+
+shopsButton.addEventListener("click", () => {
+    setActiveButton(shopsButton);
+    output.replaceChildren(
+        new ShopsComponents().render());
+});
+
+function setActiveButton(activeButton) {
+    const buttons = document
+        .querySelectorAll("#menu button");
+    for (const button of buttons) {
+        if (button === activeButton)
+            button.classList.add("activeButton")
+        else
+            button.classList.remove("activeButton");
+    }
+}
+
+
+
 const itemInput = document.querySelector("#itemInput");
 const addButton = document.querySelector("#addButton");
 const list = document.querySelector("#list");
