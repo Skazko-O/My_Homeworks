@@ -48,10 +48,12 @@ body {
 }
 
 .txtzone {
-  border: 2px solid black;
+  border: 1px solid black;
   width: 50%;
 }
 
-.editor {
-  width: 50%;
+.edit {
+  outline: 2px dashed black;
+  background-color: pink;
+  border: none; 
 }
