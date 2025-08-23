@@ -1,0 +1,224 @@
+@use 'fonts.css' as*;
+
+$text-color: #B7BACD;
+$main-color: #8D91A3;
+$active-color: #FFFFFF;
+$btn-color: #13E28D;
+$tab-color: #2B3040;
+$bg-content-color: #212534;
+$bg-color: #2B3040;
+$disc-color: #FFDD3F;
+
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a,
+button {
+  transition: all .2s ease;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  width: min(90%, 1440px);
+  margin: 0 auto;
+  position: relative;
+}
+
+body {
+  font-size: 1rem;
+  color: $text-color;
+  font-family: 'Lato';
+  overflow-y: scroll;
+  background-color: $bg-color;
+  height: 100%;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  max-width: 1000px;
+  aspect-ratio: 1000 / 860;
+  background-image: url("../images/background_img.jpg");
+  background-size: cover;
+  background-position: center;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  opacity: 0.2;
+}
+
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 600px
+}
+
+.tab-content {
+  height: 432px;
+  width: 600px;
+  background-color: $bg-content-color;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.tab-buttons {
+  padding: 30px 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 70px;
+  background: $bg-color;
+
+  button {
+    border: none;
+    background: $bg-color;
+    text-transform: uppercase;
+    color: $main-color;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      stroke: $main-color;
+      fill: none;
+      margin-bottom: 15px;
+    }
+  }
+
+  .active {
+    color: $active-color;
+
+    svg {
+      stroke: $active-color;
+    }
+  }
+}
+
+.tab-content {
+  display: none;
+  padding: 60px 40px;
+}
+
+.tab-content.active {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 41px;
+  background-color: $bg-content-color;
+}
+
+.img-section {
+  padding: 78.5px 0;
+
+  .game-img {
+    padding-bottom: 25px;
+  }
+}
+
+
+.head-content {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40px;
+
+  .game-name {
+    color: #FFF;
+    padding: 72px 0 15px;
+    font-size: 32px;
+  }
+
+  .game-released {
+    font-size: 14px;
+  }
+}
+
+.overview {
+  width: 277px;
+  font-size: 14px;
+  line-height: 22px;
+  padding-bottom: 50px;
+}
+
+.footer-section {
+  display: flex;
+  justify-content: space-between;
+
+
+  .discont {
+    color: $disc-color;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .price {
+    font-size: 32px;
+    color: #FFF;
+  }
+
+  button {
+    color: #FFF;
+    text-transform: uppercase;
+    padding: 20px 30px;
+    background-color: $btn-color;
+  }
+}
+
+.jchart--donut--segment {
+  transition: stroke-dasharray 1s ease;
+}
+
+.jchart {
+  width: 95px;
+  height: 95px;
+  padding-top: 60px;
+}
+
+.jchart--body {
+  width: 100%;
+  height: 100%;
+}
+
+.jchart--summary {
+  font-size: 20px;
+  line-height: 22px;
+}

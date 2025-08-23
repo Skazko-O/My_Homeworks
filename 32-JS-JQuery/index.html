@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Far Cry 6</title>
+  <link rel="stylesheet" href="assets/css/style.min.css">
+  <link rel="stylesheet" href="assets/css/star-rating-svg.css">
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <header></header>
+    <main>
+      <div class="container">
+        <div class="overlay"></div>
+        <div class="content">
+          <div class="tabs">
+            <div class="tab-buttons">
+              <button data-tab="information" class="active">
+                <svg>
+                  <use xlink:href="assets/images/sprite.svg#info-icon"></use>
+                </svg>
+                <div>information</div>
+              </button>
+              <button data-tab="ratings-info">
+                <svg>
+                  <use xlink:href="assets/images/sprite.svg#spades-icon"></use>
+                </svg>
+                <div>rating info</div>
+              </button>
+              <button data-tab="where-to-buy">
+                <svg>
+                  <use xlink:href="assets/images/sprite.svg#bag-icon"></use>
+                </svg>
+                <div>where to buy</div>
+              </button>
+            </div>
+            <div class="tab-content active" data-content="information">
+              <div class="img-section">
+                <div class="game-img">
+                  <img src="assets/images/far_cry_6.jpg" alt="Far Cry 6 cover art">
+                </div>
+                <div class="stars jq-stars"></div>
+              </div>
+              <div class="content-section">
+                <div class="head-content">
+                  <div>
+                    <div class="game-name">Far Cry 6</div>
+                    <div class="game-released">First Released Oct 6, 2021</div>
+                  </div>
+                  <div id="element"></div>
+                </div>
+
+                <div class="overview">
+                  Far Cry 6 is a 2021 action-adventure first-person shooter game developed by
+                  Ubisoft
+                  Toronto. It is the sixth main installment in the Far Cry series and the successor Far Cry 5.
+                </div>
+                <div class="footer-section">
+                  <div class="price-discont">
+                    <div class="discont">20% OFF!</div>
+                    <div class="price">$59.96</div>
+                  </div>
+                  <button>buy it now</button>
+                </div>
+              </div>
+            </div>
+            <div class="tab-content" data-content="ratings-info">
+              <div class="overview">
+                  Far Cry 6 is a 2021 action-adventure first-person shooter game developed by
+                  Ubisoft
+                  Toronto. It is the sixth main installment in the Far Cry series and the successor Far Cry 5.
+                </div>
+            </div>
+            <div class="tab-content" data-content="where-to-buy">
+              <div class="overview">
+                  Far Cry 6 is a 2021 action-adventure first-person shooter game developed by
+                  Ubisoft
+                  Toronto. It is the sixth main installment in the Far Cry series and the successor Far Cry 5.
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+  </div>  
+  <script src="assets/js/plagins/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/plagins/star_rating/jquery.star-rating-svg.js"></script>  
+  <script src="assets/js/plagins/donut_rating/jquery.jchart.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
