@@ -21,24 +21,21 @@ var myData = [{
 }, {
   value: 100,
   color: '#77dd4f',
+  // stroke color of the segment
   draw: true,
-  push: true
+  // draw the segment on the chart or not
+  push: true //push the next segment via offset
+
 }, {
   value: 100,
-  color: '#dd5723',
-  draw: true
+  color: '#dd5723'
 }];
-$("#element").jChart({
+var myChart = $("#element").jChart({
   data: myData,
   appearance: {
     type: 'donut',
-    strokeWidth: 1,
     title: {
-      showValue: true,
-      showPercentage: false,
-      showSummary: true,
-      summaryTitle: '',
-      summarySegment: 1
+      showSummary: true
     }
   }
 });

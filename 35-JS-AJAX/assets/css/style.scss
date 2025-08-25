@@ -1,20 +1,16 @@
 $text-color: #232323;
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-ul,
-ol {
+ul, ol {
   list-style: none;
 }
 
-a,
-button {
+a, button {
   transition: all .2s ease;
   text-decoration: none;
 }
@@ -45,9 +41,27 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 100vh;
-
+   min-height: 100vh;
   main {
-    flex-grow: 1;
+    flex-grow: 1;   
   }
+}
+
+header {
+  height: 80px;
+  background-color: aquamarine;
+  .container {
+    height: 100%;
+  }
+}
+.main-menu {
+  height: 100%;
+}
+
+.main-menu ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  height: 100%;
 }
