@@ -44,7 +44,28 @@
       <div class="card-body" id="movies-list"></div>
     </div>
   </div>
+
+  <!-- Vertically centered scrollable modal -->
+
+  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div id = "modal-header" class="modal-header">
+          <h1 class="modal-title fs-5" id="modalLabel"></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div id="modal-body" class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
   <script src="assets/js/movies.js"></script>
+
 </body>
 
 </html>
