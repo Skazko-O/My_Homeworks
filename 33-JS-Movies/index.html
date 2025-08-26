@@ -11,13 +11,27 @@
 </head>
 
 <body>
+
+  <div class="toast-container position-fixed top-0 start-0 p-3" id="toastContainer">
+  <div id="movieToast" class="toast custom-toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <strong class="me-auto">Movies</strong>
+      <small class="text-muted">alert!</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">     
+    </div>
+  </div>
+</div>
+
+
   <div class="container">
     <div class="card mb-4">
       <div class="card-body">
         <form id="search-form">
           <div class="row">
             <div class="col-6">
-              <input type="text" class="form-control" placeholder="Enter movie name" id="search-inp" value="Batman">
+              <input type="text" class="form-control" placeholder="Enter movie name" id="search-inp" value="Sonic">
             </div>
             <div class="col-2">
               <select id="type" class="form-select">

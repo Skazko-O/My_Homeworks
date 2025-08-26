@@ -32,7 +32,7 @@ function searchMovie(search) {
             break;
           }
 
-          alert("".concat(data.Error));
+          showToast("".concat(data.Error));
           return _context.abrupt("return");
 
         case 12:
@@ -62,7 +62,7 @@ form.addEventListener('submit', function (e) {
   var year = document.getElementById('year').value;
 
   if (search === '') {
-    return alert('Enter movie name for search');
+    return showToast('Enter movie name for search');
   }
 
   searchMovie(search, type, year);
@@ -119,5 +119,20 @@ function updateModalContent(titleText, overviewText, releaseDate) {
   var modalTitle = document.getElementById('modalLabel');
   var modalBody = document.getElementById('modal-body');
   modalTitle.innerText = titleText;
-  modalBody.innerHTML = "\n    <p>".concat(overviewText, "</p>\n    <p><b>Release date:</b> ").concat(releaseDate, "</p>\n    ");
+  var releaseCheck = typeof releaseDate !== 'undefined' ? "<p><b>Release date:</b> ".concat(releaseDate, "</p>") : "<p><b>Release date:</b> <i>Not available</i></p>";
+  modalBody.innerHTML = "\n    <p>".concat(overviewText, "</p>\n    ").concat(releaseCheck, "\n    ");
+}
+/*Toasts*/
+
+
+function showToast(message) {
+  var delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 3000;
+  var toastEl = document.getElementById('movieToast');
+  var toastBody = toastEl.querySelector('.toast-body');
+  toastBody.textContent = message;
+  var toast = bootstrap.Toast.getOrCreateInstance(toastEl, {
+    delay: delay,
+    autohide: true
+  });
+  toast.show();
 }

@@ -6,8 +6,8 @@ async function searchMovie(search, type = '', year = '') {
         await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${search}&type=${type}&y=${year}`)
     const data = await response.json()
     console.log(data);
-    if (data.Response === "False") {
-        alert(`${data.Error}`)
+    if (data.Response === "False") {        
+        showToast(`${data.Error}`)
         return
     }
 
@@ -38,8 +38,8 @@ form.addEventListener('submit', function (e) {
     const type = document.getElementById('type').value
     const year = document.getElementById('year').value
 
-    if (search === '') {
-        return alert('Enter movie name for search')
+    if (search === '') {       
+        return showToast ('Enter movie name for search')
     }
 
     searchMovie(search, type, year)
@@ -79,8 +79,26 @@ function updateModalContent(titleText, overviewText, releaseDate) {
     const modalTitle = document.getElementById('modalLabel');
     const modalBody = document.getElementById('modal-body');
     modalTitle.innerText = titleText;
+    const releaseCheck = (typeof releaseDate !== 'undefined')
+    ? `<p><b>Release date:</b> ${releaseDate}</p>`
+    : `<p><b>Release date:</b> <i>Not available</i></p>`;
     modalBody.innerHTML = `
     <p>${overviewText}</p>
-    <p><b>Release date:</b> ${releaseDate}</p>
+    ${releaseCheck}
     `;
+}
+
+/*Toasts*/
+
+function showToast(message, delay = 3000) {
+  const toastEl = document.getElementById('movieToast');
+  const toastBody = toastEl.querySelector('.toast-body');
+  toastBody.textContent = message;
+
+  const toast = bootstrap.Toast.getOrCreateInstance(toastEl, {
+    delay: delay,
+    autohide: true
+  });
+
+  toast.show();
 }

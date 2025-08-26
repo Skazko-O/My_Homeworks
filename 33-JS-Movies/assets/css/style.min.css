@@ -1,1 +1,1 @@
-#movies-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}
+#movies-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px}.toast.custom-toast{background:#8068e8;color:#fff;border:none;mix-blend-mode:screen;box-shadow:0 0 10px rgba(0,0,0,.3)}

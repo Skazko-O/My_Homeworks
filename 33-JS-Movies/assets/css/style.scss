@@ -3,3 +3,11 @@
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 20px;
 }
+
+.toast.custom-toast {
+  background: hsl(251, 74%, 66%); // градієнт
+  color: #fff;
+  border: none;
+  mix-blend-mode: screen; // або overlay, multiply
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
