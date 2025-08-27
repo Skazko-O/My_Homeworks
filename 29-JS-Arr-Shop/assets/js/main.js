@@ -107,6 +107,10 @@ function addToCart() {
     CART[index].qty += qty
   }
 
+  toast.success('Product successesfuly added', {
+    autoclose: false
+  })
+
   _el("prod_form").reset()
   _el("prod_title").focus()
   showProduct()
@@ -114,6 +118,7 @@ function addToCart() {
 
 function showProduct() {
   let html = ''
+  let total = 0
   CART.forEach((prod, index) => {
     html += `<tr>
       <td> ${index + 1}</td>
@@ -124,17 +129,27 @@ function showProduct() {
       <td>${prod.price * prod.qty}</td>
       <td>
         <button type="button" class="btn btn-info btn-sm" onclick="buyProduct(${index})">Buy</button>
+        <button type="button" class="btn btn-danger btn-sm" onclick="deleteProduct(${index}, '${prod.title}')">Delete</button>
       </td>
     </tr> `
+    total += prod.price * prod.qty
   })
+
   _el('prod_list').innerHTML = html
+  _el('total_sum').innerText = total
 }
-
-
 
 function buyProduct(index) {
   CART[index].isBuy = true;
   showProduct()
+}
+
+function deleteProduct(index, title) {
+  if (confirm(`Are you sure to delete ${title}`)) {
+    CART.splice(index, 1)
+    showProduct()
+  }
+
 }
 
 

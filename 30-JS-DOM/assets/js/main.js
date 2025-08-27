@@ -54,11 +54,11 @@ addListElement();
 
 function addListElement() {
     playList.forEach(song => {
-            const li = document.createElement("li");
-            li.style.paddingBottom = "5px";
-            li.textContent = `${song.author} - ${song.song}`;
-            ol.appendChild(li);
-        }
+        const li = document.createElement("li");
+        li.style.paddingBottom = "5px";
+        li.textContent = `${song.author} - ${song.song}`;
+        ol.appendChild(li);
+    }
     );
 }
 
@@ -66,6 +66,49 @@ function addElement(parent, tag) {
     parent.appendChild(tag);
     document.body.appendChild(parent);
 }
+
+/*TASK2*/
+if (document.body.dataset.page === 'modal') {
+    const open = document.getElementById('open');
+    const close = document.getElementById('close');
+    const modal = document.getElementById('modal');
+
+    open.addEventListener('click', () => {
+        modal.style.display = 'flex';
+    });
+
+    close.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+}
+
+
+/*TASK3*/
+
+const lights = {
+    red: document.getElementById('red'),
+    yellow: document.getElementById('yellow'),
+    green: document.getElementById('green'),
+}
+let current = 0;
+const colors = ['red', 'yellow', 'green'];
+
+function selectorLight() {
+  const activeColor = colors[current];
+  Object.entries(lights).forEach(([color, el]) => {
+    el.style.backgroundColor = color === activeColor ? color : '';
+  });
+  current = (current + 1) % colors.length;
+}
+
+
+
 /*
 import { CoffeComponents }
     from "./components/CoffeComponents.js";

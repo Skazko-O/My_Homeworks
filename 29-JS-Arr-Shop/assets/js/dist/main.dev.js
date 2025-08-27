@@ -108,6 +108,10 @@ function addToCart() {
     CART[index].qty += qty;
   }
 
+  toast.success('Product successesfuly added', {
+    autoclose: false
+  });
+
   _el("prod_form").reset();
 
   _el("prod_title").focus();
@@ -117,15 +121,25 @@ function addToCart() {
 
 function showProduct() {
   var html = '';
+  var total = 0;
   CART.forEach(function (prod, index) {
-    html += "<tr>\n      <td> ".concat(index + 1, "</td>\n      <td>").concat(prod.title, "</td>\n      <td>").concat(prod.isBuy ? '<span class="badge text-bg-success">Yes</span>' : '<span class="badge text-bg-danger">No</span>', "</td>\n      <td>").concat(prod.qty, "</td>\n      <td>").concat(prod.price, "</td>\n      <td>").concat(prod.price * prod.qty, "</td>\n      <td>\n        <button type=\"button\" class=\"btn btn-info btn-sm\" onclick=\"buyProduct(").concat(index, ")\">Buy</button>\n      </td>\n    </tr> ");
+    html += "<tr>\n      <td> ".concat(index + 1, "</td>\n      <td>").concat(prod.title, "</td>\n      <td>").concat(prod.isBuy ? '<span class="badge text-bg-success">Yes</span>' : '<span class="badge text-bg-danger">No</span>', "</td>\n      <td>").concat(prod.qty, "</td>\n      <td>").concat(prod.price, "</td>\n      <td>").concat(prod.price * prod.qty, "</td>\n      <td>\n        <button type=\"button\" class=\"btn btn-info btn-sm\" onclick=\"buyProduct(").concat(index, ")\">Buy</button>\n        <button type=\"button\" class=\"btn btn-danger btn-sm\" onclick=\"deleteProduct(").concat(index, ", '").concat(prod.title, "')\">Delete</button>\n      </td>\n    </tr> ");
+    total += prod.price * prod.qty;
   });
   _el('prod_list').innerHTML = html;
+  _el('total_sum').innerText = total;
 }
 
 function buyProduct(index) {
   CART[index].isBuy = true;
   showProduct();
+}
+
+function deleteProduct(index, title) {
+  if (confirm("Are you sure to delete ".concat(title))) {
+    CART.splice(index, 1);
+    showProduct();
+  }
 }
 
 showProduct();
