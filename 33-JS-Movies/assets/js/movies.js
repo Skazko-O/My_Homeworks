@@ -35,7 +35,7 @@ async function searchMovie(search, type = "movie", year = '', language = 'en-US'
         return;
     }
 
-    showMoviesList(data.results);
+    showMoviesList(data.results.map(x => ({ ...x, media_type: type === "multi" ? x.media_type : type})));
 }
 
 function showMoviesList(movies) {
