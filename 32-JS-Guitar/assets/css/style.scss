@@ -6,7 +6,7 @@ $secondary-color: #F8F1EA;
 $accent-color: #F16A50;
 $background-color-footer: #35312D;
 
-$pointer: url("/32-JS-Guitar/assets/images/svg/cursor.svg"), pointer;
+$pointer: url("../images/svg/cursor.svg"), pointer;
 
 *,
 *::before,
@@ -147,19 +147,19 @@ body {
 .slide-1 {
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0.00) 100%),
-    url('/32-JS-Guitar/assets/images/slider/image_1.jpg');
+    url('../images/slider/image_1.jpg');
 }
 
 .slide-2 {
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0.00) 100%),
-    url("/32-JS-Guitar/assets/images/slider/image_2.jpg");
+    url("../images/slider/image_2.jpg");
 }
 
 .slide-3 {
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0.00) 100%),
-    url("/32-JS-Guitar/assets/images/slider/image_3.jpg");
+    url("../images/slider/image_3.jpg");
 }
 
 .lSSlideOuter .lSPager.lSpg>li.active a,
@@ -199,7 +199,7 @@ h2 {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  background-image: url("/32-JS-Guitar/assets/images/svg/arrow.svg");
+  background-image: url("../images/svg/arrow.svg");
 }
 
 .revers {
@@ -263,6 +263,10 @@ h2 {
   width: 100px;  
 }
 
+.brand-saction {
+  background-color: $background-color;
+}
+
 footer {
   height: 350px;
   background-color: $background-color-footer;
@@ -318,7 +322,7 @@ footer {
     &:hover {
       stroke: $accent-color;
       fill: $accent-color;
-      cursor: url("/32-JS-Guitar/assets/images/svg/cursor.svg"),
+      cursor: $pointer,
         pointer;
     }
   }
