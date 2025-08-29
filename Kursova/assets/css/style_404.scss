@@ -40,8 +40,7 @@ img {
 body {
     font-size: 1rem;
     color: $text-color;
-    font-family: sans-serif;
-    overflow-y: scroll; // додаэ вертикальний скрол
+    font-family: sans-serif;    
     background-color: #ECF4E9;
     margin: 0;
     height: 100vh;
@@ -51,6 +50,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-height: 100vh;
 
     main {
         flex-grow: 1;

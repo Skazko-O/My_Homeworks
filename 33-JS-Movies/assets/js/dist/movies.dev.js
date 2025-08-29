@@ -2,6 +2,14 @@
 
 var API_KEY = '395e2453';
 var API_KEY_TMDB = '38b45ed5fa06954a0aeefd258bb8860c';
+var baseURL = 'https://api.themoviedb.org/3/search';
+var options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzOGI0NWVkNWZhMDY5NTRhMGFlZWZkMjU4YmI4ODYwYyIsIm5iZiI6MTc1NTk0OTY2Ny4zNDIwMDAyLCJzdWIiOiI2OGE5YWE2M2I1YTFiMThhMTk2NmZjZWQiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.Amay3DD7G_Ot0fU-05P3xEE1EqH8MTjnclXRIBFFvUE'
+  }
+};
 
 function searchMovie(search) {
   var type,
@@ -16,7 +24,7 @@ function searchMovie(search) {
           type = _args.length > 1 && _args[1] !== undefined ? _args[1] : '';
           year = _args.length > 2 && _args[2] !== undefined ? _args[2] : '';
           _context.next = 4;
-          return regeneratorRuntime.awrap(fetch("https://www.omdbapi.com/?apikey=".concat(API_KEY, "&s=").concat(search, "&type=").concat(type, "&y=").concat(year)));
+          return regeneratorRuntime.awrap(fetch("https://api.themoviedb.org/3/search/movie?query=".concat(search, "&include_adult=false&").concat(year, "&").concat(type, "&page=1"), options));
 
         case 4:
           response = _context.sent;
@@ -49,7 +57,7 @@ function searchMovie(search) {
 function showMoviesList(movies) {
   var list = '';
   movies.forEach(function (movie) {
-    list += "\n        <div class=\"card\">\n            <img src=\"".concat(movie.Poster, "\" class=\"card-img-top\" alt=\"").concat(movie.Title, "\" onerror=\"this.src = 'assets/images/no-img.png'\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">").concat(movie.Title, "</h5>\n                <p class=\"card-text\"><b>Year: </b>").concat(movie.Year, "</p>\n                <button href=\"#\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#myModal\" data-imdb-id=").concat(movie.imdbID, ">Detailed</button>\n            </div>\n            </div>\n        ");
+    list += "\n        <div class=\"card\">\n            <img src=\"".concat(movie.poster_path, "\" class=\"card-img-top\" alt=\"").concat(movie.title, "\" onerror=\"this.src = 'assets/images/no-img.png'\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">").concat(movie.title, "</h5>\n                <p class=\"card-text\"><b>Year: </b>").concat(movie.release_date, "</p>\n                <button href=\"#\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#myModal\" data-imdb-id=").concat(movie.id, ">Detailed</button>\n            </div>\n            </div>\n        ");
   });
   document.getElementById('movies-list').innerHTML = list;
 }
@@ -115,12 +123,12 @@ var myModal = new bootstrap.Modal(modalElement, {
   backdrop: 'static'
 });
 
-function updateModalContent(titleText, overviewText, releaseDate) {
+function updateModalContent(titleText, overviewText) {
+  var releaseDate = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'N/A';
   var modalTitle = document.getElementById('modalLabel');
   var modalBody = document.getElementById('modal-body');
   modalTitle.innerText = titleText;
-  var releaseCheck = typeof releaseDate !== 'undefined' ? "<p><b>Release date:</b> ".concat(releaseDate, "</p>") : "<p><b>Release date:</b> <i>Not available</i></p>";
-  modalBody.innerHTML = "\n    <p>".concat(overviewText, "</p>\n    ").concat(releaseCheck, "\n    ");
+  modalBody.innerHTML = "\n    <p>".concat(overviewText, "</p>\n    <p><b>Release date:</b> ").concat(releaseDate, "</p>\n    ");
 }
 /*Toasts*/
 

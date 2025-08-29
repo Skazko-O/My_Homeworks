@@ -1,5 +1,7 @@
 "use strict";
 
+function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
+
 var DEV_MODE = true;
 /*function loadPage(page) {
     const xhr = new XMLHttpRequest()
@@ -192,3 +194,39 @@ promise.finally(() => {
 }).catch((err) => {
     console.log(err)
 })*/
+
+/*COOCKIES*/
+
+function setCookie(name, value, seconds) {
+  var path = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '/';
+  var expires = "";
+
+  if (seconds) {
+    var date = new Date();
+    date.setTime(date.getTime() + seconds * 1000);
+    expires = (_readOnlyError("expires"), "; expires=" + date.toUTCString());
+  }
+
+  document.cookie = name + "=" + (value || "") + expires + "; path=/" + path;
+}
+
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1, c.length);
+    }
+
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+  }
+
+  return null;
+}
+
+function deleteCookie(name) {
+  document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;'; // альтернативний варіант setCookie(name, '', -1)
+}

@@ -1,18 +1,28 @@
 @use 'fonts.css' as*;
 
-$text-color: #232323;
+$background-color: #F8F1EA;
+$text-color: #000;
+$secondary-color: #F8F1EA;
+$accent-color: #F16A50;
+$background-color-footer: #35312D;
 
-*, *::before, *::after {
+$pointer: url("/32-JS-Guitar/assets/images/svg/cursor.svg"), pointer;
+
+*,
+*::before,
+*::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
-a, button {
+a,
+button {
   transition: all .2s ease;
   text-decoration: none;
 }
@@ -29,22 +39,300 @@ img {
 }
 
 .container {
-  width: min(90%, 1200px);
+  width: min(90%, 1400px);
   margin: 0 auto;
 }
 
 body {
   font-size: 1rem;
   color: $text-color;
-  font-family: sans-serif;
-  overflow-y: scroll; // додаэ вертикальний скрол
+  font-weight: 500;
+  font-family: 'Montserrat';
 }
 
 .page-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  min-height: 100vh;
+
   main {
     flex-grow: 1;
   }
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background-color: $background-color;
+}
+
+.logo-wrap {
+  padding: 1.5rem 0 1.5rem 6.25rem;
+}
+
+.menu ul {
+  display: flex;
+  gap: 30px;
+
+  a {
+    color: $text-color ;
+    font-size: 20px;
+  }
+}
+
+.profile-section {
+  display: flex;
+  gap: 30px;
+  padding-right: 102px;
+
+  svg {
+    width: 36px;
+    stroke: $text-color;
+    fill: $text-color;
+  }
+}
+
+.hero-section {
+  padding-bottom: 70px;
+}
+
+#slider-hero li {
+  position: relative;
+  height: 700px;
+  color: $secondary-color;
+  background-size: cover;
+  background-position: center;
+  text-transform: uppercase;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.slider-content {
+  position: absolute;
+  top: 120px;
+  right: 100px;
+}
+
+.slider-text {
+  width: 400px;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.btn {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  width: fit-content;
+  padding: 15px 57px;
+  border: 2px solid $secondary-color;
+  background-color: transparent;
+  font-size: 18px;
+
+  color: #fff;
+  text-decoration: none;
+  cursor: $pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $accent-color;
+    border-color: $accent-color;
+    cursor: $pointer;
+  }
+}
+
+.slide-1 {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0.00) 100%),
+    url('/32-JS-Guitar/assets/images/slider/image_1.jpg');
+}
+
+.slide-2 {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0.00) 100%),
+    url("/32-JS-Guitar/assets/images/slider/image_2.jpg");
+}
+
+.slide-3 {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.84) 0%, rgba(217, 217, 217, 0.00) 100%),
+    url("/32-JS-Guitar/assets/images/slider/image_3.jpg");
+}
+
+.lSSlideOuter .lSPager.lSpg>li.active a,
+.lSSlideOuter .lSPager.lSpg>li:hover a {
+  background-color: $accent-color
+}
+
+.lSSlideOuter .lSPager.lSpg>li a {
+  bottom: 80px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: $secondary-color;
+  margin: 0 15px;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+// .slider-wrapper {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   gap: 20px;
+// }
+
+.slider-btn {
+  width: 40px;
+  height: 74px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  background-image: url("/32-JS-Guitar/assets/images/svg/arrow.svg");
+}
+
+.revers {
+  transform: scaleX(-1);
+}
+
+#slider-product li {
+  position: relative;
+  height: 500px;
+  color: $secondary-color;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 53px;
+
+  img {
+    padding-bottom: 10px;
+  }
+}
+
+.status {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 10px;
+  color: $secondary-color;
+  background-color: $accent-color;
+  width: 60px;
+  padding: 4px 0;
+}
+
+.sold {
+    background-color: $background-color;
+    color: #000;
+  }
+
+.product-name {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  color: #000;
+}
+
+.product-price {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  color: #000;
+}
+
+.btn-main {
+  color: #000;
+  border-color: #000;
+  margin-bottom: 70px;
+}
+
+#slider-brands {
+  height: 70px;
+}
+
+
+.brand-item {
+  width: 100px;  
+}
+
+footer {
+  height: 350px;
+  background-color: $background-color-footer;
+}
+
+.footer-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 70px 153px 50px 130px;
+}
+
+.logo-wrap-footer {
+  padding-bottom: 35px;
+}
+
+.menu-footer ul {
+  li {
+    padding-bottom: 10px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  a {
+    color: $background-color ;
+    font-size: 20px;
+
+  }
+}
+
+.contact {
+  text-transform: capitalize;
+  color: $secondary-color;
+  font-size: 26px;
+
+  padding-bottom: 51.5px;
+}
+
+.social {
+  display: flex;
+  gap: 35px;
+  padding-bottom: 35.5px;
+
+  svg {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    stroke: $secondary-color;
+    fill: $secondary-color;
+
+
+    &:hover {
+      stroke: $accent-color;
+      fill: $accent-color;
+      cursor: url("/32-JS-Guitar/assets/images/svg/cursor.svg"),
+        pointer;
+    }
+  }
+}
+
+.phone-number {
+  font-size: 26px;
+  color: $secondary-color;
+}
+
+.copyright {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-bottom: 20px;
+  color: $secondary-color;
 }

@@ -49,6 +49,11 @@ img {
   margin: 0 auto;
 }
 
+.content {
+  display: flex;
+  flex-grow: 1;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 1.05fr 3fr 3fr;
@@ -78,22 +83,18 @@ body {
 
 .page-wrapper {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   min-height: 100vh;
 
   main {
-    padding: 17px 0;
-
+    flex-grow: 1;
   }
 }
 
 .border-section {
   border-radius: 16px;
   border: 1px solid $border-color;
-}
-
-.main-content {
-  flex-grow: 1;
-  padding: 22px 28px 20px;
 }
 
 /*==SIDEBAR==*/
@@ -109,7 +110,7 @@ body {
   top: 0;
   left: 0;
   bottom: 0;
-  overflow-y: auto;
+  overflow-y: auto;  
 }
 
 .logo a {

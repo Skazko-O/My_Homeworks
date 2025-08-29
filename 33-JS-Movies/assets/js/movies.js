@@ -1,9 +1,18 @@
-const API_KEY = '395e2453'
-const API_KEY_TMDB = '38b45ed5fa06954a0aeefd258bb8860c'
+const API_KEY = '395e2453';
+const API_KEY_TMDB = '38b45ed5fa06954a0aeefd258bb8860c';
+const baseURL = 'https://api.themoviedb.org/3/search';
+
+const options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzOGI0NWVkNWZhMDY5NTRhMGFlZWZkMjU4YmI4ODYwYyIsIm5iZiI6MTc1NTk0OTY2Ny4zNDIwMDAyLCJzdWIiOiI2OGE5YWE2M2I1YTFiMThhMTk2NmZjZWQiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.Amay3DD7G_Ot0fU-05P3xEE1EqH8MTjnclXRIBFFvUE'
+  }
+};
 
 async function searchMovie(search, type = '', year = '') {
     const response =
-        await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${search}&type=${type}&y=${year}`)
+        await fetch(`https://api.themoviedb.org/3/search/movie?query=${search}&include_adult=false&${year}&${type}&page=1`, options)
     const data = await response.json()
     console.log(data);
     if (data.Response === "False") {        
@@ -14,16 +23,19 @@ async function searchMovie(search, type = '', year = '') {
     showMoviesList(data.Search)
 }
 
+
+
+
 function showMoviesList(movies) {
     let list = ''
     movies.forEach(movie => {
         list += `
         <div class="card">
-            <img src="${movie.Poster}" class="card-img-top" alt="${movie.Title}" onerror="this.src = 'assets/images/no-img.png'">
+            <img src="${movie.poster_path}" class="card-img-top" alt="${movie.title}" onerror="this.src = 'assets/images/no-img.png'">
             <div class="card-body">
-                <h5 class="card-title">${movie.Title}</h5>
-                <p class="card-text"><b>Year: </b>${movie.Year}</p>
-                <button href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" data-imdb-id=${movie.imdbID}>Detailed</button>
+                <h5 class="card-title">${movie.title}</h5>
+                <p class="card-text"><b>Year: </b>${movie.release_date}</p>
+                <button href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" data-imdb-id=${movie.id}>Detailed</button>
             </div>
             </div>
         `
@@ -75,16 +87,13 @@ const myModal = new bootstrap.Modal(modalElement, {
     backdrop: 'static'
 });
 
-function updateModalContent(titleText, overviewText, releaseDate) {
+function updateModalContent(titleText, overviewText, releaseDate = 'N/A') {
     const modalTitle = document.getElementById('modalLabel');
     const modalBody = document.getElementById('modal-body');
-    modalTitle.innerText = titleText;
-    const releaseCheck = (typeof releaseDate !== 'undefined')
-    ? `<p><b>Release date:</b> ${releaseDate}</p>`
-    : `<p><b>Release date:</b> <i>Not available</i></p>`;
+    modalTitle.innerText = titleText; 
     modalBody.innerHTML = `
     <p>${overviewText}</p>
-    ${releaseCheck}
+    <p><b>Release date:</b> ${releaseDate}</p>
     `;
 }
 
