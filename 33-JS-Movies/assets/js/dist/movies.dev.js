@@ -89,7 +89,7 @@ function showMoviesList(movies) {
     var poster = movie.poster_path;
     var id = movie.id;
     var type = movie.media_type;
-    list += "\n        <div class=\"card\">\n            <img src=\"".concat(IMAGE_BASE).concat(poster, "\" class=\"card-img-top\" alt=\"").concat(title, "\" onerror=\"this.src = 'assets/images/no-img.png'\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">").concat(title, "</h5>\n                <p class=\"card-text\"><b>Year: </b>").concat(year, "</p>\n                <button href=\"#\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#myModal\" data-tmdb-id=").concat(id, " data-tmdb-type=").concat(type, ">Detailed</button>\n            </div>\n            </div>\n        ");
+    list += "\n        <div class=\"card\">\n            <img src=\"".concat(IMAGE_BASE).concat(poster, "\" class=\"card-img-top\" alt=\"").concat(title, "\" onerror=\"this.src = 'assets/images/no-img.png'\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">").concat(title, "</h5>\n                <p class=\"card-text\"><b>Year: </b>").concat(year, "</p>\n                <button href=\"#\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#myModal\" data-tmdb-id=").concat(id, " data-tmdb-type=").concat(type, ">Detailed</button>\n                <button class=\"btn btn-warning fav-btn\" data-id=").concat(id, " data-title=").concat(title, " data-poster=").concat(poster, " data-type=").concat(type, " >\u2605</button>\n            </div>\n            </div>\n        ");
   });
   document.getElementById('movies-list').innerHTML = list;
 }
@@ -176,3 +176,39 @@ function showToast(message) {
   });
   toast.show();
 }
+/*FAVORITES*/
+
+
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("fav-btn")) {
+    var btn = e.target;
+    var id = btn.dataset.id;
+    var title = btn.dataset.title;
+    var posterPath = btn.dataset.poster;
+    var type = btn.dataset.type;
+    var poster = posterPath ? "https://image.tmdb.org/t/p/w500".concat(posterPath) : "assets/images/no-img.png";
+    var favorite = {
+      id: id,
+      title: title,
+      poster: poster,
+      type: type
+    };
+    var favList = JSON.parse(localStorage.getItem("favMovies")) || [];
+    var exists = favList.some(function (f) {
+      return f.id === id;
+    });
+
+    if (exists) {
+      showToast("Цей елемент вже в улюблених");
+      return;
+    }
+
+    favList.push(favorite);
+    localStorage.setItem("favMovies", JSON.stringify(favList));
+    showToast("Додано в улюблені!"); // Візуальна зміна кнопки
+
+    btn.classList.remove("btn-warning");
+    btn.classList.add("btn-success");
+    btn.innerText = "✓";
+  }
+});

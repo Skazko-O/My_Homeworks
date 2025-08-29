@@ -35,7 +35,7 @@ async function searchMovie(search, type = "movie", year = '', language = 'en-US'
         return;
     }
 
-    showMoviesList(data.results.map(x => ({ ...x, media_type: type === "multi" ? x.media_type : type})));
+    showMoviesList(data.results.map(x => ({ ...x, media_type: type === "multi" ? x.media_type : type })));
 }
 
 function showMoviesList(movies) {
@@ -53,6 +53,7 @@ function showMoviesList(movies) {
                 <h5 class="card-title">${title}</h5>
                 <p class="card-text"><b>Year: </b>${year}</p>
                 <button href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" data-tmdb-id=${id} data-tmdb-type=${type}>Detailed</button>
+                <button class="btn btn-warning fav-btn" data-id=${id} data-title=${title} data-poster=${poster} data-type=${type} >★</button>
             </div>
             </div>
         `
@@ -128,3 +129,40 @@ function showToast(message, delay = 3000) {
 
     toast.show();
 }
+
+/*FAVORITES*/
+
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("fav-btn")) {
+    const btn = e.target;
+    const id = btn.dataset.id;
+    const title = btn.dataset.title;
+    const posterPath = btn.dataset.poster;
+    const type = btn.dataset.type;
+
+    const poster = posterPath
+      ? `https://image.tmdb.org/t/p/w500${posterPath}`
+      : "assets/images/no-img.png";
+
+    const favorite = { id, title, poster, type };
+
+    const favList = JSON.parse(localStorage.getItem("favMovies")) || [];
+
+    const exists = favList.some(f => f.id === id);
+    if (exists) {
+      showToast("Цей елемент вже в улюблених");
+      return;
+    }
+
+    favList.push(favorite);
+    localStorage.setItem("favMovies", JSON.stringify(favList));
+    showToast("Додано в улюблені!");
+
+    // Візуальна зміна кнопки
+    btn.classList.remove("btn-warning");
+    btn.classList.add("btn-success");
+    btn.innerText = "✓";
+  }
+});
+
+
