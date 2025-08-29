@@ -1,41 +1,58 @@
 const API_KEY = '395e2453';
 const API_KEY_TMDB = '38b45ed5fa06954a0aeefd258bb8860c';
-const baseURL = 'https://api.themoviedb.org/3/search';
+const baseURL = 'https://api.themoviedb.org/3/';
+const IMAGE_BASE = 'https://image.tmdb.org/t/p/w500';
 
 const options = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzOGI0NWVkNWZhMDY5NTRhMGFlZWZkMjU4YmI4ODYwYyIsIm5iZiI6MTc1NTk0OTY2Ny4zNDIwMDAyLCJzdWIiOiI2OGE5YWE2M2I1YTFiMThhMTk2NmZjZWQiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.Amay3DD7G_Ot0fU-05P3xEE1EqH8MTjnclXRIBFFvUE'
-  }
+    method: 'GET',
+    headers: {
+        accept: 'application/json',
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzOGI0NWVkNWZhMDY5NTRhMGFlZWZkMjU4YmI4ODYwYyIsIm5iZiI6MTc1NTk0OTY2Ny4zNDIwMDAyLCJzdWIiOiI2OGE5YWE2M2I1YTFiMThhMTk2NmZjZWQiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.Amay3DD7G_Ot0fU-05P3xEE1EqH8MTjnclXRIBFFvUE'
+    }
 };
 
-async function searchMovie(search, type = '', year = '') {
-    const response =
-        await fetch(`https://api.themoviedb.org/3/search/movie?query=${search}&include_adult=false&${year}&${type}&page=1`, options)
-    const data = await response.json()
-    console.log(data);
-    if (data.Response === "False") {        
-        showToast(`${data.Error}`)
-        return
+async function searchMovie(search, type = "movie", year = '', language = 'en-US') {
+    const baseURL = `https://api.themoviedb.org/3/search/${type}`;
+
+    const params = new URLSearchParams({
+        query: encodeURIComponent(search),
+        include_adult: 'false',
+        page: '1',
+        language: language
+    });
+
+    if (year) {
+        params.append('year', year);
     }
 
-    showMoviesList(data.Search)
+    const response = await fetch(`${baseURL}?${params.toString()}`, options);
+    const data = await response.json();
+
+    console.log(data);
+
+    if (!data.results || data.results.length === 0) {
+        showToast('Нічого не знайдено');
+        return;
+    }
+
+    showMoviesList(data.results);
 }
-
-
-
 
 function showMoviesList(movies) {
     let list = ''
     movies.forEach(movie => {
+        const title = movie.title || movie.name || "No title";
+        const year = (movie.release_date || movie.first_air_date || "").slice(0, 4);
+        const poster = movie.poster_path;
+        const id = movie.id;
+        const type = movie.media_type;
         list += `
         <div class="card">
-            <img src="${movie.poster_path}" class="card-img-top" alt="${movie.title}" onerror="this.src = 'assets/images/no-img.png'">
+            <img src="${IMAGE_BASE}${poster}" class="card-img-top" alt="${title}" onerror="this.src = 'assets/images/no-img.png'">
             <div class="card-body">
-                <h5 class="card-title">${movie.title}</h5>
-                <p class="card-text"><b>Year: </b>${movie.release_date}</p>
-                <button href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" data-imdb-id=${movie.id}>Detailed</button>
+                <h5 class="card-title">${title}</h5>
+                <p class="card-text"><b>Year: </b>${year}</p>
+                <button href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" data-tmdb-id=${id} data-tmdb-type=${type}>Detailed</button>
             </div>
             </div>
         `
@@ -50,8 +67,8 @@ form.addEventListener('submit', function (e) {
     const type = document.getElementById('type').value
     const year = document.getElementById('year').value
 
-    if (search === '') {       
-        return showToast ('Enter movie name for search')
+    if (search === '') {
+        return showToast('Enter movie name for search')
     }
 
     searchMovie(search, type, year)
@@ -61,25 +78,25 @@ document.getElementById('year').setAttribute('max', new Date().getFullYear())
 
 /*Модальне вікно*/
 
-async function getDetailed(imdbID) {
+async function getDetailed(tmdbID, type) {
     const response =
-        await fetch(`https://api.themoviedb.org/3/find/${imdbID}?external_source=imdb_id&api_key=${API_KEY_TMDB}`)
+        await fetch(`${baseURL}${type}/${tmdbID}?api_key=${API_KEY_TMDB}`)
     const data = await response.json()
     console.log(data);
-    if (data.movie_results && data.movie_results.length > 0) {
-        const movie = data.movie_results[0];
-        updateModalContent(movie.title, movie.overview, movie.release_date);
-    } else
-        updateModalContent('Unknown title', 'Movie description not found!');
+    const title = data.title || data.name || "Unknown title";
+    const overview = data.overview || "Опис недоступний";
+    const date = data.release_date || data.first_air_date || "Дата невідома";
+    updateModalContent(title, overview, date);
 }
 
 const modalElement = document.getElementById('myModal');
 
 modalElement.addEventListener('show.bs.modal', e => {
     const button = e.relatedTarget;
-    const imdbID = button.getAttribute('data-imdb-id');
-    if (imdbID) {
-        getDetailed(imdbID);
+    const tmdbID = button.getAttribute('data-tmdb-id');
+    const type = button.getAttribute('data-tmdb-type');
+    if (tmdbID) {
+        getDetailed(tmdbID, type);
     }
 })
 const myModal = new bootstrap.Modal(modalElement, {
@@ -90,7 +107,7 @@ const myModal = new bootstrap.Modal(modalElement, {
 function updateModalContent(titleText, overviewText, releaseDate = 'N/A') {
     const modalTitle = document.getElementById('modalLabel');
     const modalBody = document.getElementById('modal-body');
-    modalTitle.innerText = titleText; 
+    modalTitle.innerText = titleText;
     modalBody.innerHTML = `
     <p>${overviewText}</p>
     <p><b>Release date:</b> ${releaseDate}</p>
@@ -100,14 +117,14 @@ function updateModalContent(titleText, overviewText, releaseDate = 'N/A') {
 /*Toasts*/
 
 function showToast(message, delay = 3000) {
-  const toastEl = document.getElementById('movieToast');
-  const toastBody = toastEl.querySelector('.toast-body');
-  toastBody.textContent = message;
+    const toastEl = document.getElementById('movieToast');
+    const toastBody = toastEl.querySelector('.toast-body');
+    toastBody.textContent = message;
 
-  const toast = bootstrap.Toast.getOrCreateInstance(toastEl, {
-    delay: delay,
-    autohide: true
-  });
+    const toast = bootstrap.Toast.getOrCreateInstance(toastEl, {
+        delay: delay,
+        autohide: true
+    });
 
-  toast.show();
+    toast.show();
 }

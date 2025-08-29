@@ -2,7 +2,8 @@
 
 var API_KEY = '395e2453';
 var API_KEY_TMDB = '38b45ed5fa06954a0aeefd258bb8860c';
-var baseURL = 'https://api.themoviedb.org/3/search';
+var baseURL = 'https://api.themoviedb.org/3/';
+var IMAGE_BASE = 'https://image.tmdb.org/t/p/w500';
 var options = {
   method: 'GET',
   headers: {
@@ -14,6 +15,9 @@ var options = {
 function searchMovie(search) {
   var type,
       year,
+      language,
+      baseURL,
+      params,
       response,
       data,
       _args = arguments;
@@ -21,32 +25,45 @@ function searchMovie(search) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          type = _args.length > 1 && _args[1] !== undefined ? _args[1] : '';
+          type = _args.length > 1 && _args[1] !== undefined ? _args[1] : "movie";
           year = _args.length > 2 && _args[2] !== undefined ? _args[2] : '';
-          _context.next = 4;
-          return regeneratorRuntime.awrap(fetch("https://api.themoviedb.org/3/search/movie?query=".concat(search, "&include_adult=false&").concat(year, "&").concat(type, "&page=1"), options));
+          language = _args.length > 3 && _args[3] !== undefined ? _args[3] : 'en-US';
+          baseURL = "https://api.themoviedb.org/3/search/".concat(type);
+          params = new URLSearchParams({
+            query: encodeURIComponent(search),
+            include_adult: 'false',
+            page: '1',
+            language: language
+          });
 
-        case 4:
+          if (year) {
+            params.append('year', year);
+          }
+
+          _context.next = 8;
+          return regeneratorRuntime.awrap(fetch("".concat(baseURL, "?").concat(params.toString()), options));
+
+        case 8:
           response = _context.sent;
-          _context.next = 7;
+          _context.next = 11;
           return regeneratorRuntime.awrap(response.json());
 
-        case 7:
+        case 11:
           data = _context.sent;
           console.log(data);
 
-          if (!(data.Response === "False")) {
-            _context.next = 12;
+          if (!(!data.results || data.results.length === 0)) {
+            _context.next = 16;
             break;
           }
 
-          showToast("".concat(data.Error));
+          showToast('Нічого не знайдено');
           return _context.abrupt("return");
 
-        case 12:
-          showMoviesList(data.Search);
+        case 16:
+          showMoviesList(data.results);
 
-        case 13:
+        case 17:
         case "end":
           return _context.stop();
       }
@@ -57,7 +74,12 @@ function searchMovie(search) {
 function showMoviesList(movies) {
   var list = '';
   movies.forEach(function (movie) {
-    list += "\n        <div class=\"card\">\n            <img src=\"".concat(movie.poster_path, "\" class=\"card-img-top\" alt=\"").concat(movie.title, "\" onerror=\"this.src = 'assets/images/no-img.png'\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">").concat(movie.title, "</h5>\n                <p class=\"card-text\"><b>Year: </b>").concat(movie.release_date, "</p>\n                <button href=\"#\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#myModal\" data-imdb-id=").concat(movie.id, ">Detailed</button>\n            </div>\n            </div>\n        ");
+    var title = movie.title || movie.name || "No title";
+    var year = (movie.release_date || movie.first_air_date || "").slice(0, 4);
+    var poster = movie.poster_path;
+    var id = movie.id;
+    var type = movie.media_type;
+    list += "\n        <div class=\"card\">\n            <img src=\"".concat(IMAGE_BASE).concat(poster, "\" class=\"card-img-top\" alt=\"").concat(title, "\" onerror=\"this.src = 'assets/images/no-img.png'\">\n            <div class=\"card-body\">\n                <h5 class=\"card-title\">").concat(title, "</h5>\n                <p class=\"card-text\"><b>Year: </b>").concat(year, "</p>\n                <button href=\"#\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#myModal\" data-tmdb-id=").concat(id, " data-tmdb-type=").concat(type, ">Detailed</button>\n            </div>\n            </div>\n        ");
   });
   document.getElementById('movies-list').innerHTML = list;
 }
@@ -78,14 +100,14 @@ form.addEventListener('submit', function (e) {
 document.getElementById('year').setAttribute('max', new Date().getFullYear());
 /*Модальне вікно*/
 
-function getDetailed(imdbID) {
-  var response, data, movie;
+function getDetailed(tmdbID, type) {
+  var response, data, title, overview, date;
   return regeneratorRuntime.async(function getDetailed$(_context2) {
     while (1) {
       switch (_context2.prev = _context2.next) {
         case 0:
           _context2.next = 2;
-          return regeneratorRuntime.awrap(fetch("https://api.themoviedb.org/3/find/".concat(imdbID, "?external_source=imdb_id&api_key=").concat(API_KEY_TMDB)));
+          return regeneratorRuntime.awrap(fetch("".concat(baseURL).concat(type, "/").concat(tmdbID, "?api_key=").concat(API_KEY_TMDB)));
 
         case 2:
           response = _context2.sent;
@@ -95,13 +117,12 @@ function getDetailed(imdbID) {
         case 5:
           data = _context2.sent;
           console.log(data);
+          title = data.title || data.name || "Unknown title";
+          overview = data.overview || "Опис недоступний";
+          date = data.release_date || data.first_air_date || "Дата невідома";
+          updateModalContent(title, overview, date);
 
-          if (data.movie_results && data.movie_results.length > 0) {
-            movie = data.movie_results[0];
-            updateModalContent(movie.title, movie.overview, movie.release_date);
-          } else updateModalContent('Unknown title', 'Movie description not found!');
-
-        case 8:
+        case 11:
         case "end":
           return _context2.stop();
       }
@@ -112,10 +133,11 @@ function getDetailed(imdbID) {
 var modalElement = document.getElementById('myModal');
 modalElement.addEventListener('show.bs.modal', function (e) {
   var button = e.relatedTarget;
-  var imdbID = button.getAttribute('data-imdb-id');
+  var tmdbID = button.getAttribute('data-tmdb-id');
+  var type = button.getAttribute('data-tmdb-type');
 
-  if (imdbID) {
-    getDetailed(imdbID);
+  if (tmdbID) {
+    getDetailed(tmdbID, type);
   }
 });
 var myModal = new bootstrap.Modal(modalElement, {
