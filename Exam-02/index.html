@@ -7,50 +7,61 @@
   <title>Monticello</title>
   <script src="https://kit.fontawesome.com/1aec2fdc6f.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="assets/js/plagins/lightslider/css/lightslider.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css" />
   <link rel="stylesheet" href="assets/css/style.min.css">
 </head>
 
 <body>
   <div class="page-wrapper">
-    <div class="container">
-      <header class="transparent-header">
+
+    <header class="transparent-header">
+      <div class="container">
         <div class="header-inner">
           <div class="logo">
-            <img src="assets/images/logo.png" data-alt="assets/images/logo_dark.png" class="logo" alt="log-montichello">
+            <img src="assets/images/logo.png" data-alt="assets/images/logo_dark.png" class="logo"
+              alt="logo-montichello">
           </div>
           <nav>
             <ul class="nav-menu">
-              <li><a href="#">
-                  <div class="circle active-header"></div>projects
+              <li><a href="#about">
+                  <div class="circle active-header"></div>about us
+                </a>
+              </li>
+              <li><a href="#projects">
+                  <div class="circle"></div>projects
                 </a></li>
-              <li><a href="#">
+              <li><a href="#news">
                   <div class="circle"></div>news
                 </a></li>
-              <li><a href="#">
+              <li><a href="#gallery">
                   <div class="circle"></div>gallery
                 </a></li>
-              <li><a href="#">
+              <li><a href="#contact">
                   <div class="circle"></div>contact
                 </a></li>
             </ul>
           </nav>
           <div class="social-list">
-            <a href="https://facebook.com" target="_blank" title="Facebook" rel="nofolow noreferrer" class="color-facebook">
-              <div class="circle-wrap"><i class="fa-brands fa-facebook-f social-item"></i></div>
+            <a href="https://facebook.com" target="_blank" title="Facebook" rel="nofolow noreferrer"
+              class="color-facebook circle-wrap">
+              <i class="fa-brands fa-facebook-f social-item"></i>
             </a>
-            <a href="https://twitter.com" target="_blank" title="Tweeter" rel="nofolow noreferrer" class="color-twitter">
-              <div class="circle-wrap"><i class="fa-brands fa-twitter social-item"></i></div>
+            <a href="https://twitter.com" target="_blank" title="Tweeter" rel="nofolow noreferrer"
+              class="color-twitter circle-wrap">
+              <i class="fa-brands fa-twitter social-item"></i>
             </a>
-            <a href="https://instagram.com" target="_blank" title="Instagram" rel="nofolow noreferrer" class="color-instagram">
-              <div class="circle-wrap"><i class="fa-brands fa-instagram social-item"></i></div>
+            <a href="https://instagram.com" target="_blank" title="Instagram" rel="nofolow noreferrer"
+              class="color-instagram circle-wrap">
+              <i class="fa-brands fa-instagram social-item"></i>
             </a>
           </div>
         </div>
-      </header>
-    </div>
+      </div>
+    </header>
+
     <main>
-      <div class="container">
-        <div class="hero-sections">
+      <div id="about" class="hero-sections">
+        <div class="slider-hero-wrapper">
           <ul id="slider-hero">
             <li class="slide-1">
               <div class="overlay">
@@ -67,7 +78,7 @@
             <li class="slide-3">
               <div class="overlay">
                 <div class="slide-title">bright & timeless</div>
-                <p>we shape beauty into every detail</p>
+                <p>we shape beauty into every ditail</p>
               </div>
             </li>
             <li class="slide-4">
@@ -83,36 +94,221 @@
               </div>
             </li>
           </ul>
-          <div class="circle-wrap arrow">
-            <i class="fa-solid fa-angle-down angle-down"></i>
-          </div>
         </div>
-        <hr class="divider">
-        <h2>what we do</h2>
-        <div class="project-section">
+        <a href="#projects" class="circle-wrap scroll-link color-scroll-link">
+          <i class="fa-solid fa-angle-down angle-down"></i>
+        </a>
+      </div>
+      <section id="projects" class="project-section">
+        <div class="container">
+          <div class="divider-wrapper">
+            <hr class="divider">
+          </div>
+          <h2 class="header-section">what we do</h2>
           <div class="project-content">
             <div class="project-img">
-              <img src="assets/images/joel_filipe.jpg">
+              <div class="shadow-box">
+                <img src="assets/images/joel_filipe.jpg">
+              </div>
             </div>
             <div class="project-text">
               <h3>one world</h3>
               <h2>trade center</h2>
               <p>Increasing prosperity in our lives can be accomplished by having the right frame of mind. The truth is,
                 our thoughts are very powerful.</p>
-                <button>more details</button>
+              <button class="btn">
+                <svg width="190px" height="50px" viewBox="0 0 190 50" class="border">
+                  <polyline points="189,1 189,49 1,49 1,1 189,1" class="bg-line" />
+                  <polyline points="189,1 189,49 1,49 1,1 189,1" class="hl-line" />
+                </svg>
+                <span>more ditails</span>
+              </button>
+
+              <p class="target">
                 <i class="fa-solid fa-location-dot"></i>
-                <p>New York City, United States - 1776 feet </p>
+                New York City, United States - 1776 feet
+              </p>
             </div>
           </div>
-          <div class="project-content revers"></div>
+          <div class="project-content revers">
+            <div class="project-img">
+              <div class="shadow-box">
+                <img src="assets/images/building.jpg">
+              </div>
+            </div>
+            <div class="project-text">
+              <h3>international</h3>
+              <h2>comerce center</h2>
+              <p>Successful businesses have many things in common, today we’ll look at the big ‘R’ of recognition and
+                how a digital advertising network may help.</p>
+              <button class="btn">
+                <svg width="190px" height="50px" viewBox="0 0 190 50" class="border">
+                  <polyline points="189,1 189,49 1,49 1,1 189,1" class="bg-line" />
+                  <polyline points="189,1 189,49 1,49 1,1 189,1" class="hl-line" />
+                </svg>
+                <span>more ditails</span>
+              </button>
+              <p class="target">
+                <i class="fa-solid fa-location-dot"></i>
+                Hong Kong - 1588 feet
+              </p>
+            </div>
+          </div>
         </div>
-
-      </div> <!-- container -->
+      </section>
+      <section class="news" id="news">
+        <div class="container">
+          <div class="divider-wrapper">
+            <hr class="divider">
+          </div>
+          <h2 class="header-section">latest news</h2>
+          <div class="slider-news-wrapper">
+            <ul id="slider-news">
+              <li>
+                <div class="img-wrapper-news">
+                  <img src="assets/images/news/lauren-mancke.jpg" alt="lauren-mancke building">
+                </div>
+                <div class="content-news">
+                  <h4>SEE THE UNMATCHED BEAUTY OF THE GREAT.</h4>
+                  <p class="summary">Free directories: directories are perfect for customers that are searching for...
+                  </p>
+                  <div class="news-content-footer">
+                    <div class="avatar-wrapper">
+                      <img src="assets/images/avatar/avatar_alja.jpg">
+                    </div>
+                    <div class="author-date">
+                      <p class="ful-name">
+                        ALJA BRUN
+                      </p>
+                      <time datetime="2020-01-20">20 Jan 2020
+                      </time>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrapper-news">
+                  <img src="assets/images/news/lauren-mancke.jpg" alt="lauren-mancke building">
+                </div>
+                <div class="content-news">
+                  <h4>SEE THE UNMATCHED BEAUTY OF THE GREAT.</h4>
+                  <p class="summary">Free directories: directories are perfect for customers that are searching for...
+                  </p>
+                  <div class="news-content-footer">
+                    <div class="avatar-wrapper">
+                      <img src="assets/images/avatar/avatar_alja.jpg">
+                    </div>
+                    <div class="author-date">
+                      <p class="ful-name">
+                        ALJA BRUN
+                      </p>
+                      <time datetime="2020-01-20">20 Jan 2020
+                      </time>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="img-wrapper-news">
+                  <img src="assets/images/news/lauren-mancke.jpg" alt="lauren-mancke building">
+                </div>
+                <div class="content-news">
+                  <h4>SEE THE UNMATCHED BEAUTY OF THE GREAT.</h4>
+                  <p class="summary">Free directories: directories are perfect for customers that are searching for...
+                  </p>
+                  <div class="news-content-footer">
+                    <div class="avatar-wrapper">
+                      <img src="assets/images/avatar/avatar_alja.jpg">
+                    </div>
+                    <div class="author-date">
+                      <p class="ful-name">
+                        ALJA BRUN
+                      </p>
+                      <time datetime="2020-01-20">20 Jan 2020
+                      </time>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <button id="slider-prev" class="slider-btn">
+              <i class="fa-solid fa-angle-left"></i>
+            </button>
+            <button id="slider-next" class="slider-btn revers">
+              <i class="fa-solid fa-angle-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="gallery" id="gallery">
+        <div class="container">
+          <div class="divider-wrapper">
+            <hr class="divider">
+          </div>
+          <h2 class="header-section">gallery</h2>
+          <div class="gallery center-wrapper">
+            <div id="lightgallery">
+              <a class="sec1" href="assets/images/gallery/original/scott_webb_original.jpg" data-lg-size="3841-2744">
+                <img alt="scott_webb" src="assets/images/gallery/scott_webb.jpg" />
+              </a>
+              <a class="sec2" href="assets/images/gallery/original/skyscraper_original.jpg" data-lg-size="285-214">
+                <img alt="skyscraper" src="assets/images/gallery/skyscraper.jpg" />
+              </a>
+              <a class="sec3" href="assets/images/gallery/original/echo_grid_original.jpg" data-lg-size="4096-2730">
+                <img alt="skyscraper" src="assets/images/gallery/echo_grid.jpg" />
+              </a>
+              <a class="sec4" href="assets/images/gallery/original/fuse_brussels_original.jpg" data-lg-size="3264-2176">
+                <img alt="skyscraper" src="assets/images/gallery/fuse_brussels.jpg" />
+              </a>
+              <a class="sec5" href="assets/images/gallery/original/tu_tram_original.jpg" data-lg-size="4096-2723">
+                <img alt="tu_tram" src="assets/images/gallery/tu_tram.jpg" />
+              </a>
+            </div>            
+          </div>
+          <div class="center-wrapper">
+            <button class="btn btn-gallery">
+              <svg width="190px" height="50px" viewBox="0 0 190 50" class="border">
+                <polyline points="189,1 189,49 1,49 1,1 189,1" class="bg-line" />
+                <polyline points="189,1 189,49 1,49 1,1 189,1" class="hl-line" />
+              </svg>
+              <span>more ditails</span>
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer></footer>
+    <footer>
+      <div class="container">
+        <div class="footer-wrap">
+          <div class="logo-section">
+            <div class="logo">
+              <img src="assets/images/logo.png" alt="logo-montichello">
+            </div>
+            <p class="copyrights">Copyrights © 2020 Montichello</p>
+          </div>
+          <div class="social-list">
+            <a href="https://facebook.com" target="_blank" title="Facebook" rel="nofolow noreferrer"
+              class="color-facebook circle-wrap">
+              <i class="fa-brands fa-facebook-f social-item"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" title="Tweeter" rel="nofolow noreferrer"
+              class="color-twitter circle-wrap">
+              <i class="fa-brands fa-twitter social-item"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" title="Instagram" rel="nofolow noreferrer"
+              class="color-instagram circle-wrap">
+              <i class="fa-brands fa-instagram social-item"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
   <script src="assets/js/plagins/jquery-3.7.1.min.js"></script>
   <script src="assets/js/plagins/lightslider/js/lightslider.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 
