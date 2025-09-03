@@ -44,13 +44,6 @@ $(document).ready(function () {
     speed: 500
   });
   /*--MAP--*/
-  //   const map = L.map('map').setView([40.680713598195986, -73.90616447480521], 13);
-  // L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}.png', {
-  //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
-  // }).addTo(map);
-  // L.marker([40.680713598195986, -73.90616447480521]).addTo(map)
-  //     .bindPopup('')
-  // .openPopup();
 
   var mapLink = document.getElementById("load-map-link");
 
@@ -72,6 +65,13 @@ $(document).ready(function () {
     L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
     }).addTo(map);
-    L.marker([40.680713598195986, -73.90616447480521]).addTo(map).bindPopup('Hello!');
+    var customIcon = L.icon({
+      iconUrl: 'assets/images/pin.svg',
+      iconSize: [106, 106],
+      iconAncor: [53, 106]
+    });
+    L.marker([40.680713598195986, -73.90616447480521], {
+      icon: customIcon
+    }).addTo(map).bindPopup('Get in Touch!');
   };
 });

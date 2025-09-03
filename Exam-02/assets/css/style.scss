@@ -615,18 +615,24 @@ h2 {
 }
 
 .form-wrap {
+  display: none;
   position: absolute;
-  
   left: 50%;
   top: 83%;
   transform: translate(-50%, -50%);
   z-index: 3;
   padding: 60px;
-  background: url(../images/bg_form.png) rgb(255, 255, 255) 50% bottom / contain  no-repeat;
-  
-  .flex-wrap{
+  height: auto;
+  bottom: auto;
+  background: url(../images/bg_form.png) rgb(255, 255, 255) 50% bottom / contain no-repeat;
+
+  .flex-wrap {
     display: flex;
-    gap:54px;
+    gap: 54px;
+  }
+
+  .contact {
+    width: 408px;
   }
 
   .divider-wrapper {
@@ -637,7 +643,72 @@ h2 {
     padding-bottom: 42px;
   }
 
+  li:not(last-child) {
+    padding-bottom: 30px;
+  }
+
+  li>i,
+  li>a,
+  li>span {
+    color: #7E5AFF;
+    font-size: 18px;
+    line-height: 28px;
+    font-style: normal;
+  }
+
+  li>a,
+  li>span {
+    color: #000;
+  }
 }
+
+/*-FLOATING LABEL-*/
+
+fieldset {
+  border: none;
+}
+
+.floating-label {
+  position: relative;
+  margin-bottom: 20px;
+
+
+  input {
+    width: 100%;
+    padding: 16px 20px 8px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #999;
+    font-size: 18px;
+    line-height: 27px;
+    background: none;
+    outline: none;    
+
+    &:focus {
+      border-color: $text-color;
+    }
+
+    &:focus+label,
+    &:not(:placeholder-shown)+label {
+      top: 4px;
+      left: 8px;
+      font-size: 12px;
+      color: $text-color;      
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 16px;
+    left: 12px;
+    font-size: 16px;
+    color: #999;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+  }
+}
+
 
 /*--FOOTER--*/
 
@@ -647,7 +718,7 @@ footer {
 
 
   .footer-wrap {
-    width: 770px ;
+    width: 770px;
     margin: 0 auto;
     min-height: 549px;
     display: flex;
