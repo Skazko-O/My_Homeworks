@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Monticello</title>
   <script src="https://kit.fontawesome.com/1aec2fdc6f.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="assets/js/plagins/lightslider/css/lightslider.min.css">
+  <link rel="stylesheet" href="assets/js/plugins/lightslider/css/lightslider.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css" />
   <link rel="stylesheet" href="assets/css/style.min.css">
 </head>
@@ -240,6 +240,7 @@
           </div>
         </div>
       </section>
+      <!--GALLERY-->
       <section class="gallery" id="gallery">
         <div class="container">
           <div class="divider-wrapper">
@@ -263,7 +264,7 @@
               <a class="sec5" href="assets/images/gallery/original/tu_tram_original.jpg" data-lg-size="4096-2723">
                 <img alt="tu_tram" src="assets/images/gallery/tu_tram.jpg" />
               </a>
-            </div>            
+            </div>
           </div>
           <div class="center-wrapper">
             <button class="btn btn-gallery">
@@ -276,8 +277,75 @@
           </div>
         </div>
       </section>
+      <!--MAP-->
+      <div class="container">
+        <div class="map-wrap">
+          <div id="map">
+            <a href="#" id="load-map-link">
+              <img class="lazy" src="assets/images/map.png" alt="">
+              <p>Click for interactive map</p>
+            </a>
+            <div class="form-wrap">
+              <div class="divider-wrapper">
+                <hr class="divider">
+              </div>
+              <h2 class="header-section">get in touch</h2>
+              <div class="flex-wrap">
+                <div class="contact">
+                  <address>
+                    <ul class="contact-list">
+                      <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        91 Nolan Extensions Suite 670
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="tel:+0013568682454">
+                          +001 356-868-2454</a>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-inbox"></i>
+                        <a href="mailto:montichello@service.com">
+                          montichello@service.com</a>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-clock"></i>
+                        <span class="working-hours">From
+                          <time datetime="07:05">07:05AM</time> to <time datetime="19:30">19:30PM</time>
+                        </span>
+                      </li>
+                    </ul>
+                  </address>
+                </div>
+                <div class="form-subscr">
+                  <form action="https://httpbin.org/post" method="post">
+                    <fieldset>
+                      <div class="floating-label">
+                        <input type="text" id="ful_name" name="ful_name" required>
+                        <label for="ful_name">name</label>
+                      </div>
+                      <div class="floating-label">
+                        <input type="text" id="email" name="email" required>
+                        <label for="email">email</label>
+                      </div>
+                    </fieldset>
+                    <button type="submit" class="btn">
+                      <svg width="190px" height="50px" viewBox="0 0 190 50" class="border">
+                        <polyline points="189,1 189,49 1,49 1,1 189,1" class="bg-line" />
+                        <polyline points="189,1 189,49 1,49 1,1 189,1" class="hl-line" />
+                      </svg>
+                      <span>submit</span>
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </main>
-    <footer>
+    <footer id="contact">
       <div class="container">
         <div class="footer-wrap">
           <div class="logo-section">
@@ -304,8 +372,8 @@
       </div>
     </footer>
   </div>
-  <script src="assets/js/plagins/jquery-3.7.1.min.js"></script>
-  <script src="assets/js/plagins/lightslider/js/lightslider.min.js"></script>
+  <script src="assets/js/plugins/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/plugins/lightslider/js/lightslider.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>

@@ -43,4 +43,35 @@ $(document).ready(function () {
     licenseKey: '',
     speed: 500
   });
+  /*--MAP--*/
+  //   const map = L.map('map').setView([40.680713598195986, -73.90616447480521], 13);
+  // L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}.png', {
+  //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
+  // }).addTo(map);
+  // L.marker([40.680713598195986, -73.90616447480521]).addTo(map)
+  //     .bindPopup('')
+  // .openPopup();
+
+  var mapLink = document.getElementById("load-map-link");
+
+  mapLink.onclick = function (e) {
+    e.preventDefault();
+    var link = document.createElement('link');
+    link.setAttribute('rel', 'stylesheet');
+    link.setAttribute('href', 'assets/js/plugins/leaflet/leaflet.css');
+    document.head.append(link);
+    var script = document.createElement('script');
+    script.src = 'assets/js/plugins/leaflet/leaflet.js';
+    script.onload = initMap;
+    document.body.append(script);
+  };
+
+  var initMap = function initMap() {
+    mapLink.remove();
+    var map = L.map('map').setView([40.680713598195986, -73.90616447480521], 13);
+    L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
+    }).addTo(map);
+    L.marker([40.680713598195986, -73.90616447480521]).addTo(map).bindPopup('Hello!');
+  };
 });

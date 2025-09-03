@@ -3,7 +3,7 @@ $(document).ready(() => {
     /*--SCROLL--*/
 
     let headerScrolled = false
-    
+
     $(window).scroll(function () {
         const $logo = $('img.logo');
         if ($(window).scrollTop() > 100 && !headerScrolled) {
@@ -11,7 +11,7 @@ $(document).ready(() => {
             headerScrolled = true
             $('.header-inner').addClass('scrolled')
         } else if ($(window).scrollTop() <= 100 && headerScrolled) {
-            $logo.attr('src','assets/images/logo.png')
+            $logo.attr('src', 'assets/images/logo.png')
             headerScrolled = false
             $('.header-inner').removeClass('scrolled');
         }
@@ -28,7 +28,7 @@ $(document).ready(() => {
 
     const sliderProduct = $("#slider-news").lightSlider({
         item: 3,
-        loop:true,        
+        loop: true,
         slideMargin: 30,
         controls: false
     })
@@ -40,10 +40,49 @@ $(document).ready(() => {
     /*--LIGHTGALLERY*/
 
     lightGallery(document.getElementById('lightgallery'), {
-    plugins: [lgZoom, lgThumbnail],
-    licenseKey: '',
-    speed: 500
-  });
+        plugins: [lgZoom, lgThumbnail],
+        licenseKey: '',
+        speed: 500
+    });
+
+    /*--MAP--*/
+
+    //   const map = L.map('map').setView([40.680713598195986, -73.90616447480521], 13);
+
+    // L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}.png', {
+    //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
+    // }).addTo(map);
+
+    // L.marker([40.680713598195986, -73.90616447480521]).addTo(map)
+    //     .bindPopup('')
+    // .openPopup();
+
+    const mapLink = document.getElementById("load-map-link")
+
+    mapLink.onclick = function (e) {
+        e.preventDefault()
+        const link = document.createElement('link')
+        link.setAttribute('rel', 'stylesheet')
+        link.setAttribute('href', 'assets/js/plugins/leaflet/leaflet.css')
+        document.head.append(link)
+
+        const script = document.createElement('script')
+        script.src = 'assets/js/plugins/leaflet/leaflet.js'
+        script.onload = initMap
+        document.body.append(script)
+    }
+        const initMap = () => {
+            mapLink.remove()
+        const map = L.map('map').setView([40.680713598195986, -73.90616447480521], 13);
+
+        L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>'
+        }).addTo(map);
+
+        L.marker([40.680713598195986, -73.90616447480521]).addTo(map)
+        .bindPopup('Hello!')
+    }
+
 });
 
-  
+
