@@ -18,9 +18,29 @@ $(document).ready(() => {
     })
 
     const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    console.log(navLinks);
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
 
-    /*--LIGHTSLIDER*/
+            if (window.scrollY >= sectionTop - sectionHeight / 3) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            const circle = link.querySelector('.circle');
+            if (circle) circle.classList.remove('active-header');
+            if (link.getAttribute('href') === `#${current}`) {
+                if (circle) circle.classList.add('active-header');
+            }
+        })
+    })
+
+    /*--LIGHTSLIDER-HERO--*/
 
     $("#slider-hero").lightSlider({
         item: 1,
@@ -30,7 +50,7 @@ $(document).ready(() => {
     })
 
 
-    /*--NEWS--*/
+    /*--LIGHTSLIDER-NEWS--*/
     fetch('assets/js/data/news.json') //викликає асинхронний запит до файлу. Повертає проміс
         .then(response => response.json())  //перетворення відповіді у json масив
         .then(data => {                     //data - масив
@@ -74,7 +94,11 @@ $(document).ready(() => {
                 item: 3,
                 loop: true,
                 slideMargin: 40,
-                controls: false
+                controls: false,
+                auto: true,
+                pause: 4000,
+                speed: 600,
+                pauseOnHover: true
             })
             $("#slider-prev").click(() => sliderProduct.goToPrevSlide())
             $("#slider-next").click(() => sliderProduct.goToNextSlide())
@@ -82,7 +106,7 @@ $(document).ready(() => {
         })
         .catch(error => console.error('Помилка завантаження JSON:', error));
 
-        /*--FORMAT DATE--*/
+    /*--FORMAT DATE--*/
 
     function formatDate(dateStr) {
         const [day, month, year] = dateStr.split('.');
@@ -106,8 +130,9 @@ $(document).ready(() => {
                 const img = document.createElement('img');
                 img.src = item.thumb;
                 img.alt = item.alt;
-
+                const overlay = document.createElement('div')
                 const zoomIcon = document.createElement('div');
+                overlay.className = 'overlay'
                 zoomIcon.className = 'zoom-icon';
                 zoomIcon.innerHTML = `
     <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70" fill="none">
@@ -117,6 +142,7 @@ $(document).ready(() => {
     </svg>
   `;
                 a.appendChild(img);
+                a.appendChild(overlay);
                 a.appendChild(zoomIcon);
                 gallery.appendChild(a);
             });

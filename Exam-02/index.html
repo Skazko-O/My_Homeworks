@@ -6,6 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Monticello</title>
   <script src="https://kit.fontawesome.com/1aec2fdc6f.js" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Montichello" />
+  <link rel="manifest" href="assets/favicon/site.webmanifest" />
   <link rel="stylesheet" href="assets/js/plugins/lightslider/css/lightslider.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css" />
   <link rel="stylesheet" href="assets/css/style.min.css">
@@ -60,45 +66,48 @@
     </header>
 
     <main>
-      <div id="about" class="hero-sections">
-        <div class="slider-hero-wrapper">
-          <ul id="slider-hero">
-            <li class="slide-1">
-              <div class="overlay">
-                <div class="slide-title">simple & modern</div>
-                <p>we make the world beatiful everyday</p>
-              </div>
-            </li>
-            <li class="slide-2">
-              <div class="overlay">
-                <div class="slide-title">clean & bold</div>
-                <p>design that speaks without words</p>
-              </div>
-            </li>
-            <li class="slide-3">
-              <div class="overlay">
-                <div class="slide-title">bright & timeless</div>
-                <p>we shape beauty into every ditail</p>
-              </div>
-            </li>
-            <li class="slide-4">
-              <div class="overlay">
-                <div class="slide-title">pure & elegant</div>
-                <p>creating harmony through simplicity</p>
-              </div>
-            </li>
-            <li class="slide-5">
-              <div class="overlay">
-                <div class="slide-title">fresh & inspired</div>
-                <p>we turn ideas into visual joy</p>
-              </div>
-            </li>
-          </ul>
+      <section id="about">
+        <div class="hero-sections">
+          <div class="slider-hero-wrapper">
+            <ul id="slider-hero">
+              <li class="slide-1">
+                <div class="overlay">
+                  <div class="slide-title">simple & modern
+                  </div>
+                  <p>we make the world beatiful everyday</p>
+                </div>
+              </li>
+              <li class="slide-2">
+                <div class="overlay">
+                  <div class="slide-title">clean & bold</div>
+                  <p>design that speaks without words</p>
+                </div>
+              </li>
+              <li class="slide-3">
+                <div class="overlay">
+                  <div class="slide-title">bright & timeless</div>
+                  <p>we shape beauty into every ditail</p>
+                </div>
+              </li>
+              <li class="slide-4">
+                <div class="overlay">
+                  <div class="slide-title">pure & elegant</div>
+                  <p>creating harmony through simplicity</p>
+                </div>
+              </li>
+              <li class="slide-5">
+                <div class="overlay">
+                  <div class="slide-title">fresh & inspired</div>
+                  <p>we turn ideas into visual joy</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <a href="#projects" class="circle-wrap scroll-link color-scroll-link">
+            <i class="fa-solid fa-angle-down angle-down"></i>
+          </a>
         </div>
-        <a href="#projects" class="circle-wrap scroll-link color-scroll-link">
-          <i class="fa-solid fa-angle-down angle-down"></i>
-        </a>
-      </div>
+      </section>
       <section id="projects" class="project-section">
         <div class="container">
           <div class="divider-wrapper">
@@ -164,7 +173,7 @@
           </div>
           <h2 class="header-section">latest news</h2>
           <div class="slider-news-wrapper">
-            <ul id="slider-news" class="slider-news">             
+            <ul id="slider-news" class="slider-news">
             </ul>
             <button id="slider-prev" class="slider-btn">
               <i class="fa-solid fa-angle-left"></i>
@@ -197,74 +206,74 @@
           </div>
         </div>
       </section>
-      <!--MAP-->      
+      <!--MAP-->
+      <section id="contact">
         <div class="map-wrap">
           <div id="map">
             <a href="#" id="load-map-link">
               <img class="lazy" src="assets/images/map.png" alt="">
               <p>Click for interactive map</p>
             </a>
-            <div class="form-wrap">
-              <div class="divider-wrapper">
-                <hr class="divider">
-              </div>
-              <h2 class="header-section">get in touch</h2>
-              <div class="flex-wrap">
-                <div class="contact">
-                  <address>
-                    <ul class="contact-list">
-                      <li>
-                        <i class="fa-solid fa-location-dot"></i>                     
-                        <span>91 Nolan Extensions Suite 670</span>
-                      </li>
-                      <li>
-                        <i class="fa-solid fa-phone"></i>
-                        <a href="tel:+0013568682454">
-                          +001 356-868-2454</a>
-                      </li>
-                      <li>
-                        <i class="fa-solid fa-inbox"></i>
-                        <a href="mailto:montichello@service.com">
-                          montichello@service.com</a>
-                      </li>
-                      <li>
-                        <i class="fa-solid fa-clock"></i>
-                        <span class="working-hours">From
-                          <time datetime="07:05">07:05AM</time> to <time datetime="19:30">19:30PM</time>
-                        </span>
-                      </li>
-                    </ul>
-                  </address>
-                </div>
-                <div class="form-subscr">
-                  <form action="https://httpbin.org/post" method="post">
-                    <fieldset>
-                      <div class="floating-label">
-                        <input type="text" id="ful_name" name="ful_name" placeholder="" required>
-                        <label for="ful_name">name</label>
-                      </div>
-                      <div class="floating-label">
-                        <input type="text" id="email" name="email" placeholder="" required>
-                        <label for="email">email</label>
-                      </div>
-                    </fieldset>
-                    <button type="submit" class="btn">
-                      <svg width="190px" height="50px" viewBox="0 0 190 50" class="border">
-                        <polyline points="189,1 189,49 1,49 1,1 189,1" class="bg-line" />
-                        <polyline points="189,1 189,49 1,49 1,1 189,1" class="hl-line" />
-                      </svg>
-                      <span>submit</span>
-                    </button>
-                  </form>
-                </div>
-              </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="form-wrap">
+        <div class="top">
+          <div class="divider-wrapper">
+            <hr class="divider">
+          </div>
+          <h2 class="header-section">get in touch</h2>
+          <div class="flex-wrap">
+            <address>
+              <ul class="contact-list">
+                <li>
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>91 Nolan Extensions Suite 670</span>
+                </li>
+                <li>
+                  <i class="fa-solid fa-phone"></i>
+                  <a href="tel:+0013568682454">
+                    +001 356-868-2454</a>
+                </li>
+                <li>
+                  <i class="fa-solid fa-inbox"></i>
+                  <a href="mailto:montichello@service.com">
+                    montichello@service.com</a>
+                </li>
+                <li>
+                  <i class="fa-solid fa-clock"></i>
+                  <span class="working-hours">From
+                    <time datetime="07:05">07:05AM</time> to <time datetime="19:30">19:30PM</time>
+                  </span>
+                </li>
+              </ul>
+            </address>
+            <div class="form-subscr">
+              <form action="https://httpbin.org/post" method="post">
+                <fieldset>
+                  <div class="floating-label">
+                    <input type="text" id="ful_name" name="ful_name" placeholder="" required>
+                    <label for="ful_name">name</label>
+                  </div>
+                  <div class="floating-label">
+                    <input type="text" id="email" name="email" placeholder="" required>
+                    <label for="email">message</label>
+                  </div>
+                </fieldset>
+                <button type="submit" class="btn">
+                  <svg width="140px" height="50px" viewBox="0 0 140 50" class="border">
+                    <polyline points="139,1 139,49 1,49 1,1 139,1" class="bg-line" />
+                    <polyline points="139,1 139,49 1,49 1,1 139,1" class="hl-line" />
+                  </svg>
+                  <span>send</span>
+                </button>
+              </form>
             </div>
           </div>
         </div>
-    </main>
-    <footer id="contact">
-      <div class="container">
-        <div class="footer-wrap">
+        <div class="bottom">
           <div class="logo-section">
             <div class="logo">
               <img src="assets/images/logo.png" alt="logo-montichello">
