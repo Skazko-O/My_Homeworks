@@ -1,0 +1,27 @@
+[
+  {
+    "src": "assets/images/gallery/original/scott_webb_original.jpg",
+    "thumb": "assets/images/gallery/scott_webb.jpg",
+    "alt": "scott_webb"    
+  },
+  {
+    "src": "assets/images/gallery/original/skyscraper_original.jpg",
+    "thumb": "assets/images/gallery/skyscraper.jpg",
+    "alt": "skyscraper"    
+  },
+  {
+    "src": "assets/images/gallery/original/fuse_brussels_original.jpg",
+    "thumb": "assets/images/gallery/fuse_brussels.jpg",
+    "alt": "fuse_brussels"    
+  },
+  {
+    "src": "assets/images/gallery/original/echo_grid_original.jpg",
+    "thumb": "assets/images/gallery/echo_grid.jpg",
+    "alt": "echo_grid"    
+  },
+  {
+    "src": "assets/images/gallery/original/tu_tram_original.jpg",
+    "thumb": "assets/images/gallery/tu_tram.jpg",
+    "alt": "tu_tram"    
+  }
+]

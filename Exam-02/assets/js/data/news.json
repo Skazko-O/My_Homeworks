@@ -1,0 +1,59 @@
+[
+  {
+    "id": 1,
+    "title": "see the unmatched beauty of the great.",
+    "date": "20.07.2020",
+    "author": "Alja Brun",
+    "avatar": "assets/images/avatar/avatar_alja.jpg",
+    "image": "assets/images/news/lauren-mancke.jpg",
+    "alt": "lauren-mancke", 
+    "summary": "Free directories: directories are perfect for customers that are searching for",
+    "content": ""    
+  },
+  {
+    "id": 2,
+    "title": "effective advertising pointers.",
+    "date": "30.11.2019",
+    "author": "Dominic Freeman",
+    "avatar": "assets/images/avatar/avatar_dominic.jpg",
+    "image": "assets/images/news/matthew-hamilton.jpg",
+    "alt": "matthew-hamilton",
+    "summary": "Having a home based business is a wonderful asset to your life",
+    "content": ""
+    
+  },
+  {
+    "id": 3,
+    "title": "hypnotize yourself into the ghost.",
+    "date": "13.12.2019",
+    "author": "Alice Ward",
+    "avatar": "assets/images/avatar/avatar_alice.jpg",
+    "image": "assets/images/news/joel-filipe.jpg",
+    "alt": "joel-filipe",
+    "summary": "There are many things that are important to catalog design",
+    "content": ""
+  },
+  {
+    "id": 4,
+    "title": "Witness the Majesty That Defies Time.",
+    "date": "21.09.2021",
+    "author": "Jenis Kolman",
+    "avatar": "assets/images/avatar/avatar_jenis.png",
+    "image": "assets/images/news/kaisara_bld.jpg",
+    "alt": "Jenis Kolman", 
+    "summary": "Online directories make it easy for users to discover local businesses that match their exact needs",
+    "content": ""    
+  },
+  {
+    "id": 5,
+    "title": "Where Nature and Wonder Collide.",
+    "date": "31.12.2024",
+    "author": "Katy Olson",
+    "avatar": "assets/images/avatar/avatar_katy.png",
+    "image": "assets/images/news/ny.jpg",
+    "alt": "Katy Olson",
+    "summary": "Free listing platforms connect customers with businesses they can rely on — fast, simple, and cost-free",
+    "content": ""
+    
+  }
+]
