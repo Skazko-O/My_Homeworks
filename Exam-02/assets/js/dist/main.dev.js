@@ -82,7 +82,21 @@ $(document).ready(function () {
       auto: true,
       pause: 4000,
       speed: 600,
-      pauseOnHover: true
+      pauseOnHover: true,
+      responsive: [{
+        breakpoint: 1400,
+        settings: {
+          item: 2,
+          slideMove: 1,
+          slideMargin: 20
+        }
+      }, {
+        breakpoint: 960,
+        settings: {
+          item: 1,
+          slideMove: 1
+        }
+      }]
     });
     $("#slider-prev").click(function () {
       return sliderProduct.goToPrevSlide();
@@ -134,10 +148,13 @@ $(document).ready(function () {
       a.appendChild(zoomIcon);
       gallery.appendChild(a);
     });
-    lightGallery(gallery, {
+    var lgInstance = lightGallery(gallery, {
       plugins: [lgZoom, lgThumbnail],
       licenseKey: '',
       speed: 500
+    });
+    document.getElementById('open-gallery').addEventListener('click', function () {
+      lgInstance.openGallery(0);
     });
   });
   /*--MAP--*/

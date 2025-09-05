@@ -98,7 +98,24 @@ $(document).ready(() => {
                 auto: true,
                 pause: 4000,
                 speed: 600,
-                pauseOnHover: true
+                pauseOnHover: true,
+                responsive : [
+            {
+                breakpoint:1400,
+                settings: {
+                    item:2,
+                    slideMove:1,
+                    slideMargin:20,
+                  }
+            },
+            {
+                breakpoint:960,
+                settings: {
+                    item:1,
+                    slideMove:1
+                  }
+            }
+        ]
             })
             $("#slider-prev").click(() => sliderProduct.goToPrevSlide())
             $("#slider-next").click(() => sliderProduct.goToNextSlide())
@@ -147,12 +164,18 @@ $(document).ready(() => {
                 gallery.appendChild(a);
             });
 
-            lightGallery(gallery, {
+            const lgInstance = lightGallery(gallery, {
                 plugins: [lgZoom, lgThumbnail],
                 licenseKey: '',
                 speed: 500
             });
+
+            document.getElementById('open-gallery').addEventListener('click', () => {
+                lgInstance.openGallery(0);
+            });
         });
+
+
 
     /*--MAP--*/
 
@@ -186,8 +209,7 @@ $(document).ready(() => {
 
         L.marker([40.680713598195986, -73.90616447480521], { icon: customIcon }).addTo(map)
             .bindPopup('Get in Touch!')
-    }
-
+    }    
 });
 
 

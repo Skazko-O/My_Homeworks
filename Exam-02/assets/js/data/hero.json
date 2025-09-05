@@ -1,0 +1,32 @@
+[
+  {
+    "title": "simple & modern",
+    "text": "we make the world beautiful everyday",
+    "image": "assets/images/slider/background_1.jpg",
+    "class": "slide-1"
+  },
+  {
+    "title": "clean & bold",
+    "text": "design that speaks without words",
+    "image": "assets/images/slider/background_2.jpg",
+    "class": "slide-2"
+  },
+  {
+    "title": "bright & timeless",
+    "text": "we shape beauty into every ditail",
+    "image": "assets/images/slider/background_3.jpg",
+    "class": "slide-3"
+  },
+  {
+    "title": "pure & elegant",
+    "text": "creating harmony through simplicity",
+    "image": "assets/images/slider/background_4.jpg",
+    "class": "slide-4"
+  },
+  {
+    "title": "fresh & inspired",
+    "text": "we turn ideas into visual joy",
+    "image": "assets/images/slider/background_5.jpg",
+    "class": "slide-5"
+  }
+]
