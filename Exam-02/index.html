@@ -13,18 +13,86 @@
   <meta name="apple-mobile-web-app-title" content="Montichello" />
   <link rel="manifest" href="assets/favicon/site.webmanifest" />
   <link rel="stylesheet" href="assets/js/plugins/lightslider/css/lightslider.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css" />  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css" />
   <link rel="stylesheet" href="assets/css/style.min.css">
 </head>
 
 <body>
+  <div class="overlay-mm"></div>
+  <div class="mobile-menu-panel">
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="#about">
+            <div class="circle active-header"></div>about us
+          </a>
+        </li>
+        <li><a href="#projects">
+            <div class="circle"></div>projects
+          </a></li>
+        <li><a href="#news">
+            <div class="circle"></div>news
+          </a></li>
+        <li><a href="#gallery">
+            <div class="circle"></div>gallery
+          </a></li>
+        <li><a href="#contact">
+            <div class="circle"></div>contact
+          </a></li>
+      </ul>
+    </nav>
+    <address>
+      <ul class="contact-list">
+        <li>
+          <i class="fa-solid fa-location-dot"></i>
+          <span>91 Nolan Extensions Suite 670</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:+0013568682454">
+            +001 356-868-2454</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-inbox"></i>
+          <a href="mailto:montichello@service.com">
+            montichello@service.com</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-clock"></i>
+          <span class="working-hours">From
+            <time datetime="07:05">07:05AM</time> to <time datetime="19:30">19:30PM</time>
+          </span>
+        </li>
+      </ul>
+    </address>
+    <div class="social-list">
+      <a href="https://facebook.com" target="_blank" title="Facebook" rel="nofolow noreferrer"
+        class="color-facebook circle-wrap">
+        <i class="fa-brands fa-facebook-f social-item"></i>
+      </a>
+      <a href="https://twitter.com" target="_blank" title="Tweeter" rel="nofolow noreferrer"
+        class="color-twitter circle-wrap">
+        <i class="fa-brands fa-twitter social-item"></i>
+      </a>
+      <a href="https://instagram.com" target="_blank" title="Instagram" rel="nofolow noreferrer"
+        class="color-instagram circle-wrap">
+        <i class="fa-brands fa-instagram social-item"></i>
+      </a>
+    </div>
+  </div>
   <div class="page-wrapper">
     <header class="transparent-header">
       <div class="container">
         <div class="header-inner">
+          <button class="hamburger hamburger--spring" type="button" onclick="toggleMenu()">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
           <div class="logo">
-            <img src="assets/images/logo.png" data-alt="assets/images/logo_dark.png" class="logo"
-              alt="logo-montichello">
+            <a href="#">
+              <img src="assets/images/logo.png" data-alt="assets/images/logo_dark.png" class="logo"
+                alt="logo-montichello">
+            </a>
           </div>
           <nav>
             <ul class="nav-menu">
@@ -60,7 +128,7 @@
               <i class="fa-brands fa-instagram social-item"></i>
             </a>
           </div>
-        </div>        
+        </div>
       </div>
     </header>
 
@@ -224,7 +292,7 @@
             <hr class="divider">
           </div>
           <h2 class="header-section">get in touch</h2>
-          <div class="flex-wrap">
+          <div class="flex-wrap top">
             <address>
               <ul class="contact-list">
                 <li>
@@ -303,6 +371,10 @@
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    const toggleMenu = () => document.body.classList.toggle('open-menu')
+   
+  </script>
 </body>
 
 </html>

@@ -38,7 +38,7 @@ $(document).ready(() => {
                 if (circle) circle.classList.add('active-header');
             }
         })
-    })
+    })   
 
     /*--LIGHTSLIDER-HERO--*/
 
@@ -99,23 +99,23 @@ $(document).ready(() => {
                 pause: 4000,
                 speed: 600,
                 pauseOnHover: true,
-                responsive : [
-            {
-                breakpoint:1400,
-                settings: {
-                    item:2,
-                    slideMove:1,
-                    slideMargin:20,
-                  }
-            },
-            {
-                breakpoint:960,
-                settings: {
-                    item:1,
-                    slideMove:1
-                  }
-            }
-        ]
+                responsive: [
+                    {
+                        breakpoint: 1400,
+                        settings: {
+                            item: 2,
+                            slideMove: 1,
+                            slideMargin: 20,
+                        }
+                    },
+                    {
+                        breakpoint: 960,
+                        settings: {
+                            item: 1,
+                            slideMove: 1
+                        }
+                    }
+                ]
             })
             $("#slider-prev").click(() => sliderProduct.goToPrevSlide())
             $("#slider-next").click(() => sliderProduct.goToNextSlide())
@@ -175,8 +175,6 @@ $(document).ready(() => {
             });
         });
 
-
-
     /*--MAP--*/
 
     const mapLink = document.getElementById("load-map-link")
@@ -210,6 +208,46 @@ $(document).ready(() => {
         L.marker([40.680713598195986, -73.90616447480521], { icon: customIcon }).addTo(map)
             .bindPopup('Get in Touch!')
     }    
+
 });
 
+/*--HAMBURGER--*/
+function closeMenu() {  
+  document.body.classList.remove('open-menu'); 
+}
 
+document.addEventListener('DOMContentLoaded', function () {
+  const menuLinks = document.querySelectorAll('.mobile-menu-panel a');
+
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
+});
+
+// /*--SEND TELEGRAM--*/
+// let formInProgress = false
+// form.onsubmit = async function (e) {
+//     e.preventDefault()
+//     if(formInProgress) return
+// }
+// formInProgress = true
+// const BOT_TOKEN = '8084021249:AAHeZSko2YVe8hZr49BgDMM0IXEOUn_Wt7o'
+// const CHAT_ID = '-4844723150'
+
+// const fname = document.getElementById("ful_name").value
+// const mesage = document.getElementById("text").value
+
+// const msg = `<b>Name: </b>${fname}%0a`+
+// `<b></b>${mesage}`
+
+// const resp = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}0&parse_mode=html&text=${msg}`)
+// const answer = await resp.json()
+// if (answer.ok) {
+//     alert('You successfully send msg')
+//     form.reset()
+// } else {
+//     alert('Some error occurred')
+// }
+// formInProgress = false

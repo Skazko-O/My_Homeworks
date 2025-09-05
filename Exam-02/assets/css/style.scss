@@ -1,6 +1,6 @@
 @use 'fonts.css' as*;
 
-@import 'hamburger';
+@use 'hamburger' as*;
 
 $text-color: #2C4058;
 
@@ -35,10 +35,6 @@ $social-colors: (
   margin: 0;
   box-sizing: border-box;
 }
-
-// * {
-//   outline: 1px solid rgba(255, 0, 0, 0.3);
-// }
 
 ul,
 ol {
@@ -94,6 +90,157 @@ h2 {
   }
 }
 
+/*--HAMBURGER--*/
+.hamburger {
+  display: none;
+}
+/*  button {
+    display: none;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    border: none;
+    background-color: transparent;
+
+    &::before,
+    &::after {
+      content: '';
+    }
+
+    &::before,
+    &::after,
+    span {
+      display: inline-block;
+      height: 3px;
+      width: 30px;
+      border-radius: 2px;
+      background-color: #000;
+      position: absolute;
+      left: 3px;
+    }
+
+    span {
+      top: 7px;
+    }
+
+    &::before {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &::after {
+      bottom: 7px;
+    }
+
+    &.close {
+      span {
+        display: none;
+      }
+
+      &::before {
+        top: 19px;
+        rotate: 45deg;
+      }
+
+      &::after {
+        top: 19px;
+        rotate: -45deg;
+      }
+    }
+  }
+}*/
+
+.overlay-mm {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  left: 0;
+  top: 0;  
+  width: 100%;
+  height: calc(100dvh-60px);
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: all .5s ease;
+}
+
+.mobile-menu-panel {
+  position: fixed;
+  left: 0;
+  top: 0;  
+  width: 100%;
+  height: 100dvh;
+  background-color: #fff;
+  transform: translateY(-100%);
+  transition: all .5s ease;
+  z-index: 101;
+
+
+  .mm-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+}
+
+.open-menu {
+  .overlay-mm {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .mobile-menu-panel {
+    transform: translateY(60px);
+  }
+
+  .mobile-menu-panel .nav-menu, .contact-list {
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
+
+    .circle {
+      border-color: $text-color;
+    }
+
+     li {
+       padding: 20px;       
+     }
+
+    a {
+      display: inline;
+      width: 100%;
+      color: $text-color;
+      text-transform: uppercase;
+      font-size: 25px;
+      font-family: 'Source Sans Pro';
+
+      &:hover .circle {
+        background-color: $text-color;
+      }
+    }
+  }
+
+  .contact-list a{
+    text-transform: none;
+  }
+
+  .social-list {
+    padding-top: 50px;
+    justify-content: space-around;
+  }
+
+  .circle-wrap {
+    border-color: #7E5AFF;
+
+    i {
+      color: #7E5AFF;
+    }
+  }
+}
+
 /*--HEADER--*/
 
 .transparent-header {
@@ -101,7 +248,7 @@ h2 {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 99;
   background-color: transparent;
 }
 
@@ -704,10 +851,10 @@ h2 {
 
 .form-wrap {
   position: absolute;
-  top: -54%;
+  top: -43%;
   // min-width: 770px;
   margin: 0 auto;
-  z-index: 1000;
+  z-index: 1;
 }
 
 .top {
@@ -740,7 +887,9 @@ h2 {
   h2 {
     padding-bottom: 35px;
   }
+}
 
+.contact-list {
   li:not(:last-child) {
     padding-bottom: 30px;
   }
@@ -775,11 +924,15 @@ h2 {
 
 fieldset {
   border: none;
-  padding-bottom: 30px;
+  // padding-bottom: 30px;
 }
 
 fieldset .floating-label:not(:last-child) input {
   margin-bottom: 33px;
+}
+
+.form-wrap .top {
+    padding: 26px;
 }
 
 .floating-label {
@@ -787,7 +940,9 @@ fieldset .floating-label:not(:last-child) input {
 
   input {
     width: 100%;
-    padding: 1px 43px 15px;
+    padding-right: 43px;
+    padding-top: 8px;
+    margin-bottom: 57px;
     border: none;
     outline: none;
     border-bottom: 1px solid #000;
@@ -856,13 +1011,21 @@ footer {
 }
 
 @media screen and (max-width: 960px) {
+  .header-inner {
+    height: 60px;
+
+    .social-list {
+      display: none;
+    }
+  }
+
   .nav-menu {
     display: none;
   }
 
-  .header-inner {
-    justify-content: space-around;
-  }
+  .hamburger {
+    display: inline-block;
+  }  
 
   #slider-prev {
     left: 0;
@@ -903,17 +1066,25 @@ footer {
   }
 }
 
-@media screen and (max-width: 960px) {
-  .header-inner {
-    justify-content: center;
+footer {
+    height: 700px;
+  }
 
-    .social-list {
-      display: none;
+@media screen and (max-width: 600px) {
+  .form-wrap .top {
+    padding: 30px;
+  }
+
+
+  .zoom-icon {
+    svg {
+      width: 30px;
+      height: 30px;
     }
   }
 
-  footer {
-    height: 600px;
+  #slider-hero li .slide-title {
+    font-size: 50px;
   }
 
 }

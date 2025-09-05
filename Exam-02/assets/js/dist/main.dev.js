@@ -189,3 +189,38 @@ $(document).ready(function () {
     }).addTo(map).bindPopup('Get in Touch!');
   };
 });
+/*--HAMBURGER--*/
+
+function closeMenu() {
+  document.body.classList.remove('open-menu');
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  var menuLinks = document.querySelectorAll('.mobile-menu-panel a');
+  menuLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+      closeMenu();
+    });
+  });
+}); // /*--SEND TELEGRAM--*/
+// let formInProgress = false
+// form.onsubmit = async function (e) {
+//     e.preventDefault()
+//     if(formInProgress) return
+// }
+// formInProgress = true
+// const BOT_TOKEN = '8084021249:AAHeZSko2YVe8hZr49BgDMM0IXEOUn_Wt7o'
+// const CHAT_ID = '-4844723150'
+// const fname = document.getElementById("ful_name").value
+// const mesage = document.getElementById("text").value
+// const msg = `<b>Name: </b>${fname}%0a`+
+// `<b></b>${mesage}`
+// const resp = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}0&parse_mode=html&text=${msg}`)
+// const answer = await resp.json()
+// if (answer.ok) {
+//     alert('You successfully send msg')
+//     form.reset()
+// } else {
+//     alert('Some error occurred')
+// }
+// formInProgress = false
