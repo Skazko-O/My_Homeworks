@@ -112,7 +112,7 @@ $(document).ready(() => {
                         breakpoint: 960,
                         settings: {
                             item: 1,
-                            slideMove: 1
+                            slideMove: 1,                            
                         }
                     }
                 ]
