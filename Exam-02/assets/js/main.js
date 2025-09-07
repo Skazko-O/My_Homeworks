@@ -38,7 +38,7 @@ $(document).ready(() => {
                 if (circle) circle.classList.add('active-header');
             }
         })
-    })   
+    })
 
     /*--LIGHTSLIDER-HERO--*/
 
@@ -46,8 +46,18 @@ $(document).ready(() => {
         item: 1,
         loop: true,
         controls: false,
-        vertical: true
-    })
+        vertical: true,
+        responsive: [
+            {
+                breakpoint: 960,
+                settings: {
+                    auto: true,
+                    enableTouch: false,
+                    enableDrag: false
+                }
+            }
+        ]
+    });
 
 
     /*--LIGHTSLIDER-NEWS--*/
@@ -112,7 +122,7 @@ $(document).ready(() => {
                         breakpoint: 960,
                         settings: {
                             item: 1,
-                            slideMove: 1,                            
+                            slideMove: 1,
                         }
                     }
                 ]
@@ -207,47 +217,79 @@ $(document).ready(() => {
 
         L.marker([40.680713598195986, -73.90616447480521], { icon: customIcon }).addTo(map)
             .bindPopup('Get in Touch!')
-    }    
+    }
 
 });
 
 /*--HAMBURGER--*/
-function closeMenu() {  
-  document.body.classList.remove('open-menu'); 
-}
+const toggleMenu = () => document.body.classList.toggle('open-menu');
 
-document.addEventListener('DOMContentLoaded', function () {
-  const menuLinks = document.querySelectorAll('.mobile-menu-panel a');
-
-  menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      closeMenu();
-    });
-  });
+window.addEventListener('resize', function (event) {
+    console.log(event.target.outerWidth);
+    if (event.target.outerWidth >= 980 && document.body.classList.contains('open-menu')) {
+        document.body.classList.remove('open-menu');
+    }
 });
 
-// /*--SEND TELEGRAM--*/
-// let formInProgress = false
-// form.onsubmit = async function (e) {
-//     e.preventDefault()
-//     if(formInProgress) return
-// }
-// formInProgress = true
-// const BOT_TOKEN = '8084021249:AAHeZSko2YVe8hZr49BgDMM0IXEOUn_Wt7o'
-// const CHAT_ID = '-4844723150'
+/*--SEND TELEGRAM--*/
 
-// const fname = document.getElementById("ful_name").value
-// const mesage = document.getElementById("text").value
+const form = document.getElementById('subscr')
+let formInProgress = false
+form.onsubmit = async function (e) {
+    e.preventDefault();
+    if (formInProgress) return;
 
-// const msg = `<b>Name: </b>${fname}%0a`+
-// `<b></b>${mesage}`
+    // Validation
+    const v_name = document.getElementById("name").value;
+    const v_email = document.getElementById("email").value;
+    if (v_name.trim() === "" || v_email.trim() === "") {
+        toast.warning('Please fill out both Name and Email fields');
+        return;
+    }
+    if (v_name === "") {
+        toast.warning('Name field is required');
+        return;
+    }
 
-// const resp = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}0&parse_mode=html&text=${msg}`)
-// const answer = await resp.json()
-// if (answer.ok) {
-//     alert('You successfully send msg')
-//     form.reset()
-// } else {
-//     alert('Some error occurred')
-// }
-// formInProgress = false
+    if (v_email === "") {
+        toast.warning('Email field is required');
+        return;
+    }
+    const validateEmail = (v_email) => {
+        return String(v_email)
+            .toLowerCase()
+            .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+    };
+    if (!validateEmail(v_email)){
+        toast.error('Please enter a valid email adress');
+        return;
+    }
+
+
+    formInProgress = true
+    const BOT_TOKEN = '8084021249:AAHeZSko2YVe8hZr49BgDMM0IXEOUn_Wt7o'
+    const CHAT_ID = '-4844723150'
+
+    const name = document.getElementById("name").value
+    const email = document.getElementById("email").value
+
+    const msg = `<b>Name: </b>${name}%0a` +
+        `<b>Email :</b>${email}`
+
+    const resp = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&parse_mode=html&text=${msg}`)
+    const answer = await resp.json()
+    if (answer.ok) {
+        toast.success('You successfully subscrybe')
+        form.reset()
+    } else {
+        toast.error('Some error occurred')
+    }
+    formInProgress = false
+}
+
+
+
+
+

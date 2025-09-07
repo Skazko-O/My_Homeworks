@@ -95,62 +95,6 @@ h2 {
   display: none;
 }
 
-
-/*  button {
-    display: none;
-    width: 40px;
-    height: 40px;
-    position: relative;
-    border: none;
-    background-color: transparent;
-
-    &::before,
-    &::after {
-      content: '';
-    }
-
-    &::before,
-    &::after,
-    span {
-      display: inline-block;
-      height: 3px;
-      width: 30px;
-      border-radius: 2px;
-      background-color: #000;
-      position: absolute;
-      left: 3px;
-    }
-
-    span {
-      top: 7px;
-    }
-
-    &::before {
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    &::after {
-      bottom: 7px;
-    }
-
-    &.close {
-      span {
-        display: none;
-      }
-
-      &::before {
-        top: 19px;
-        rotate: 45deg;
-      }
-
-      &::after {
-        top: 19px;
-        rotate: -45deg;
-      }
-    }
-  }
-}*/
 .overlay-mm {
   visibility: hidden;
   opacity: 0;
@@ -242,9 +186,9 @@ h2 {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  z-index: 99;
+  width: 100%;  
   background-color: transparent;
+  z-index: 999;
 }
 
 .header-inner {
@@ -776,10 +720,8 @@ h2 {
 
 #map {
   position: relative;
-  width: 100%;
-  height: 100vh;
-
-//  height: clamp(300px, 60vh, 700px);
+  width: 100%;  
+  height: clamp(300px, 60vh, 700px);
 
   #map a:focus {
     outline: none;
@@ -838,7 +780,7 @@ h2 {
   top: -40%;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 999;
+  z-index: 100;
   width: clamp(300px, 80%, 770px);
 }
 
@@ -949,14 +891,7 @@ label {
   color: rgba(75, 85, 98, 0.5);
   pointer-events: none;
   transition: all 0.2s ease;
-}
-
-.l-email {
-  top: 3px;
-}
-
-.l-name {
-  top: 1px;
+  top: -1px;
 }
 
 input:focus~label {
@@ -1056,11 +991,12 @@ footer {
 }
 
 @media screen and (max-width: 650px) {
-  
+
   #lightgallery {
     display: flex;
     flex-direction: column;
   }
+
   .zoom-icon {
     svg {
       width: 30px;
@@ -1071,7 +1007,8 @@ footer {
   #slider-hero li .slide-title {
     font-size: 50px;
   }
-  .top{
+
+  .top {
     padding: 10px;
 
     h2 {

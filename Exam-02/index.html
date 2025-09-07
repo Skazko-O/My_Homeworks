@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Monticello</title>
-   <script src="https://kit.fontawesome.com/1aec2fdc6f.js" crossorigin="anonymous"></script>  
+  <script src="https://kit.fontawesome.com/1aec2fdc6f.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://i.icomoon.io/public/temp/d2dd4fd3e2/UntitledProject/style.css">
   <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
@@ -285,7 +285,7 @@
           </div>
         </div>
       </section>
-    </main> 
+    </main>
     <footer>
       <div class="form-wrap">
         <div class="top">
@@ -301,7 +301,7 @@
                   <span>91 Nolan Extensions Suite 670</span>
                 </li>
                 <li>
-                  <i class="icon-phone"></i>                   
+                  <i class="icon-phone"></i>
                   <a href="tel:+0013568682454">
                     +001 356-868-2454</a>
                 </li>
@@ -319,21 +319,21 @@
               </ul>
             </address>
             <div class="form-subscr">
-              <form action="#" method="post">                
-                  <div class="floating-label">
-                    <input class= "name" type="text" id="ful_name" name="ful_name" placeholder="" required>
-                    <label class= "l-name" for="ful_name">NAME</label>
-                  </div>
-                  <div class="floating-label">
-                    <input class= "email" type="text" id="text" name="text" placeholder="" required>
-                    <label class= "l-email" for="text">MESSAGE</label>
-                  </div>                
+              <form name="form-subscr" id="subscr" action="" onsubmit="return validateForm()" method="post">
+                <div class="floating-label">
+                  <input class="name" type="text" id="name" name="name" placeholder="">
+                  <label class="l-name" for="name">NAME</label>
+                </div>
+                <div class="floating-label">
+                  <input class="email" type="text" id="email" name="email" placeholder="">
+                  <label class="l-email" for="email">Email</label>
+                </div>
                 <button type="submit" class="btn">
                   <svg width="140px" height="50px" viewBox="0 0 140 50" class="border">
                     <polyline points="139,1 139,49 1,49 1,1 139,1" class="bg-line" />
                     <polyline points="139,1 139,49 1,49 1,1 139,1" class="hl-line" />
                   </svg>
-                  <span>send</span>
+                  <span>subscrybe</span>
                 </button>
               </form>
             </div>
@@ -365,15 +365,12 @@
     </footer>
   </div>
   <script src="assets/js/plugins/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/plugins/my-toast.js"></script>
   <script src="assets/js/plugins/lightslider/js/lightslider.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
-  <script src="assets/js/main.js"></script>
-  <script>
-    const toggleMenu = () => document.body.classList.toggle('open-menu')
-   
-  </script>
+  <script src="assets/js/main.js"></script>  
 </body>
 
 </html>

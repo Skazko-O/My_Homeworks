@@ -52,7 +52,15 @@ $(document).ready(function () {
     item: 1,
     loop: true,
     controls: false,
-    vertical: true
+    vertical: true,
+    responsive: [{
+      breakpoint: 960,
+      settings: {
+        auto: true,
+        enableTouch: false,
+        enableDrag: false
+      }
+    }]
   });
   /*--LIGHTSLIDER-NEWS--*/
 
@@ -191,36 +199,112 @@ $(document).ready(function () {
 });
 /*--HAMBURGER--*/
 
-function closeMenu() {
-  document.body.classList.remove('open-menu');
-}
+var toggleMenu = function toggleMenu() {
+  return document.body.classList.toggle('open-menu');
+};
 
-document.addEventListener('DOMContentLoaded', function () {
-  var menuLinks = document.querySelectorAll('.mobile-menu-panel a');
-  menuLinks.forEach(function (link) {
-    link.addEventListener('click', function () {
-      closeMenu();
-    });
+window.addEventListener('resize', function (event) {
+  console.log(event.target.outerWidth);
+
+  if (event.target.outerWidth >= 980 && document.body.classList.contains('open-menu')) {
+    document.body.classList.remove('open-menu');
+  }
+});
+/*--SEND TELEGRAM--*/
+
+var form = document.getElementById('subscr');
+var formInProgress = false;
+
+form.onsubmit = function _callee(e) {
+  var v_name, v_email, validateEmail, BOT_TOKEN, CHAT_ID, name, email, msg, resp, answer;
+  return regeneratorRuntime.async(function _callee$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          e.preventDefault();
+
+          if (!formInProgress) {
+            _context.next = 3;
+            break;
+          }
+
+          return _context.abrupt("return");
+
+        case 3:
+          // Validation
+          v_name = document.getElementById("name").value;
+          v_email = document.getElementById("email").value;
+
+          if (!(v_name.trim() === "" || v_email.trim() === "")) {
+            _context.next = 8;
+            break;
+          }
+
+          toast.warning('Please fill out both Name and Email fields');
+          return _context.abrupt("return");
+
+        case 8:
+          if (!(v_name === "")) {
+            _context.next = 11;
+            break;
+          }
+
+          toast.warning('Name field is required');
+          return _context.abrupt("return");
+
+        case 11:
+          if (!(v_email === "")) {
+            _context.next = 14;
+            break;
+          }
+
+          toast.warning('Email field is required');
+          return _context.abrupt("return");
+
+        case 14:
+          validateEmail = function validateEmail(v_email) {
+            return String(v_email).toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+          };
+
+          if (validateEmail(v_email)) {
+            _context.next = 18;
+            break;
+          }
+
+          toast.error('Please enter a valid email adress');
+          return _context.abrupt("return");
+
+        case 18:
+          formInProgress = true;
+          BOT_TOKEN = '8084021249:AAHeZSko2YVe8hZr49BgDMM0IXEOUn_Wt7o';
+          CHAT_ID = '-4844723150';
+          name = document.getElementById("name").value;
+          email = document.getElementById("email").value;
+          msg = "<b>Name: </b>".concat(name, "%0a") + "<b>Email :</b>".concat(email);
+          _context.next = 26;
+          return regeneratorRuntime.awrap(fetch("https://api.telegram.org/bot".concat(BOT_TOKEN, "/sendMessage?chat_id=").concat(CHAT_ID, "&parse_mode=html&text=").concat(msg)));
+
+        case 26:
+          resp = _context.sent;
+          _context.next = 29;
+          return regeneratorRuntime.awrap(resp.json());
+
+        case 29:
+          answer = _context.sent;
+
+          if (answer.ok) {
+            toast.success('You successfully subscrybe');
+            form.reset();
+          } else {
+            toast.error('Some error occurred');
+          }
+
+          formInProgress = false;
+
+        case 32:
+        case "end":
+          return _context.stop();
+      }
+    }
   });
-}); // /*--SEND TELEGRAM--*/
-// let formInProgress = false
-// form.onsubmit = async function (e) {
-//     e.preventDefault()
-//     if(formInProgress) return
-// }
-// formInProgress = true
-// const BOT_TOKEN = '8084021249:AAHeZSko2YVe8hZr49BgDMM0IXEOUn_Wt7o'
-// const CHAT_ID = '-4844723150'
-// const fname = document.getElementById("ful_name").value
-// const mesage = document.getElementById("text").value
-// const msg = `<b>Name: </b>${fname}%0a`+
-// `<b></b>${mesage}`
-// const resp = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}0&parse_mode=html&text=${msg}`)
-// const answer = await resp.json()
-// if (answer.ok) {
-//     alert('You successfully send msg')
-//     form.reset()
-// } else {
-//     alert('Some error occurred')
-// }
-// formInProgress = false
+};
