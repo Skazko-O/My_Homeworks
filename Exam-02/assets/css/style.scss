@@ -22,7 +22,7 @@ $social-colors: (
   a.#{$class}:hover {
     border-color: $color;
 
-    i {
+    span {
       color: $color;
     }
   }
@@ -93,6 +93,12 @@ h2 {
 /*--HAMBURGER--*/
 .hamburger {
   display: none;
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+  /* запобігає прокрутці на мобільних */
 }
 
 .overlay-mm {
@@ -174,7 +180,7 @@ h2 {
   .circle-wrap {
     border-color: #7E5AFF;
 
-    i {
+    span {
       color: #7E5AFF;
     }
   }
@@ -186,7 +192,7 @@ h2 {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;  
+  width: 100%;
   background-color: transparent;
   z-index: 999;
 }
@@ -250,7 +256,7 @@ h2 {
   height: 40px;
   transition: border-color 1s ease;
 
-  i {
+  span {
     color: #fff;
     transition: color 1s ease;
   }
@@ -282,7 +288,7 @@ h2 {
   .circle-wrap {
     border-color: $text-color;
 
-    i {
+    span {
       color: $text-color;
     }
   }
@@ -325,26 +331,6 @@ h2 {
   transform: translate(-50%, -50%);
   width: 100%;
   text-align: center;
-}
-
-.slide-1 {
-  background-image: url('../images/slider/background_1.jpg');
-}
-
-.slide-2 {
-  background-image: url('../images/slider/background_2.jpg');
-}
-
-.slide-3 {
-  background-image: url('../images/slider/background_3.jpg');
-}
-
-.slide-4 {
-  background-image: url('../images/slider/background_4.jpg');
-}
-
-.slide-5 {
-  background-image: url('../images/slider/background_5.jpg');
 }
 
 .scroll-link {
@@ -422,9 +408,15 @@ h2 {
   padding-bottom: 176px;
 }
 
+.project-img {
+  max-width: 630px;
+  margin: auto;
+}
+
+
 
 .shadow-box img {
-  box-shadow: -260px -57px #55B7FF;
+  box-shadow: calc(clamp(-260px, -30vw, -100px)) calc(clamp(-57px, -6vw, -20px)) #55B7FF;
   transition: box-shadow 0.3s ease, width 0.3s ease;
   aspect-ratio: 4 / 3;
 }
@@ -451,7 +443,7 @@ h2 {
     padding-bottom: 30px;
   }
 
-  i {
+  span {
     font-size: 15px;
   }
 }
@@ -507,7 +499,7 @@ h2 {
   flex-direction: row-reverse;
 
   .shadow-box img {
-    box-shadow: 260px -57px #7E5AFF;
+    box-shadow: calc(clamp(100px, 30vw, 260px)) calc(clamp(-57px, -6vw, -20px)) #7E5AFF;
     transition: box-shadow 0.3s ease, width 0.3s ease;
     aspect-ratio: 4 / 3;
   }
@@ -516,7 +508,12 @@ h2 {
 /*--NEWS--*/
 
 .news {
-  background: url(../images/bg_news.png) center / cover no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+
+
 
   .divider {
     background-color: #fff;
@@ -568,7 +565,7 @@ h2 {
   border-radius: 50%;
   background-color: transparent;
 
-  i {
+  span {
     color: #fff;
   }
 }
@@ -720,7 +717,7 @@ h2 {
 
 #map {
   position: relative;
-  width: 100%;  
+  width: 100%;
   height: clamp(300px, 60vh, 700px);
 
   #map a:focus {
@@ -785,7 +782,10 @@ h2 {
 }
 
 .top {
-  background: url(../images/bg_form.png) rgb(255, 255, 255) 50% bottom / contain no-repeat;
+  background-color: rgb(255, 255, 255);
+  background-position: 50% bottom;
+  background-size: contain;
+  background-repeat: no-repeat;  
   padding: 60px;
 
   form {
@@ -824,7 +824,8 @@ h2 {
     padding-bottom: 26px;
   }
 
-  li :is(i, a, span) {
+  li :is(a, span, p) {
+    display: inline;
     color: #7E5AFF;
     font-size: 18px;
     line-height: 28px;
@@ -832,7 +833,7 @@ h2 {
     padding-right: 5px;
   }
 
-  li :is(a, span) {
+  li :is(a, p) {
     color: #000;
   }
 }
@@ -903,14 +904,33 @@ input:focus~label {
 
 /*--FOOTER--*/
 
-footer {
+.footer {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 550px;
-  background: url(../images/bg_footer.png) lightgray 0px 0px / 100% 95.446% no-repeat,
-    linear-gradient(251deg, #7E5AFF -2.19%, #55B7FF 103.21%);
+  min-height: 500px;
+  background-image: linear-gradient(251deg, #7E5AFF -2.19%, #55B7FF 103.21%);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}  
+
+.footer-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 95.446%;
+  object-fit: contain;
+  z-index: 0;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
 
@@ -986,9 +1006,10 @@ footer {
   }
 }
 
-footer {
-  height: 700px;
+.footer{
+  min-height: 700px;
 }
+
 
 @media screen and (max-width: 650px) {
 

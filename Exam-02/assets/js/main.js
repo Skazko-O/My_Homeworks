@@ -56,7 +56,28 @@ $(document).ready(() => {
                     enableDrag: false
                 }
             }
-        ]
+        ],
+        onSliderLoad: function (el) {
+            const showActiveSlides = function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.src = entry.target.dataset.src;
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const imageWidth = el.find("li").outerWidth() + "px";
+
+            const observer = new window.IntersectionObserver(showActiveSlides, {
+                root: el.parent()[0],
+                rootMargin: "0px " + imageWidth + " 0px " + imageWidth
+            });
+
+            el.find("li img").each(function () {
+                observer.observe(this);
+            });
+        }
     });
 
 
@@ -79,7 +100,9 @@ $(document).ready(() => {
                 card.innerHTML = `
                 <a href="#">
                  <div class="img-wrapper-news">
-                  <img src="${item.image}" alt="${item.alt}">
+                  <img class="lazy"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                  data-src="${item.image}" alt="${item.alt}">
                 </div>
                 <div class="content-news">
                   <h4>${item.title}</h4>
@@ -87,7 +110,9 @@ $(document).ready(() => {
                   </p>
                   <div class="news-content-footer">
                     <div class="avatar-wrapper">
-                      <img src="${item.avatar}">
+                      <img class="lazy" 
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                      data-src="${item.avatar}">
                     </div>
                     <div class="author-date">
                       <p class="ful-name">
@@ -125,7 +150,28 @@ $(document).ready(() => {
                             slideMove: 1,
                         }
                     }
-                ]
+                ],
+                onSliderLoad: function (el) {
+                    const showActiveSlides = function (entries) {
+                        entries.forEach(function (entry) {
+                            if (entry.isIntersecting) {
+                                entry.target.src = entry.target.dataset.src;
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    };
+
+                    const imageWidth = el.find("li").outerWidth() + "px";
+
+                    const observer = new window.IntersectionObserver(showActiveSlides, {
+                        root: el.parent()[0],
+                        rootMargin: "0px " + imageWidth + " 0px " + imageWidth
+                    });
+
+                    el.find("li img").each(function () {
+                        observer.observe(this);
+                    });
+                }
             })
             $("#slider-prev").click(() => sliderProduct.goToPrevSlide())
             $("#slider-next").click(() => sliderProduct.goToNextSlide())
@@ -222,7 +268,10 @@ $(document).ready(() => {
 });
 
 /*--HAMBURGER--*/
-const toggleMenu = () => document.body.classList.toggle('open-menu');
+const toggleMenu = () => {
+    document.body.classList.toggle('open-menu');
+    document.body.classList.toggle('no-scroll');
+}
 
 window.addEventListener('resize', function (event) {
     console.log(event.target.outerWidth);
@@ -230,6 +279,7 @@ window.addEventListener('resize', function (event) {
         document.body.classList.remove('open-menu');
     }
 });
+
 
 /*--SEND TELEGRAM--*/
 
@@ -262,7 +312,7 @@ form.onsubmit = async function (e) {
                 /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             );
     };
-    if (!validateEmail(v_email)){
+    if (!validateEmail(v_email)) {
         toast.error('Please enter a valid email adress');
         return;
     }
@@ -281,7 +331,7 @@ form.onsubmit = async function (e) {
     const resp = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&parse_mode=html&text=${msg}`)
     const answer = await resp.json()
     if (answer.ok) {
-        toast.success('You successfully subscrybe')
+        toast.success('You successfully subscribe')
         form.reset()
     } else {
         toast.error('Some error occurred')
@@ -289,7 +339,5 @@ form.onsubmit = async function (e) {
     formInProgress = false
 }
 
-
-
-
-
+/*--LazyLoading--*/
+const lazyLoadInstance = new LazyLoad();

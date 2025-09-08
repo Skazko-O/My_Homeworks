@@ -28,7 +28,7 @@ var toast = {
     borderRadius: '4px',
     backgroundColor: '#eee',
     padding: '15px',
-    zIndex: '10',
+    zIndex: '1100',
     width: '400px'
   },
   types: {

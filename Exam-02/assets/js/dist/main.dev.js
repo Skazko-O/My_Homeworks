@@ -60,7 +60,26 @@ $(document).ready(function () {
         enableTouch: false,
         enableDrag: false
       }
-    }]
+    }],
+    onSliderLoad: function onSliderLoad(el) {
+      var showActiveSlides = function showActiveSlides(entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.src = entry.target.dataset.src;
+            observer.unobserve(entry.target);
+          }
+        });
+      };
+
+      var imageWidth = el.find("li").outerWidth() + "px";
+      var observer = new window.IntersectionObserver(showActiveSlides, {
+        root: el.parent()[0],
+        rootMargin: "0px " + imageWidth + " 0px " + imageWidth
+      });
+      el.find("li img").each(function () {
+        observer.observe(this);
+      });
+    }
   });
   /*--LIGHTSLIDER-NEWS--*/
 
@@ -79,7 +98,7 @@ $(document).ready(function () {
       var truncatedSummary = summaryText.length <= maxChars ? summaryText + '...' : summaryText.slice(0, maxChars) + '...';
       var card = document.createElement('li');
       card.className = 'news-card';
-      card.innerHTML = "\n                <a href=\"#\">\n                 <div class=\"img-wrapper-news\">\n                  <img src=\"".concat(item.image, "\" alt=\"").concat(item.alt, "\">\n                </div>\n                <div class=\"content-news\">\n                  <h4>").concat(item.title, "</h4>\n                  <p class=\"summary\">").concat(truncatedSummary, "\n                  </p>\n                  <div class=\"news-content-footer\">\n                    <div class=\"avatar-wrapper\">\n                      <img src=\"").concat(item.avatar, "\">\n                    </div>\n                    <div class=\"author-date\">\n                      <p class=\"ful-name\">\n                        ").concat(item.author, "\n                      </p>\n                      <time datetime=\"").concat(item.date, "\">").concat(formattedDate, "</time>                      \n                    </div>\n                  </div>\n                </div>\n                </a>");
+      card.innerHTML = "\n                <a href=\"#\">\n                 <div class=\"img-wrapper-news\">\n                  <img class=\"lazy\"\n                  src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=\"\n                  data-src=\"".concat(item.image, "\" alt=\"").concat(item.alt, "\">\n                </div>\n                <div class=\"content-news\">\n                  <h4>").concat(item.title, "</h4>\n                  <p class=\"summary\">").concat(truncatedSummary, "\n                  </p>\n                  <div class=\"news-content-footer\">\n                    <div class=\"avatar-wrapper\">\n                      <img class=\"lazy\" \n                      src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=\"\n                      data-src=\"").concat(item.avatar, "\">\n                    </div>\n                    <div class=\"author-date\">\n                      <p class=\"ful-name\">\n                        ").concat(item.author, "\n                      </p>\n                      <time datetime=\"").concat(item.date, "\">").concat(formattedDate, "</time>                      \n                    </div>\n                  </div>\n                </div>\n                </a>");
       container.appendChild(card);
     });
     var sliderProduct = $("#slider-news").lightSlider({
@@ -104,7 +123,26 @@ $(document).ready(function () {
           item: 1,
           slideMove: 1
         }
-      }]
+      }],
+      onSliderLoad: function onSliderLoad(el) {
+        var showActiveSlides = function showActiveSlides(entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.src = entry.target.dataset.src;
+              observer.unobserve(entry.target);
+            }
+          });
+        };
+
+        var imageWidth = el.find("li").outerWidth() + "px";
+        var observer = new window.IntersectionObserver(showActiveSlides, {
+          root: el.parent()[0],
+          rootMargin: "0px " + imageWidth + " 0px " + imageWidth
+        });
+        el.find("li img").each(function () {
+          observer.observe(this);
+        });
+      }
     });
     $("#slider-prev").click(function () {
       return sliderProduct.goToPrevSlide();
@@ -200,7 +238,8 @@ $(document).ready(function () {
 /*--HAMBURGER--*/
 
 var toggleMenu = function toggleMenu() {
-  return document.body.classList.toggle('open-menu');
+  document.body.classList.toggle('open-menu');
+  document.body.classList.toggle('no-scroll');
 };
 
 window.addEventListener('resize', function (event) {
@@ -293,7 +332,7 @@ form.onsubmit = function _callee(e) {
           answer = _context.sent;
 
           if (answer.ok) {
-            toast.success('You successfully subscrybe');
+            toast.success('You successfully subscribe');
             form.reset();
           } else {
             toast.error('Some error occurred');
@@ -308,3 +347,7 @@ form.onsubmit = function _callee(e) {
     }
   });
 };
+/*--LazyLoading--*/
+
+
+var lazyLoadInstance = new LazyLoad();

@@ -4,9 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monticello</title>
-  <script src="https://kit.fontawesome.com/1aec2fdc6f.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://i.icomoon.io/public/temp/d2dd4fd3e2/UntitledProject/style.css">
+  <title>Monticello</title>  
+  <link rel="stylesheet" href="https://i.icomoon.io/public/temp/f1fb74cc18/UntitledProject/style.css">
   <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
   <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
@@ -44,21 +43,21 @@
     <address>
       <ul class="contact-list">
         <li>
-          <i class="fa-solid fa-location-dot"></i>
+          <span class="icon-map-marker"></span>
           <span>91 Nolan Extensions Suite 670</span>
         </li>
         <li>
-          <i class="fa-solid fa-phone"></i>
+          <span class="icon-phone"></span>
           <a href="tel:+0013568682454">
             +001 356-868-2454</a>
         </li>
         <li>
-          <i class="fa-solid fa-inbox"></i>
+          <span class="icon-inbox"></span>
           <a href="mailto:montichello@service.com">
             montichello@service.com</a>
         </li>
         <li>
-          <i class="fa-solid fa-clock"></i>
+          <span class="icon-clock-o"></span>
           <span class="working-hours">From
             <time datetime="07:05">07:05AM</time> to <time datetime="19:30">19:30PM</time>
           </span>
@@ -68,15 +67,15 @@
     <div class="social-list">
       <a href="https://facebook.com" target="_blank" title="Facebook" rel="nofolow noreferrer"
         class="color-facebook circle-wrap">
-        <i class="icon-facebook social-item"></i>
+        <span class="icon-facebook social-item"></span>
       </a>
       <a href="https://twitter.com" target="_blank" title="Tweeter" rel="nofolow noreferrer"
         class="color-twitter circle-wrap">
-        <i class="icon-twitter social-item"></i>
+        <span class="icon-twitter social-item"></span>
       </a>
       <a href="https://instagram.com" target="_blank" title="Instagram" rel="nofolow noreferrer"
         class="color-instagram circle-wrap">
-        <i class="icon-instagram social-item"></i>
+        <span class="icon-instagram social-item"></span>
       </a>
     </div>
   </div>
@@ -118,15 +117,15 @@
           <div class="social-list">
             <a href="https://facebook.com" target="_blank" title="Facebook" rel="nofolow noreferrer"
               class="color-facebook circle-wrap">
-              <i class="icon-facebook social-item"></i>
+              <span class="icon-facebook social-item"></span>
             </a>
             <a href="https://twitter.com" target="_blank" title="Tweeter" rel="nofolow noreferrer"
               class="color-twitter circle-wrap">
-              <i class="icon-twitter social-item"></i>
+              <span class="icon-twitter social-item"></span>
             </a>
             <a href="https://instagram.com" target="_blank" title="Instagram" rel="nofolow noreferrer"
               class="color-instagram circle-wrap">
-              <i class="icon-instagram social-item"></i>
+              <span class="icon-instagram social-item"></span>
             </a>
           </div>
         </div>
@@ -138,32 +137,32 @@
         <div class="hero-sections">
           <div class="slider-hero-wrapper">
             <ul id="slider-hero">
-              <li class="slide-1">
+              <li class="slide-1 lazy" data-bg="assets/images/slider/background_1.jpg">
                 <div class="overlay">
                   <div class="slide-title">simple & modern
                   </div>
                   <p>we make the world beatiful everyday</p>
                 </div>
               </li>
-              <li class="slide-2">
+              <li class="slide-2 lazy" data-bg="assets/images/slider/background_2.jpg">
                 <div class="overlay">
                   <div class="slide-title">clean & bold</div>
                   <p>design that speaks without words</p>
                 </div>
               </li>
-              <li class="slide-3">
+              <li class="slide-3 lazy" data-bg="assets/images/slider/background_3.jpg">
                 <div class="overlay">
                   <div class="slide-title">bright & timeless</div>
                   <p>we shape beauty into every ditail</p>
                 </div>
               </li>
-              <li class="slide-4">
+              <li class="slide-4 lazy" data-bg="assets/images/slider/background_4.jpg">
                 <div class="overlay">
                   <div class="slide-title">pure & elegant</div>
                   <p>creating harmony through simplicity</p>
                 </div>
               </li>
-              <li class="slide-5">
+              <li class="slide-5 lazy" data-bg="assets/images/slider/background_5.jpg">
                 <div class="overlay">
                   <div class="slide-title">fresh & inspired</div>
                   <p>we turn ideas into visual joy</p>
@@ -172,7 +171,7 @@
             </ul>
           </div>
           <a href="#projects" class="circle-wrap scroll-link color-scroll-link">
-            <i class="fa-solid fa-angle-down angle-down"></i>
+            <span class="icon-angle-down"></span>
           </a>
         </div>
       </section>
@@ -185,7 +184,9 @@
           <div class="project-content">
             <div class="project-img">
               <div class="shadow-box">
-                <img src="assets/images/joel_filipe.jpg">
+                <img class="lazy"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                  data-src="assets/images/joel_filipe.jpg">
               </div>
             </div>
             <div class="project-text">
@@ -202,7 +203,7 @@
               </button>
 
               <span class="target">
-                <i class="fa-solid fa-location-dot"></i>
+                <span class="icon-map-marker"></span>
                 New York City, United States - 1776 feet
               </span>
             </div>
@@ -210,7 +211,9 @@
           <div class="project-content revers">
             <div class="project-img">
               <div class="shadow-box">
-                <img src="assets/images/building.jpg">
+                <img class="lazy"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                  data-src="assets/images/building.jpg">
               </div>
             </div>
             <div class="project-text">
@@ -226,7 +229,7 @@
                 <span>more ditails</span>
               </button>
               <span class="target">
-                <i class="fa-solid fa-location-dot"></i>
+                <span class="icon-map-marker"></span>
                 Hong Kong - 1588 feet
               </span>
             </div>
@@ -234,7 +237,7 @@
         </div>
       </section>
       <!--NEWS-->
-      <section class="news" id="news">
+      <section class="news lazy" id="news" data-bg="assets/images/bg_news.png">
         <div class="container">
           <div class="divider-wrapper">
             <hr class="divider">
@@ -244,10 +247,10 @@
             <ul id="slider-news" class="slider-news">
             </ul>
             <button id="slider-prev" class="slider-btn">
-              <i class="fa-solid fa-angle-left"></i>
+              <span class="icon-angle-left"></span>
             </button>
             <button id="slider-next" class="slider-btn revers">
-              <i class="fa-solid fa-angle-right"></i>
+              <span class="icon-angle-right"></span>
             </button>
           </div>
         </div>
@@ -279,7 +282,9 @@
         <div class="map-wrap">
           <div id="map">
             <a href="#" id="load-map-link">
-              <img class="lazy" src="assets/images/map.png" alt="">
+              <img class="lazy"
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                data-src="assets/images/map.png" alt="map">
               <p>Click for interactive map</p>
             </a>
           </div>
@@ -287,8 +292,12 @@
       </section>
     </main>
     <footer>
+      <div class="footer">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+                  data-src="assets/images/bg_footer.png" alt="Footer background" class="footer-bg lazy">
+      
       <div class="form-wrap">
-        <div class="top">
+        <div class="top lazy" data-bg="assets/images/bg_form.png">
           <div class="divider-wrapper">
             <hr class="divider">
           </div>
@@ -297,24 +306,24 @@
             <address>
               <ul class="contact-list">
                 <li>
-                  <i class="icon-map-marker"></i>
-                  <span>91 Nolan Extensions Suite 670</span>
+                  <span class="icon-map-marker"></span>
+                  <p>91 Nolan Extensions Suite 670</p>
                 </li>
                 <li>
-                  <i class="icon-phone"></i>
+                  <span class="icon-phone"></span>
                   <a href="tel:+0013568682454">
                     +001 356-868-2454</a>
                 </li>
                 <li>
-                  <i class="icon-inbox"></i>
+                  <span class="icon-inbox"></span>
                   <a href="mailto:montichello@service.com">
                     montichello@service.com</a>
                 </li>
                 <li>
-                  <i class="icon-clock-o"></i>
-                  <span class="working-hours">From
+                  <span class="icon-clock-o"></span>
+                  <p class="working-hours">From
                     <time datetime="07:05">07:05AM</time> to <time datetime="19:30">19:30PM</time>
-                  </span>
+                  </p>
                 </li>
               </ul>
             </address>
@@ -333,7 +342,7 @@
                     <polyline points="139,1 139,49 1,49 1,1 139,1" class="bg-line" />
                     <polyline points="139,1 139,49 1,49 1,1 139,1" class="hl-line" />
                   </svg>
-                  <span>subscrybe</span>
+                  <span>subscribe</span>
                 </button>
               </form>
             </div>
@@ -349,28 +358,30 @@
           <div class="social-list">
             <a href="https://facebook.com" target="_blank" title="Facebook" rel="nofolow noreferrer"
               class="color-facebook circle-wrap">
-              <i class="icon-facebook social-item"></i>
+              <span class="icon-facebook social-item"></span>
             </a>
             <a href="https://twitter.com" target="_blank" title="Tweeter" rel="nofolow noreferrer"
               class="color-twitter circle-wrap">
-              <i class="icon-twitter social-item"></i>
+              <span class="icon-twitter social-item"></span>
             </a>
             <a href="https://instagram.com" target="_blank" title="Instagram" rel="nofolow noreferrer"
               class="color-instagram circle-wrap">
-              <i class="icon-instagram social-item"></i>
+              <span class="icon-instagram social-item"></span>
             </a>
           </div>
         </div>
       </div>
+      </div>
     </footer>
   </div>
+  <script src="assets/js/plugins/lazyload/lazyload.min.js"></script>
   <script src="assets/js/plugins/jquery-3.7.1.min.js"></script>
   <script src="assets/js/plugins/my-toast.js"></script>
   <script src="assets/js/plugins/lightslider/js/lightslider.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
-  <script src="assets/js/main.js"></script>  
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
