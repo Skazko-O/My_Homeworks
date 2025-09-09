@@ -962,11 +962,15 @@ h2 {
   li :is(a, span, p) {
     display: inline;
     color: #7E5AFF;
-    font-size: 18px;
+    font-size: 17px;
     line-height: 28px;
     font-style: normal;
     padding-right: 5px;
   }
+
+  // li span {
+  //   font-size: 17px;
+  // }
 
   li :is(a, p) {
     color: #000;
