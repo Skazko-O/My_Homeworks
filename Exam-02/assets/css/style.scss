@@ -129,8 +129,7 @@ h2 {
   top: 0;
   width: 100%;
   height: calc(100dvh - 60px);
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.3);  
   -webkit-transition: all .5s ease;
   -o-transition: all .5s ease;
   transition: all .5s ease;
@@ -169,7 +168,7 @@ h2 {
 .open-menu {
   .overlay-mm {
     visibility: visible;
-    opacity: 0;
+    opacity: 1;
   }
 
   .mobile-menu-panel {
