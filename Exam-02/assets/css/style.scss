@@ -665,6 +665,14 @@ h2 {
   span {
     color: #fff;
   }
+
+  &:hover {
+    span {
+      color: $text-color;
+    }
+
+    border-color: $text-color;
+  }
 }
 
 #slider-prev {
@@ -1146,6 +1154,7 @@ input:focus~label {
 
     .logo {
       padding: 20px 0;
+
       img {
         max-width: 200px;
         height: auto;
