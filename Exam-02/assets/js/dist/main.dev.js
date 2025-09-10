@@ -53,6 +53,7 @@ $(document).ready(function () {
     loop: true,
     controls: false,
     vertical: true,
+    slideMargin: 0,
     responsive: [{
       breakpoint: 960,
       settings: {
@@ -248,6 +249,12 @@ window.addEventListener('resize', function (event) {
   if (event.target.outerWidth >= 980 && document.body.classList.contains('open-menu')) {
     document.body.classList.remove('open-menu');
   }
+});
+document.querySelectorAll('.menu-item').forEach(function (item) {
+  item.addEventListener('click', function () {
+    document.body.classList.remove('open-menu');
+    document.body.classList.remove('no-scroll');
+  });
 });
 /*--SEND TELEGRAM--*/
 

@@ -47,6 +47,7 @@ $(document).ready(() => {
         loop: true,
         controls: false,
         vertical: true,
+        slideMargin: 0,
         responsive: [
             {
                 breakpoint: 960,
@@ -277,7 +278,13 @@ window.addEventListener('resize', function (event) {
     console.log(event.target.outerWidth);
     if (event.target.outerWidth >= 980 && document.body.classList.contains('open-menu')) {
         document.body.classList.remove('open-menu');
-    }
+    }    
+});
+document.querySelectorAll('.menu-item').forEach(item => {
+    item.addEventListener('click', () => {
+        document.body.classList.remove('open-menu');
+        document.body.classList.remove('no-scroll');
+    });
 });
 
 
