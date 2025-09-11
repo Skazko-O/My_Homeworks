@@ -324,7 +324,7 @@ form.onsubmit = async function (e) {
         return;
     }
 
-
+/*--SendTelegram--*/
     formInProgress = true
     const BOT_TOKEN = '8084021249:AAHeZSko2YVe8hZr49BgDMM0IXEOUn_Wt7o'
     const CHAT_ID = '-4844723150'
